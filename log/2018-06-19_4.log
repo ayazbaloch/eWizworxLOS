@@ -1,0 +1,195 @@
+*** 2018-06-19 11:31:28.603 Adempiere Log (CLogFile) ***
+11:31:28.603 Adempiere.startup: ADempiere(r) Release 3.9.0_2017-08-01 -Smart Suite ERP,CRM and SCM- (c) 1999-2017 ADempiere(r); Implementation: ADempiere - Supported by ADempiere community [13]
+11:31:28.603 Ini.loadProperties: D:\Ayaz\Ayaz_NBP_PC_Backup\AdempiereTemplate39\Adempiere.properties #37 [13]
+-----------> MIssue.set_Value: SourceClassName - Value too long - truncated to length=60 [47]
+===========> DB.executeUpdate: INSERT INTO AD_Tree_Favorite (AD_Client_ID,AD_Org_ID,AD_Role_ID,AD_Tree_Favorite_ID,Created,CreatedBy,IsActive,Updated,UpdatedBy) VALUES (0,0,0,1000107,TO_DATE('2018-06-19 11:32:03','YYYY-MM-DD HH24:MI:SS'),0,'Y',TO_DATE('2018-06-19 11:32:03','YYYY-MM-DD HH24:MI:SS'),0) [POSave_8ea1f9f8-e99c-4aac-a68c-c89225cbbc34] [47]
+java.sql.SQLIntegrityConstraintViolationException: ORA-01400: cannot insert NULL into ("CARSDEV"."AD_TREE_FAVORITE"."AD_USER_ID")
+; State=23000; ErrorCode=1400
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:447)
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:396)
+	at oracle.jdbc.driver.T4C8Oall.processError(T4C8Oall.java:951)
+	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:513)
+	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:227)
+	at oracle.jdbc.driver.T4C8Oall.doOALL(T4C8Oall.java:531)
+	at oracle.jdbc.driver.T4CPreparedStatement.doOall8(T4CPreparedStatement.java:208)
+	at oracle.jdbc.driver.T4CPreparedStatement.executeForRows(T4CPreparedStatement.java:1046)
+	at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1336)
+	at oracle.jdbc.driver.OracleStatement.doScrollExecuteCommon(OracleStatement.java:4709)
+	at oracle.jdbc.driver.OraclePreparedStatement.doScrollPstmtExecuteUpdate(OraclePreparedStatement.java:10613)
+	at oracle.jdbc.driver.OraclePreparedStatement.executeInternal(OraclePreparedStatement.java:3611)
+	at oracle.jdbc.driver.OraclePreparedStatement.executeUpdate(OraclePreparedStatement.java:3694)
+	at oracle.jdbc.driver.OraclePreparedStatementWrapper.executeUpdate(OraclePreparedStatementWrapper.java:1354)
+	at com.mchange.v2.c3p0.impl.NewProxyPreparedStatement.executeUpdate(NewProxyPreparedStatement.java:105)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.compiere.db.StatementProxy.invoke(StatementProxy.java:100)
+	at com.sun.proxy.$Proxy3.executeUpdate(Unknown Source)
+	at org.compiere.util.DB.executeUpdate(DB.java:1046)
+	at org.compiere.util.DB.executeUpdate(DB.java:908)
+	at org.compiere.util.DB.executeUpdate(DB.java:895)
+	at org.compiere.model.PO.saveNew(PO.java:2865)
+	at org.compiere.model.PO.save(PO.java:2195)
+
+===========> DB.saveError: DBExecuteError - ORA-01400: cannot insert NULL into ("CARSDEV"."AD_TREE_FAVORITE"."AD_USER_ID")
+ [47]
+-----------> MTreeFavorite.saveNew: [POSave_8ea1f9f8-e99c-4aac-a68c-c89225cbbc34]Not inserted - AD_Tree_Favorite [47]
+-----------> DefaultDesktop.createHomeTab: Failed to create components. zul=/zul/userfavorites.zul [47]
+org.adempiere.exceptions.AdempiereException: Could not create Tree.
+	at org.adempiere.webui.dashboard.DPUserFavorites.createFavouritesPanel(DPUserFavorites.java:119)
+	at org.adempiere.webui.dashboard.DPUserFavorites.<init>(DPUserFavorites.java:63)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at java.lang.Class.newInstance(Unknown Source)
+	at org.zkoss.zk.ui.metainfo.impl.ComponentDefinitionImpl.newInstance(ComponentDefinitionImpl.java:308)
+	at org.zkoss.zk.ui.metainfo.impl.ComponentDefinitionImpl.newInstance(ComponentDefinitionImpl.java:296)
+	at org.zkoss.zk.ui.metainfo.ComponentInfo.newInstance(ComponentInfo.java:664)
+	at org.zkoss.zk.ui.impl.AbstractUiFactory.newComponent(AbstractUiFactory.java:90)
+	at org.zkoss.zk.ui.impl.UiEngineImpl.execCreateChild0(UiEngineImpl.java:616)
+	at org.zkoss.zk.ui.impl.UiEngineImpl.execCreateChild(UiEngineImpl.java:587)
+	at org.zkoss.zk.ui.impl.UiEngineImpl.execCreate0(UiEngineImpl.java:531)
+	at org.zkoss.zk.ui.impl.UiEngineImpl.execCreate(UiEngineImpl.java:498)
+	at org.zkoss.zk.ui.impl.UiEngineImpl.createComponents(UiEngineImpl.java:819)
+	at org.zkoss.zk.ui.impl.AbstractExecution.createComponents(AbstractExecution.java:189)
+	at org.zkoss.zk.ui.Executions.createComponents(Executions.java:177)
+	at org.adempiere.webui.desktop.DefaultDesktop.createHomeTab(DefaultDesktop.java:380)
+	at org.adempiere.webui.desktop.DefaultDesktop.doCreatePart(DefaultDesktop.java:162)
+	at org.adempiere.webui.part.AbstractUIPart.createPart(AbstractUIPart.java:41)
+
+-----------> Msg.getMsg: NOT found: InfoBranch [47]
+-----------> Msg.getMsg: NOT found: InfoBranch [47]
+-----------> [/webui].doWriteObject: Cannot serialize session attribute zk.desktop for session 1A7FE0BE38D99E38380362290ACD0706 [19]
+java.io.NotSerializableException: java.lang.Thread
+	at java.io.ObjectOutputStream.writeObject0(Unknown Source)
+	at java.io.ObjectOutputStream.defaultWriteFields(Unknown Source)
+	at java.io.ObjectOutputStream.writeSerialData(Unknown Source)
+	at java.io.ObjectOutputStream.writeOrdinaryObject(Unknown Source)
+	at java.io.ObjectOutputStream.writeObject0(Unknown Source)
+	at java.io.ObjectOutputStream.defaultWriteFields(Unknown Source)
+	at java.io.ObjectOutputStream.writeSerialData(Unknown Source)
+	at java.io.ObjectOutputStream.writeOrdinaryObject(Unknown Source)
+	at java.io.ObjectOutputStream.writeObject0(Unknown Source)
+	at java.io.ObjectOutputStream.writeObject(Unknown Source)
+	at org.zkoss.zk.ui.AbstractPage.writeObject(AbstractPage.java:198)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at java.io.ObjectStreamClass.invokeWriteObject(Unknown Source)
+	at java.io.ObjectOutputStream.writeSerialData(Unknown Source)
+	at java.io.ObjectOutputStream.writeOrdinaryObject(Unknown Source)
+	at java.io.ObjectOutputStream.writeObject0(Unknown Source)
+	at java.io.ObjectOutputStream.writeObject(Unknown Source)
+	at java.util.LinkedHashMap.internalWriteEntries(Unknown Source)
+
+-----------> [/webui].doWriteObject: Cannot serialize session attribute application.desktop for session 1A7FE0BE38D99E38380362290ACD0706 [19]
+java.io.NotSerializableException: org.adempiere.webui.ClientInfo
+	at java.io.ObjectOutputStream.writeObject0(Unknown Source)
+	at java.io.ObjectOutputStream.defaultWriteFields(Unknown Source)
+	at java.io.ObjectOutputStream.writeSerialData(Unknown Source)
+	at java.io.ObjectOutputStream.writeOrdinaryObject(Unknown Source)
+	at java.io.ObjectOutputStream.writeObject0(Unknown Source)
+	at java.io.ObjectOutputStream.writeObject(Unknown Source)
+	at org.zkoss.zk.ui.AbstractPage.writeObject(AbstractPage.java:198)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at java.io.ObjectStreamClass.invokeWriteObject(Unknown Source)
+	at java.io.ObjectOutputStream.writeSerialData(Unknown Source)
+	at java.io.ObjectOutputStream.writeOrdinaryObject(Unknown Source)
+	at java.io.ObjectOutputStream.writeObject0(Unknown Source)
+	at java.io.ObjectOutputStream.writeObject(Unknown Source)
+	at java.util.LinkedHashMap.internalWriteEntries(Unknown Source)
+	at java.util.HashMap.writeObject(Unknown Source)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+
+-----------> WebappClassLoaderBase.clearReferencesThreads: The web application [webui] appears to have started a thread named [Thread-3] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.lang.Thread.sleep(Native Method)
+ org.zkoss.io.FileWatchdog.run(FileWatchdog.java:128) [19]
+-----------> WebappClassLoaderBase.clearReferencesThreads: The web application [webui] appears to have started a thread named [Timer-0] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.lang.Object.wait(Native Method)
+ java.util.TimerThread.mainLoop(Unknown Source)
+ java.util.TimerThread.run(Unknown Source) [19]
+-----------> WebappClassLoaderBase.clearReferencesThreads: The web application [webui] appears to have started a thread named [com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#0] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.lang.Object.wait(Native Method)
+ com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread.run(ThreadPoolAsynchronousRunner.java:534) [19]
+-----------> WebappClassLoaderBase.clearReferencesThreads: The web application [webui] appears to have started a thread named [com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#1] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.lang.Object.wait(Native Method)
+ com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread.run(ThreadPoolAsynchronousRunner.java:534) [19]
+-----------> WebappClassLoaderBase.clearReferencesThreads: The web application [webui] appears to have started a thread named [com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#2] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.lang.Object.wait(Native Method)
+ com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread.run(ThreadPoolAsynchronousRunner.java:534) [19]
+-----------> WebappClassLoaderBase.clearReferencesThreads: The web application [webui] is still processing a request that has yet to finish. This is very likely to create a memory leak. You can control the time allowed for requests to finish by using the unloadDelay attribute of the standard Context implementation. Stack trace of request processing thread:
+ java.lang.Object.wait(Native Method)
+ java.lang.Object.wait(Unknown Source)
+ org.zkoss.zkmax.ui.comet.CometServerPush.process(CometServerPush.java:224)
+ org.zkoss.zkmax.ui.comet.CometProcessor.process0(CometProcessor.java:127)
+ org.zkoss.zkmax.ui.comet.CometProcessor.process(CometProcessor.java:79)
+ org.zkoss.zk.au.http.DHtmlUpdateServlet.doGet(DHtmlUpdateServlet.java:377)
+ org.zkoss.zk.au.http.DHtmlUpdateServlet.doPost(DHtmlUpdateServlet.java:394)
+ javax.servlet.http.HttpServlet.service(HttpServlet.java:648)
+ javax.servlet.http.HttpServlet.service(HttpServlet.java:729)
+ org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:292)
+ org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:207)
+ org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+ org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:240)
+ org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:207)
+ org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:212)
+ org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:94)
+ org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:504)
+ org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:141)
+ org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79)
+ org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:620)
+ org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:88)
+ org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:502)
+ org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1132)
+ org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:684)
+ org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1533)
+ org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.run(NioEndpoint.java:1489)
+ java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+ java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+ org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+ java.lang.Thread.run(Unknown Source) [19]
+-----------> WebappClassLoaderBase.clearReferencesThreads: The web application [webui] appears to have started a thread named [Timer-1] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.lang.Object.wait(Native Method)
+ java.lang.Object.wait(Unknown Source)
+ java.util.TimerThread.mainLoop(Unknown Source)
+ java.util.TimerThread.run(Unknown Source) [19]
+-----------> WebappClassLoaderBase.clearReferencesThreads: The web application [webui] appears to have started a thread named [OracleTimeoutPollingThread] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.lang.Thread.sleep(Native Method)
+ oracle.jdbc.driver.OracleTimeoutPollingThread.run(OracleTimeoutPollingThread.java:150) [19]
+-----------> WebappClassLoaderBase.clearReferencesThreads: The web application [webui] appears to have started a thread named [UpdateInfo] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.lang.Thread.sleep(Native Method)
+ org.adempiere.webui.dashboard.DashboardRunnable.run(DashboardRunnable.java:81)
+ java.lang.Thread.run(Unknown Source) [19]
+-----------> MIssue.set_Value: SourceClassName - Value too long - truncated to length=60 [19]
+===========> ContainerBase.run: Unexpected death of background thread ContainerBackgroundProcessor[StandardEngine[Catalina]] [19]
+java.lang.InternalError: Replicated command: onZoom
+	at org.zkoss.zk.au.AuRequest.addCommand(AuRequest.java:85)
+	at org.zkoss.zk.au.Command.<init>(Command.java:97)
+	at org.adempiere.webui.component.ZoomCommand.<init>(ZoomCommand.java:34)
+	at org.adempiere.webui.AdempiereWebUI.<clinit>(AdempiereWebUI.java:405)
+	at sun.misc.Unsafe.ensureClassInitialized(Native Method)
+	at sun.reflect.UnsafeFieldAccessorFactory.newFieldAccessor(Unknown Source)
+	at sun.reflect.ReflectionFactory.newFieldAccessor(Unknown Source)
+	at java.lang.reflect.Field.acquireFieldAccessor(Unknown Source)
+	at java.lang.reflect.Field.getFieldAccessor(Unknown Source)
+	at java.lang.reflect.Field.getLong(Unknown Source)
+	at java.io.ObjectStreamClass.getDeclaredSUID(Unknown Source)
+	at java.io.ObjectStreamClass.access$700(Unknown Source)
+	at java.io.ObjectStreamClass$2.run(Unknown Source)
+	at java.io.ObjectStreamClass$2.run(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.io.ObjectStreamClass.<init>(Unknown Source)
+	at java.io.ObjectStreamClass.lookup(Unknown Source)
+	at java.io.ObjectStreamClass.initNonProxy(Unknown Source)
+	at java.io.ObjectInputStream.readNonProxyDesc(Unknown Source)
+	at java.io.ObjectInputStream.readClassDesc(Unknown Source)
+	at java.io.ObjectInputStream.readOrdinaryObject(Unknown Source)
+

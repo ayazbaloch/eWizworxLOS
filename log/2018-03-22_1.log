@@ -1,0 +1,247 @@
+*** 2018-03-22 10:56:32.52 Adempiere Log (CLogFile) ***
+10:56:32.520 Adempiere.startup: ADempiere(r) Release 3.9.0_2017-08-01 -Smart Suite ERP,CRM and SCM- (c) 1999-2017 ADempiere(r); Implementation: ADempiere - Supported by ADempiere community [13]
+10:56:32.520 Ini.loadProperties: C:\Users\AYAZ\Adempiere.properties #37 [13]
+-----------> GridField.getDefault: (C_BankAccount_ID) - Default SQL variable parse failed: @SQL=SELECT pos.C_BankAccount_ID FROM C_POS pos WHERE pos.C_POS_ID=@C_POS_ID@ [47]
+-----------> GridField.getDefault: (CashTransferBankAccount_ID) - Default SQL variable parse failed: @SQL=SELECT pos.CashTransferBankAccount_ID FROM C_POS pos WHERE pos.C_POS_ID=@C_POS_ID@ [47]
+-----------> GridField.getDefault: (C_DocType_ID) - no Result: SELECT C_DocType_ID FROM C_DocType WHERE C_DocType.DocBaseType IN ('APP') AND IsDefault='Y' [47]
+-----------> GridField.getDefault: (Counter_C_DocType_ID) - no Result: SELECT C_DocType_ID FROM C_DocType WHERE C_DocType.DocBaseType IN ('ARR') AND IsDefault='Y' [47]
+-----------> GridField.getDefault: (C_Charge_ID) - no Result: SELECT C_Charge_ID FROM C_Charge_Acct ca INNER JOIN C_ValidCombination cvc ON (ca.Ch_Expense_Acct=cvc.C_ValidCombination_ID)   WHERE EXISTS (SELECT 1 FROM C_BankAccount_Acct baa INNER JOIN C_ValidCombination vc ON (baa.B_InTransit_Acct=vc.C_ValidCombination_ID)  WHERE vc.Account_ID = cvc.Account_ID AND baa.C_BankAccount_ID=100) [47]
+-----------> GridField.getDefault: (C_BankAccount_ID) - Default SQL variable parse failed: @SQL=SELECT pos.C_BankAccount_ID FROM C_POS pos WHERE pos.C_POS_ID=@C_POS_ID@ [47]
+-----------> GridField.getDefault: (CashTransferBankAccount_ID) - Default SQL variable parse failed: @SQL=SELECT pos.CashTransferBankAccount_ID FROM C_POS pos WHERE pos.C_POS_ID=@C_POS_ID@ [47]
+-----------> GridField.getDefault: (C_DocType_ID) - no Result: SELECT C_DocType_ID FROM C_DocType WHERE C_DocType.DocBaseType IN ('APP') AND IsDefault='Y' [47]
+-----------> GridField.getDefault: (Counter_C_DocType_ID) - no Result: SELECT C_DocType_ID FROM C_DocType WHERE C_DocType.DocBaseType IN ('ARR') AND IsDefault='Y' [47]
+-----------> GridField.getDefault: (C_Charge_ID) - no Result: SELECT C_Charge_ID FROM C_Charge_Acct ca INNER JOIN C_ValidCombination cvc ON (ca.Ch_Expense_Acct=cvc.C_ValidCombination_ID)   WHERE EXISTS (SELECT 1 FROM C_BankAccount_Acct baa INNER JOIN C_ValidCombination vc ON (baa.B_InTransit_Acct=vc.C_ValidCombination_ID)  WHERE vc.Account_ID = cvc.Account_ID AND baa.C_BankAccount_ID=100) [47]
+-----------> GridField.getDefault: (C_BankAccount_ID) - Default SQL variable parse failed: @SQL=SELECT pos.C_BankAccount_ID FROM C_POS pos WHERE pos.C_POS_ID=@C_POS_ID@ [47]
+-----------> GridField.getDefault: (CashTransferBankAccount_ID) - Default SQL variable parse failed: @SQL=SELECT pos.CashTransferBankAccount_ID FROM C_POS pos WHERE pos.C_POS_ID=@C_POS_ID@ [47]
+-----------> GridField.getDefault: (C_DocType_ID) - no Result: SELECT C_DocType_ID FROM C_DocType WHERE C_DocType.DocBaseType IN ('APP') AND IsDefault='Y' [47]
+-----------> GridField.getDefault: (Counter_C_DocType_ID) - no Result: SELECT C_DocType_ID FROM C_DocType WHERE C_DocType.DocBaseType IN ('ARR') AND IsDefault='Y' [47]
+-----------> GridField.getDefault: (C_Charge_ID) - no Result: SELECT C_Charge_ID FROM C_Charge_Acct ca INNER JOIN C_ValidCombination cvc ON (ca.Ch_Expense_Acct=cvc.C_ValidCombination_ID)   WHERE EXISTS (SELECT 1 FROM C_BankAccount_Acct baa INNER JOIN C_ValidCombination vc ON (baa.B_InTransit_Acct=vc.C_ValidCombination_ID)  WHERE vc.Account_ID = cvc.Account_ID AND baa.C_BankAccount_ID=100) [47]
+-----------> GridField.getDefault: (C_BankAccount_ID) - Default SQL variable parse failed: @SQL=SELECT pos.C_BankAccount_ID FROM C_POS pos WHERE pos.C_POS_ID=@C_POS_ID@ [47]
+-----------> GridField.getDefault: (CashTransferBankAccount_ID) - Default SQL variable parse failed: @SQL=SELECT pos.CashTransferBankAccount_ID FROM C_POS pos WHERE pos.C_POS_ID=@C_POS_ID@ [47]
+-----------> GridField.getDefault: (C_DocType_ID) - no Result: SELECT C_DocType_ID FROM C_DocType WHERE C_DocType.DocBaseType IN ('APP') AND IsDefault='Y' [47]
+-----------> GridField.getDefault: (Counter_C_DocType_ID) - no Result: SELECT C_DocType_ID FROM C_DocType WHERE C_DocType.DocBaseType IN ('ARR') AND IsDefault='Y' [47]
+-----------> GridField.getDefault: (C_Charge_ID) - no Result: SELECT C_Charge_ID FROM C_Charge_Acct ca INNER JOIN C_ValidCombination cvc ON (ca.Ch_Expense_Acct=cvc.C_ValidCombination_ID)   WHERE EXISTS (SELECT 1 FROM C_BankAccount_Acct baa INNER JOIN C_ValidCombination vc ON (baa.B_InTransit_Acct=vc.C_ValidCombination_ID)  WHERE vc.Account_ID = cvc.Account_ID AND baa.C_BankAccount_ID=100) [47]
+-----------> GridField.getDefault: (C_BankAccount_ID) - Default SQL variable parse failed: @SQL=SELECT pos.C_BankAccount_ID FROM C_POS pos WHERE pos.C_POS_ID=@C_POS_ID@ [47]
+-----------> GridField.getDefault: (CashTransferBankAccount_ID) - Default SQL variable parse failed: @SQL=SELECT pos.CashTransferBankAccount_ID FROM C_POS pos WHERE pos.C_POS_ID=@C_POS_ID@ [47]
+-----------> GridField.getDefault: (C_DocType_ID) - no Result: SELECT C_DocType_ID FROM C_DocType WHERE C_DocType.DocBaseType IN ('APP') AND IsDefault='Y' [47]
+-----------> GridField.getDefault: (Counter_C_DocType_ID) - no Result: SELECT C_DocType_ID FROM C_DocType WHERE C_DocType.DocBaseType IN ('ARR') AND IsDefault='Y' [47]
+-----------> GridField.getDefault: (C_Charge_ID) - no Result: SELECT C_Charge_ID FROM C_Charge_Acct ca INNER JOIN C_ValidCombination cvc ON (ca.Ch_Expense_Acct=cvc.C_ValidCombination_ID)   WHERE EXISTS (SELECT 1 FROM C_BankAccount_Acct baa INNER JOIN C_ValidCombination vc ON (baa.B_InTransit_Acct=vc.C_ValidCombination_ID)  WHERE vc.Account_ID = cvc.Account_ID AND baa.C_BankAccount_ID=100) [47]
+-----------> GridField.getDefault: (C_BankAccount_ID) - Default SQL variable parse failed: @SQL=SELECT pos.C_BankAccount_ID FROM C_POS pos WHERE pos.C_POS_ID=@C_POS_ID@ [47]
+-----------> GridField.getDefault: (CashTransferBankAccount_ID) - Default SQL variable parse failed: @SQL=SELECT pos.CashTransferBankAccount_ID FROM C_POS pos WHERE pos.C_POS_ID=@C_POS_ID@ [47]
+-----------> GridField.getDefault: (C_DocType_ID) - no Result: SELECT C_DocType_ID FROM C_DocType WHERE C_DocType.DocBaseType IN ('APP') AND IsDefault='Y' [47]
+-----------> GridField.getDefault: (Counter_C_DocType_ID) - no Result: SELECT C_DocType_ID FROM C_DocType WHERE C_DocType.DocBaseType IN ('ARR') AND IsDefault='Y' [47]
+-----------> GridField.getDefault: (C_Charge_ID) - no Result: SELECT C_Charge_ID FROM C_Charge_Acct ca INNER JOIN C_ValidCombination cvc ON (ca.Ch_Expense_Acct=cvc.C_ValidCombination_ID)   WHERE EXISTS (SELECT 1 FROM C_BankAccount_Acct baa INNER JOIN C_ValidCombination vc ON (baa.B_InTransit_Acct=vc.C_ValidCombination_ID)  WHERE vc.Account_ID = cvc.Account_ID AND baa.C_BankAccount_ID=100) [47]
+-----------> Msg.translate: NOT found: Assignment [47]
+-----------> Msg.getMsg: NOT found: Please save changes before closing [47]
+===========> zkoss.handleError:157: Failed to upload
+>>java.lang.NoSuchMethodError: org.apache.commons.fileupload.FileUploadBase.isMultipartContent(Lorg/apache/commons/fileupload/RequestContext;)Z
+>>	at org.zkoss.zk.au.http.AuUploader.isMultipartContent(AuUploader.java:334)
+>>	at org.zkoss.zk.au.http.AuUploader.process(AuUploader.java:87)
+>>	at org.zkoss.zk.au.http.DHtmlUpdateServlet.doGet(DHtmlUpdateServlet.java:377)
+>>	at org.zkoss.zk.au.http.DHtmlUpdateServlet.doPost(DHtmlUpdateServlet.java:394)
+>>	at javax.servlet.http.HttpServlet.service(HttpServlet.java:648)
+>>	at javax.servlet.http.HttpServlet.service(HttpServlet.java:729)
+>>	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:292)
+>>	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:207)
+>>... [26]
+===========> zkoss.handleError:157: Failed to upload
+>>java.lang.NoSuchMethodError: org.apache.commons.fileupload.FileUploadBase.isMultipartContent(Lorg/apache/commons/fileupload/RequestContext;)Z
+>>	at org.zkoss.zk.au.http.AuUploader.isMultipartContent(AuUploader.java:334)
+>>	at org.zkoss.zk.au.http.AuUploader.process(AuUploader.java:87)
+>>	at org.zkoss.zk.au.http.DHtmlUpdateServlet.doGet(DHtmlUpdateServlet.java:377)
+>>	at org.zkoss.zk.au.http.DHtmlUpdateServlet.doPost(DHtmlUpdateServlet.java:394)
+>>	at javax.servlet.http.HttpServlet.service(HttpServlet.java:648)
+>>	at javax.servlet.http.HttpServlet.service(HttpServlet.java:729)
+>>	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:292)
+>>	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:207)
+>>... [24]
+===========> zkoss.handleError:157: Failed to upload
+>>java.lang.NoSuchMethodError: org.apache.commons.fileupload.FileUploadBase.isMultipartContent(Lorg/apache/commons/fileupload/RequestContext;)Z
+>>	at org.zkoss.zk.au.http.AuUploader.isMultipartContent(AuUploader.java:334)
+>>	at org.zkoss.zk.au.http.AuUploader.process(AuUploader.java:87)
+>>	at org.zkoss.zk.au.http.DHtmlUpdateServlet.doGet(DHtmlUpdateServlet.java:377)
+>>	at org.zkoss.zk.au.http.DHtmlUpdateServlet.doPost(DHtmlUpdateServlet.java:394)
+>>	at javax.servlet.http.HttpServlet.service(HttpServlet.java:648)
+>>	at javax.servlet.http.HttpServlet.service(HttpServlet.java:729)
+>>	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:292)
+>>	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:207)
+>>... [24]
+===========> zkoss.handleError:157: Failed to upload
+>>java.lang.NoSuchMethodError: org.apache.commons.fileupload.FileUploadBase.isMultipartContent(Lorg/apache/commons/fileupload/RequestContext;)Z
+>>	at org.zkoss.zk.au.http.AuUploader.isMultipartContent(AuUploader.java:334)
+>>	at org.zkoss.zk.au.http.AuUploader.process(AuUploader.java:87)
+>>	at org.zkoss.zk.au.http.DHtmlUpdateServlet.doGet(DHtmlUpdateServlet.java:377)
+>>	at org.zkoss.zk.au.http.DHtmlUpdateServlet.doPost(DHtmlUpdateServlet.java:394)
+>>	at javax.servlet.http.HttpServlet.service(HttpServlet.java:648)
+>>	at javax.servlet.http.HttpServlet.service(HttpServlet.java:729)
+>>	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:292)
+>>	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:207)
+>>... [20]
+-----------> GridField.getDefault: (SeqNo) - Default SQL variable parse failed: @SQL=SELECT NVL(MAX(SeqNo),0)+10 AS DefaultValue FROM C_POSKey WHERE C_POSKeyLayout_ID=@C_POSKeyLayout_ID@ [152]
+-----------> GridField.getDefault: (SeqNo) - Default SQL variable parse failed: @SQL=SELECT NVL(MAX(SeqNo),0)+10 AS DefaultValue FROM C_POSKey WHERE C_POSKeyLayout_ID=@C_POSKeyLayout_ID@ [152]
+-----------> GridField.getDefault: (SeqNo) - Default SQL variable parse failed: @SQL=SELECT NVL(MAX(SeqNo),0)+10 AS DefaultValue FROM C_POSKey WHERE C_POSKeyLayout_ID=@C_POSKeyLayout_ID@ [152]
+-----------> GridField.getDefault: (SeqNo) - Default SQL variable parse failed: @SQL=SELECT NVL(MAX(SeqNo),0)+10 AS DefaultValue FROM C_POSKey WHERE C_POSKeyLayout_ID=@C_POSKeyLayout_ID@ [152]
+-----------> GridField.getDefault: (SeqNo) - Default SQL variable parse failed: @SQL=SELECT NVL(MAX(SeqNo),0)+10 AS DefaultValue FROM C_POSKey WHERE C_POSKeyLayout_ID=@C_POSKeyLayout_ID@ [152]
+-----------> GridField.getDefault: (SeqNo) - Default SQL variable parse failed: @SQL=SELECT NVL(MAX(SeqNo),0)+10 AS DefaultValue FROM C_POSKey WHERE C_POSKeyLayout_ID=@C_POSKeyLayout_ID@ [152]
+-----------> GridField.getDefault: (SeqNo) - Default SQL variable parse failed: @SQL=SELECT NVL(MAX(SeqNo),0)+10 AS DefaultValue FROM C_POSKey WHERE C_POSKeyLayout_ID=@C_POSKeyLayout_ID@ [152]
+-----------> GridField.getDefault: (SeqNo) - Default SQL variable parse failed: @SQL=SELECT NVL(MAX(SeqNo),0)+10 AS DefaultValue FROM C_POSKey WHERE C_POSKeyLayout_ID=@C_POSKeyLayout_ID@ [152]
+-----------> GridField.getDefault: (SeqNo) - Default SQL variable parse failed: @SQL=SELECT NVL(MAX(SeqNo),0)+10 AS DefaultValue FROM C_POSKey WHERE C_POSKeyLayout_ID=@C_POSKeyLayout_ID@ [152]
+===========> zkoss.handleError:157: Failed to upload
+>>java.lang.NoSuchMethodError: org.apache.commons.fileupload.FileUploadBase.isMultipartContent(Lorg/apache/commons/fileupload/RequestContext;)Z
+>>	at org.zkoss.zk.au.http.AuUploader.isMultipartContent(AuUploader.java:334)
+>>	at org.zkoss.zk.au.http.AuUploader.process(AuUploader.java:87)
+>>	at org.zkoss.zk.au.http.DHtmlUpdateServlet.doGet(DHtmlUpdateServlet.java:377)
+>>	at org.zkoss.zk.au.http.DHtmlUpdateServlet.doPost(DHtmlUpdateServlet.java:394)
+>>	at javax.servlet.http.HttpServlet.service(HttpServlet.java:648)
+>>	at javax.servlet.http.HttpServlet.service(HttpServlet.java:729)
+>>	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:292)
+>>	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:207)
+>>... [27]
+===========> zkoss.handleError:157: Failed to upload
+>>java.lang.NoSuchMethodError: org.apache.commons.fileupload.FileUploadBase.isMultipartContent(Lorg/apache/commons/fileupload/RequestContext;)Z
+>>	at org.zkoss.zk.au.http.AuUploader.isMultipartContent(AuUploader.java:334)
+>>	at org.zkoss.zk.au.http.AuUploader.process(AuUploader.java:87)
+>>	at org.zkoss.zk.au.http.DHtmlUpdateServlet.doGet(DHtmlUpdateServlet.java:377)
+>>	at org.zkoss.zk.au.http.DHtmlUpdateServlet.doPost(DHtmlUpdateServlet.java:394)
+>>	at javax.servlet.http.HttpServlet.service(HttpServlet.java:648)
+>>	at javax.servlet.http.HttpServlet.service(HttpServlet.java:729)
+>>	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:292)
+>>	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:207)
+>>... [23]
+-----------> Msg.translate: NOT found: Assignment [152]
+-----------> GridField.getDefault: (C_BPartner_ID) - Default SQL variable parse failed: @SQL=SELECT C_BPartner_ID AS DefaultValue FROM C_Order WHERE C_Order_ID=@C_Order_ID@ [123]
+-----------> GridField.getDefault: (Line) - Default SQL variable parse failed: @SQL=SELECT COALESCE(MAX(Line),0)+10 AS DefaultValue FROM C_OrderLine WHERE C_Order_ID=@C_Order_ID@ [123]
+-----------> MOrderLine.save: beforeSave - MOrderLine[0, Line=0, Ordered=1, Delivered=0, Invoiced=0, Reserved=0, LineNet=0] [123]
+org.adempiere.exceptions.ProductNotOnPriceListException: Product is not on PriceList - Product:Book, Price List:Standard, Date:03/22/2018
+	at org.compiere.model.MOrderLine.beforeSave(MOrderLine.java:782)
+	at org.compiere.model.PO.save(PO.java:2134)
+	at org.compiere.model.PO.saveEx(PO.java:2279)
+	at org.adempiere.pos.service.CPOS.addOrUpdateLine(CPOS.java:1009)
+	at org.adempiere.pos.service.CPOS.addOrUpdate(CPOS.java:1032)
+	at org.adempiere.pos.WPOS.addOrUpdateLine(WPOS.java:458)
+	at org.adempiere.pos.WPOSDocumentPanel.keyReturned(WPOSDocumentPanel.java:309)
+	at org.adempiere.pos.WPOSKeyPanel.onEvent(WPOSKeyPanel.java:420)
+	at org.zkoss.zk.ui.impl.EventProcessor.process0(EventProcessor.java:197)
+	at org.zkoss.zk.ui.impl.EventProcessor.process(EventProcessor.java:141)
+	at org.zkoss.zk.ui.impl.EventProcessingThreadImpl.process0(EventProcessingThreadImpl.java:519)
+	at org.zkoss.zk.ui.impl.EventProcessingThreadImpl.run(EventProcessingThreadImpl.java:446)
+
+-----------> WPOS.addOrUpdateLine: POS Error Product is not on PriceList - Product:Book, Price List:Standard, Date:03/22/2018 [123]
+-----------> Msg.getMsg: NOT found: Product is not on PriceList - Product:Book, Price List:Standard, Date:03/22/2018 [123]
+-----------> GridField.getDefault: (C_BPartner_ID) - Default SQL variable parse failed: @SQL=SELECT C_BPartner_ID AS DefaultValue FROM C_Order WHERE C_Order_ID=@C_Order_ID@ [47]
+-----------> GridField.getDefault: (Line) - Default SQL variable parse failed: @SQL=SELECT COALESCE(MAX(Line),0)+10 AS DefaultValue FROM C_OrderLine WHERE C_Order_ID=@C_Order_ID@ [47]
+-----------> MOrderLine.save: beforeSave - MOrderLine[0, Line=0, Ordered=1, Delivered=0, Invoiced=0, Reserved=0, LineNet=0] [47]
+org.adempiere.exceptions.ProductNotOnPriceListException: Product is not on PriceList - Product:Pen, Price List:Standard, Date:03/22/2018
+	at org.compiere.model.MOrderLine.beforeSave(MOrderLine.java:782)
+	at org.compiere.model.PO.save(PO.java:2134)
+	at org.compiere.model.PO.saveEx(PO.java:2279)
+	at org.adempiere.pos.service.CPOS.addOrUpdateLine(CPOS.java:1009)
+	at org.adempiere.pos.service.CPOS.addOrUpdate(CPOS.java:1032)
+	at org.adempiere.pos.WPOS.addOrUpdateLine(WPOS.java:458)
+	at org.adempiere.pos.WPOSDocumentPanel.keyReturned(WPOSDocumentPanel.java:309)
+	at org.adempiere.pos.WPOSKeyPanel.onEvent(WPOSKeyPanel.java:420)
+	at org.zkoss.zk.ui.impl.EventProcessor.process0(EventProcessor.java:197)
+	at org.zkoss.zk.ui.impl.EventProcessor.process(EventProcessor.java:141)
+	at org.zkoss.zk.ui.impl.EventProcessingThreadImpl.process0(EventProcessingThreadImpl.java:519)
+	at org.zkoss.zk.ui.impl.EventProcessingThreadImpl.run(EventProcessingThreadImpl.java:446)
+
+-----------> WPOS.addOrUpdateLine: POS Error Product is not on PriceList - Product:Pen, Price List:Standard, Date:03/22/2018 [47]
+-----------> Msg.getMsg: NOT found: Product is not on PriceList - Product:Pen, Price List:Standard, Date:03/22/2018 [47]
+-----------> GridField.getDefault: (C_BPartner_ID) - Default SQL variable parse failed: @SQL=SELECT C_BPartner_ID AS DefaultValue FROM C_Order WHERE C_Order_ID=@C_Order_ID@ [152]
+-----------> GridField.getDefault: (Line) - Default SQL variable parse failed: @SQL=SELECT COALESCE(MAX(Line),0)+10 AS DefaultValue FROM C_OrderLine WHERE C_Order_ID=@C_Order_ID@ [152]
+-----------> MOrderLine.save: beforeSave - MOrderLine[0, Line=0, Ordered=1, Delivered=0, Invoiced=0, Reserved=0, LineNet=0] [152]
+org.adempiere.exceptions.ProductNotOnPriceListException: Product is not on PriceList - Product:Book, Price List:Standard, Date:03/22/2018
+	at org.compiere.model.MOrderLine.beforeSave(MOrderLine.java:782)
+	at org.compiere.model.PO.save(PO.java:2134)
+	at org.compiere.model.PO.saveEx(PO.java:2279)
+	at org.adempiere.pos.service.CPOS.addOrUpdateLine(CPOS.java:1009)
+	at org.adempiere.pos.service.CPOS.addOrUpdate(CPOS.java:1032)
+	at org.adempiere.pos.WPOS.addOrUpdateLine(WPOS.java:458)
+	at org.adempiere.pos.WPOSDocumentPanel.keyReturned(WPOSDocumentPanel.java:309)
+	at org.adempiere.pos.WPOSKeyPanel.onEvent(WPOSKeyPanel.java:420)
+	at org.zkoss.zk.ui.impl.EventProcessor.process0(EventProcessor.java:197)
+	at org.zkoss.zk.ui.impl.EventProcessor.process(EventProcessor.java:141)
+	at org.zkoss.zk.ui.impl.EventProcessingThreadImpl.process0(EventProcessingThreadImpl.java:519)
+	at org.zkoss.zk.ui.impl.EventProcessingThreadImpl.run(EventProcessingThreadImpl.java:446)
+
+-----------> WPOS.addOrUpdateLine: POS Error Product is not on PriceList - Product:Book, Price List:Standard, Date:03/22/2018 [152]
+-----------> Msg.getMsg: NOT found: Product is not on PriceList - Product:Book, Price List:Standard, Date:03/22/2018 [152]
+-----------> Msg.getMsg: NOT found: Do you want to delete Order? [123]
+-----------> Msg.getMsg: NOT found: Do you want to delete Order? [123]
+-----------> GridField.getDefault: (C_BPartner_ID) - Default SQL variable parse failed: @SQL=SELECT C_BPartner_ID AS DefaultValue FROM C_Order WHERE C_Order_ID=@C_Order_ID@ [123]
+-----------> GridField.getDefault: (Line) - Default SQL variable parse failed: @SQL=SELECT COALESCE(MAX(Line),0)+10 AS DefaultValue FROM C_OrderLine WHERE C_Order_ID=@C_Order_ID@ [123]
+-----------> MOrderLine.save: beforeSave - MOrderLine[0, Line=0, Ordered=1, Delivered=0, Invoiced=0, Reserved=0, LineNet=0] [123]
+org.adempiere.exceptions.ProductNotOnPriceListException: Product is not on PriceList - Product:Book, Price List:Standard, Date:03/22/2018
+	at org.compiere.model.MOrderLine.beforeSave(MOrderLine.java:782)
+	at org.compiere.model.PO.save(PO.java:2134)
+	at org.compiere.model.PO.saveEx(PO.java:2279)
+	at org.adempiere.pos.service.CPOS.addOrUpdateLine(CPOS.java:1009)
+	at org.adempiere.pos.service.CPOS.addOrUpdate(CPOS.java:1032)
+	at org.adempiere.pos.WPOS.addOrUpdateLine(WPOS.java:458)
+	at org.adempiere.pos.WPOSDocumentPanel.keyReturned(WPOSDocumentPanel.java:309)
+	at org.adempiere.pos.WPOSKeyPanel.onEvent(WPOSKeyPanel.java:420)
+	at org.zkoss.zk.ui.impl.EventProcessor.process0(EventProcessor.java:197)
+	at org.zkoss.zk.ui.impl.EventProcessor.process(EventProcessor.java:141)
+	at org.zkoss.zk.ui.impl.EventProcessingThreadImpl.process0(EventProcessingThreadImpl.java:519)
+	at org.zkoss.zk.ui.impl.EventProcessingThreadImpl.run(EventProcessingThreadImpl.java:446)
+
+-----------> WPOS.addOrUpdateLine: POS Error Product is not on PriceList - Product:Book, Price List:Standard, Date:03/22/2018 [123]
+-----------> Msg.getMsg: NOT found: Product is not on PriceList - Product:Book, Price List:Standard, Date:03/22/2018 [123]
+-----------> Msg.translate: NOT found: Assignment [47]
+-----------> GridField.getDefault: (C_BPartner_ID) - Default SQL variable parse failed: @SQL=SELECT C_BPartner_ID AS DefaultValue FROM C_Order WHERE C_Order_ID=@C_Order_ID@ [152]
+-----------> GridField.getDefault: (Line) - Default SQL variable parse failed: @SQL=SELECT COALESCE(MAX(Line),0)+10 AS DefaultValue FROM C_OrderLine WHERE C_Order_ID=@C_Order_ID@ [152]
+-----------> MOrderLine.save: beforeSave - MOrderLine[0, Line=0, Ordered=1, Delivered=0, Invoiced=0, Reserved=0, LineNet=0] [152]
+org.adempiere.exceptions.ProductNotOnPriceListException: Product is not on PriceList - Product:Book, Price List:Standard, Date:03/22/2018
+	at org.compiere.model.MOrderLine.beforeSave(MOrderLine.java:782)
+	at org.compiere.model.PO.save(PO.java:2134)
+	at org.compiere.model.PO.saveEx(PO.java:2279)
+	at org.adempiere.pos.service.CPOS.addOrUpdateLine(CPOS.java:1009)
+	at org.adempiere.pos.service.CPOS.addOrUpdate(CPOS.java:1032)
+	at org.adempiere.pos.WPOS.addOrUpdateLine(WPOS.java:458)
+	at org.adempiere.pos.WPOSDocumentPanel.keyReturned(WPOSDocumentPanel.java:309)
+	at org.adempiere.pos.WPOSKeyPanel.onEvent(WPOSKeyPanel.java:420)
+	at org.zkoss.zk.ui.impl.EventProcessor.process0(EventProcessor.java:197)
+	at org.zkoss.zk.ui.impl.EventProcessor.process(EventProcessor.java:141)
+	at org.zkoss.zk.ui.impl.EventProcessingThreadImpl.process0(EventProcessingThreadImpl.java:519)
+	at org.zkoss.zk.ui.impl.EventProcessingThreadImpl.run(EventProcessingThreadImpl.java:446)
+
+-----------> WPOS.addOrUpdateLine: POS Error Product is not on PriceList - Product:Book, Price List:Standard, Date:03/22/2018 [152]
+-----------> Msg.getMsg: NOT found: Product is not on PriceList - Product:Book, Price List:Standard, Date:03/22/2018 [152]
+-----------> GridField.getDefault: (C_BPartner_ID) - Default SQL variable parse failed: @SQL=SELECT C_BPartner_ID AS DefaultValue FROM C_Order WHERE C_Order_ID=@C_Order_ID@ [47]
+-----------> GridField.getDefault: (Line) - Default SQL variable parse failed: @SQL=SELECT COALESCE(MAX(Line),0)+10 AS DefaultValue FROM C_OrderLine WHERE C_Order_ID=@C_Order_ID@ [47]
+-----------> MOrderLine.save: beforeSave - MOrderLine[0, Line=0, Ordered=1, Delivered=0, Invoiced=0, Reserved=0, LineNet=0] [47]
+org.adempiere.exceptions.ProductNotOnPriceListException: Product is not on PriceList - Product:Pen, Price List:Standard, Date:03/22/2018
+	at org.compiere.model.MOrderLine.beforeSave(MOrderLine.java:782)
+	at org.compiere.model.PO.save(PO.java:2134)
+	at org.compiere.model.PO.saveEx(PO.java:2279)
+	at org.adempiere.pos.service.CPOS.addOrUpdateLine(CPOS.java:1009)
+	at org.adempiere.pos.service.CPOS.addOrUpdate(CPOS.java:1032)
+	at org.adempiere.pos.WPOS.addOrUpdateLine(WPOS.java:458)
+	at org.adempiere.pos.WPOSDocumentPanel.keyReturned(WPOSDocumentPanel.java:309)
+	at org.adempiere.pos.WPOSKeyPanel.onEvent(WPOSKeyPanel.java:420)
+	at org.zkoss.zk.ui.impl.EventProcessor.process0(EventProcessor.java:197)
+	at org.zkoss.zk.ui.impl.EventProcessor.process(EventProcessor.java:141)
+	at org.zkoss.zk.ui.impl.EventProcessingThreadImpl.process0(EventProcessingThreadImpl.java:519)
+	at org.zkoss.zk.ui.impl.EventProcessingThreadImpl.run(EventProcessingThreadImpl.java:446)
+
+-----------> WPOS.addOrUpdateLine: POS Error Product is not on PriceList - Product:Pen, Price List:Standard, Date:03/22/2018 [47]
+-----------> Msg.getMsg: NOT found: Product is not on PriceList - Product:Pen, Price List:Standard, Date:03/22/2018 [47]
+-----------> GridField.getDefault: (C_BPartner_ID) - Default SQL variable parse failed: @SQL=SELECT C_BPartner_ID AS DefaultValue FROM C_Order WHERE C_Order_ID=@C_Order_ID@ [152]
+-----------> GridField.getDefault: (Line) - Default SQL variable parse failed: @SQL=SELECT COALESCE(MAX(Line),0)+10 AS DefaultValue FROM C_OrderLine WHERE C_Order_ID=@C_Order_ID@ [152]
+-----------> MOrderLine.save: beforeSave - MOrderLine[0, Line=0, Ordered=1, Delivered=0, Invoiced=0, Reserved=0, LineNet=0] [152]
+org.adempiere.exceptions.ProductNotOnPriceListException: Product is not on PriceList - Product:Book, Price List:Standard, Date:03/22/2018
+	at org.compiere.model.MOrderLine.beforeSave(MOrderLine.java:782)
+	at org.compiere.model.PO.save(PO.java:2134)
+	at org.compiere.model.PO.saveEx(PO.java:2279)
+	at org.adempiere.pos.service.CPOS.addOrUpdateLine(CPOS.java:1009)
+	at org.adempiere.pos.service.CPOS.addOrUpdate(CPOS.java:1032)
+	at org.adempiere.pos.WPOS.addOrUpdateLine(WPOS.java:458)
+	at org.adempiere.pos.WPOSDocumentPanel.keyReturned(WPOSDocumentPanel.java:309)
+	at org.adempiere.pos.WPOSKeyPanel.onEvent(WPOSKeyPanel.java:420)
+	at org.zkoss.zk.ui.impl.EventProcessor.process0(EventProcessor.java:197)
+	at org.zkoss.zk.ui.impl.EventProcessor.process(EventProcessor.java:141)
+	at org.zkoss.zk.ui.impl.EventProcessingThreadImpl.process0(EventProcessingThreadImpl.java:519)
+	at org.zkoss.zk.ui.impl.EventProcessingThreadImpl.run(EventProcessingThreadImpl.java:446)
+
+-----------> WPOS.addOrUpdateLine: POS Error Product is not on PriceList - Product:Book, Price List:Standard, Date:03/22/2018 [152]
+-----------> Msg.getMsg: NOT found: Product is not on PriceList - Product:Book, Price List:Standard, Date:03/22/2018 [152]

@@ -1,0 +1,11 @@
+*** 2017-09-21 16:59:38.982 Adempiere Log (CLogFile) ***
+16:59:38.982 Adempiere.startup: ADempiere(r) Release 3.9.0_2017-08-01 -Smart Suite ERP,CRM and SCM- (c) 1999-2017 ADempiere(r); Implementation: ADempiere - Supported by ADempiere community [13]
+16:59:38.983 Ini.loadProperties: C:\Users\AYAZ\Adempiere.properties #37 [13]
+===========> zkoss.handleError:1130: >>java.lang.NoSuchMethodError: org.adempiere.webui.window.LoginWindow.getTypedPassword()Ljava/lang/String;
+>>	at org.adempiere.webui.WLogin.getTypedPassword(WLogin.java:196)
+>>	at org.adempiere.webui.AdempiereWebUI.loginCompleted(AdempiereWebUI.java:180)
+>>	at org.adempiere.webui.window.LoginWindow.loginCompleted(LoginWindow.java:86)
+>>	at org.adempiere.webui.panel.RolePanel.validateRoles(RolePanel.java:460)
+>>	at org.adempiere.webui.panel.RolePanel.onEvent(RolePanel.java:408)
+>>	at org.zkoss.zk.ui.impl.EventProcessor.process0(EventProcessor.java:197)
+>>... [26]

@@ -1,0 +1,36 @@
+*** 2017-09-25 14:05:00.266 Adempiere Log (CLogFile) ***
+14:05:00.266 Adempiere.startup: ADempiere(r) Release 3.9.0_2017-08-01 -Smart Suite ERP,CRM and SCM- (c) 1999-2017 ADempiere(r); Implementation: ADempiere - Supported by ADempiere community [13]
+14:05:00.266 Ini.loadProperties: C:\Users\AYAZ\Adempiere.properties #37 [13]
+===========> zkoss.handleError:1130: >>java.lang.LinkageError: loader constraint violation: when resolving method "org.compiere.util.Env.verifyLanguage(Ljava/util/Properties;Lorg/compiere/util/Language;)V" the class loader (instance of org/apache/catalina/loader/WebappClassLoader) of the current class, org/adempiere/webui/AdempiereWebUI, and the class loader (instance of sun/misc/Launcher$AppClassLoader) for the method's defining class, org/compiere/util/Env, have different Class objects for the type org/compiere/util/Language used in the signature
+>>	at org.adempiere.webui.AdempiereWebUI.loginCompleted(AdempiereWebUI.java:209)
+>>	at org.adempiere.webui.window.LoginWindow.loginCompleted(LoginWindow.java:91)
+>>	at org.adempiere.webui.panel.RolePanel.validateRoles(RolePanel.java:460)
+>>	at org.adempiere.webui.window.LoginWindow.onEvent(LoginWindow.java:115)
+>>	at org.zkoss.zk.ui.impl.EventProcessor.process0(EventProcessor.java:197)
+>>	at org.zkoss.zk.ui.impl.EventProcessor.process(EventProcessor.java:141)
+>>... [26]
+-----------> WebappClassLoaderBase.clearReferencesThreads: The web application [webui] appears to have started a thread named [Thread-3] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.lang.Thread.sleep(Native Method)
+ org.zkoss.io.FileWatchdog.run(FileWatchdog.java:128) [19]
+-----------> WebappClassLoaderBase.clearReferencesThreads: The web application [webui] appears to have started a thread named [Timer-0] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.lang.Object.wait(Native Method)
+ java.util.TimerThread.mainLoop(Unknown Source)
+ java.util.TimerThread.run(Unknown Source) [19]
+-----------> WebappClassLoaderBase.clearReferencesThreads: The web application [webui] appears to have started a thread named [com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#0] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.lang.Object.wait(Native Method)
+ com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread.run(ThreadPoolAsynchronousRunner.java:534) [19]
+-----------> WebappClassLoaderBase.clearReferencesThreads: The web application [webui] appears to have started a thread named [com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#1] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.lang.Object.wait(Native Method)
+ com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread.run(ThreadPoolAsynchronousRunner.java:534) [19]
+-----------> WebappClassLoaderBase.clearReferencesThreads: The web application [webui] appears to have started a thread named [com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#2] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.lang.Object.wait(Native Method)
+ com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread.run(ThreadPoolAsynchronousRunner.java:534) [19]
+-----------> WebappClassLoaderBase.clearReferencesThreads: The web application [webui] appears to have started a thread named [Timer-1] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.lang.Object.wait(Native Method)
+ java.lang.Object.wait(Unknown Source)
+ java.util.TimerThread.mainLoop(Unknown Source)
+ java.util.TimerThread.run(Unknown Source) [19]
+-----------> WebappClassLoaderBase.clearReferencesThreads: The web application [webui] appears to have started a thread named [OracleTimeoutPollingThread] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.lang.Thread.sleep(Native Method)
+ oracle.jdbc.driver.OracleTimeoutPollingThread.run(OracleTimeoutPollingThread.java:150) [19]
+-----------> zkoss.init:105: Already started:  [19]

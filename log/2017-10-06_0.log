@@ -1,0 +1,500 @@
+*** 2017-10-06 10:37:31.914 Adempiere Log (CLogFile) ***
+10:37:31.914 Adempiere.startup: ADempiere(r) Release 3.9.0_2017-08-01 -Smart Suite ERP,CRM and SCM- (c) 1999-2017 ADempiere(r); Implementation: ADempiere - Supported by ADempiere community [13]
+10:37:31.932 Ini.loadProperties: C:\Users\AYAZ\Adempiere.properties #37 [13]
+-----------> MIssue.set_Value: SourceClassName - Value too long - truncated to length=60 [47]
+===========> DB.executeUpdate: INSERT INTO AD_Tree_Favorite (AD_Client_ID,AD_Org_ID,AD_Role_ID,AD_Tree_Favorite_ID,Created,CreatedBy,IsActive,Updated,UpdatedBy) VALUES (0,0,0,1000036,TO_DATE('2017-10-06 10:50:40','YYYY-MM-DD HH24:MI:SS'),0,'Y',TO_DATE('2017-10-06 10:50:40','YYYY-MM-DD HH24:MI:SS'),0) [POSave_02d05e76-61f0-485f-a897-c2a2dd276724] [47]
+java.sql.SQLIntegrityConstraintViolationException: ORA-01400: cannot insert NULL into ("CARSDEV"."AD_TREE_FAVORITE"."AD_USER_ID")
+; State=23000; ErrorCode=1400
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:447)
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:396)
+	at oracle.jdbc.driver.T4C8Oall.processError(T4C8Oall.java:951)
+	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:513)
+	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:227)
+	at oracle.jdbc.driver.T4C8Oall.doOALL(T4C8Oall.java:531)
+	at oracle.jdbc.driver.T4CPreparedStatement.doOall8(T4CPreparedStatement.java:208)
+	at oracle.jdbc.driver.T4CPreparedStatement.executeForRows(T4CPreparedStatement.java:1046)
+	at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1336)
+	at oracle.jdbc.driver.OracleStatement.doScrollExecuteCommon(OracleStatement.java:4709)
+	at oracle.jdbc.driver.OraclePreparedStatement.doScrollPstmtExecuteUpdate(OraclePreparedStatement.java:10613)
+	at oracle.jdbc.driver.OraclePreparedStatement.executeInternal(OraclePreparedStatement.java:3611)
+	at oracle.jdbc.driver.OraclePreparedStatement.executeUpdate(OraclePreparedStatement.java:3694)
+	at oracle.jdbc.driver.OraclePreparedStatementWrapper.executeUpdate(OraclePreparedStatementWrapper.java:1354)
+	at com.mchange.v2.c3p0.impl.NewProxyPreparedStatement.executeUpdate(NewProxyPreparedStatement.java:105)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.compiere.db.StatementProxy.invoke(StatementProxy.java:100)
+	at com.sun.proxy.$Proxy3.executeUpdate(Unknown Source)
+	at org.compiere.util.DB.executeUpdate(DB.java:1046)
+	at org.compiere.util.DB.executeUpdate(DB.java:908)
+	at org.compiere.util.DB.executeUpdate(DB.java:895)
+	at org.compiere.model.PO.saveNew(PO.java:2865)
+	at org.compiere.model.PO.save(PO.java:2195)
+
+===========> DB.saveError: DBExecuteError - ORA-01400: cannot insert NULL into ("CARSDEV"."AD_TREE_FAVORITE"."AD_USER_ID")
+ [47]
+-----------> MTreeFavorite.saveNew: [POSave_02d05e76-61f0-485f-a897-c2a2dd276724]Not inserted - AD_Tree_Favorite [47]
+-----------> DefaultDesktop.createHomeTab: Failed to create components. zul=/zul/userfavorites.zul [47]
+org.adempiere.exceptions.AdempiereException: Could not create Tree.
+	at org.adempiere.webui.dashboard.DPUserFavorites.createFavouritesPanel(DPUserFavorites.java:119)
+	at org.adempiere.webui.dashboard.DPUserFavorites.<init>(DPUserFavorites.java:63)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at java.lang.Class.newInstance(Unknown Source)
+	at org.zkoss.zk.ui.metainfo.impl.ComponentDefinitionImpl.newInstance(ComponentDefinitionImpl.java:308)
+	at org.zkoss.zk.ui.metainfo.impl.ComponentDefinitionImpl.newInstance(ComponentDefinitionImpl.java:296)
+	at org.zkoss.zk.ui.metainfo.ComponentInfo.newInstance(ComponentInfo.java:664)
+	at org.zkoss.zk.ui.impl.AbstractUiFactory.newComponent(AbstractUiFactory.java:90)
+	at org.zkoss.zk.ui.impl.UiEngineImpl.execCreateChild0(UiEngineImpl.java:616)
+	at org.zkoss.zk.ui.impl.UiEngineImpl.execCreateChild(UiEngineImpl.java:587)
+	at org.zkoss.zk.ui.impl.UiEngineImpl.execCreate0(UiEngineImpl.java:531)
+	at org.zkoss.zk.ui.impl.UiEngineImpl.execCreate(UiEngineImpl.java:498)
+	at org.zkoss.zk.ui.impl.UiEngineImpl.createComponents(UiEngineImpl.java:819)
+	at org.zkoss.zk.ui.impl.AbstractExecution.createComponents(AbstractExecution.java:189)
+	at org.zkoss.zk.ui.Executions.createComponents(Executions.java:177)
+	at org.adempiere.webui.desktop.DefaultDesktop.createHomeTab(DefaultDesktop.java:380)
+	at org.adempiere.webui.desktop.DefaultDesktop.doCreatePart(DefaultDesktop.java:162)
+	at org.adempiere.webui.part.AbstractUIPart.createPart(AbstractUIPart.java:41)
+
+-----------> MRecentItem.addMenuOption: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [56]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [56]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [56]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [56]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [56]
+-----------> Msg.getMsg: NOT found: Table and Column  Gender  System (System Administrator) @ System.* [AYAZ-PC{AYAZ-PC-orcl-carsdev}] [47]
+-----------> Msg.getMsg: NOT found: Current record was changed by another user, please ReQuery [143]
+-----------> Msg.getMsg: NOT found: Current record was changed by another user, please ReQuery [143]
+-----------> Msg.getMsg: NOT found: Current record was changed by another user, please ReQuery [143]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [56]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [143]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [56]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [143]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [47]
+-----------> Msg.getMsg: NOT found: Current record was changed by another user, please ReQuery [143]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [56]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [143]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [56]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [56]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [143]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [56]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [56]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [143]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [56]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [143]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [143]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [56]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [143]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [56]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [56]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [143]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [56]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [143]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [56]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [143]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [56]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [143]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [56]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [143]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [56]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [143]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [56]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [143]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [56]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [143]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [56]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [56]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [143]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [56]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [143]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [56]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [143]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [143]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [56]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [56]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [56]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [143]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [56]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [143]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [143]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [143]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [56]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [143]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [143]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [56]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [143]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [56]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [143]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [56]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [143]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [56]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [143]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [143]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [56]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [143]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [143]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [56]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [143]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [143]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [56]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [143]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [56]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [143]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [143]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [143]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [56]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [56]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [143]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [56]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [143]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [56]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [143]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [56]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [143]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [56]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [143]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [56]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [56]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [143]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [56]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [143]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [56]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [143]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [56]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [143]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [56]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [56]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [143]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [56]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [143]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [56]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [143]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [56]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [143]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [143]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [56]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [56]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [143]
+-----------> MTable.getClass: No class for table with it entity: COL_AGENT [143]
+===========> DB.getSQLValue: SELECT COUNT(*) FROM VCOL_ACTIVITYFOLLOWUP WHERE (APPLICATION_NO IN (SELECT LA.APPLICATION_NO FROM COL_LOANACCOUNTASSIGNED LA WHERE LA.AD_USER_ID=1000008 AND LA.ISACTIVE='Y' AND LA.PERIOD=(SELECT MAX(PERIOD) FROM COL_LOANACCOUNTASSIGNED) UNION SELECT LA.APPLICATION_NO FROM COL_LOANACCOUNTASSIGNED LA WHERE LA.AD_USER_ID IN (SELECT U.AD_USER_ID FROM AD_USER U WHERE U.SUPERVISOR_ID=1000008) AND LA.ISACTIVE='Y' AND LA.PERIOD=(SELECT MAX(PERIOD) FROM COL_LOANACCOUNTASSIGNED))) [143]
+java.sql.SQLSyntaxErrorException: ORA-00942: table or view does not exist
+; State=42000; ErrorCode=942
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:447)
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:396)
+	at oracle.jdbc.driver.T4C8Oall.processError(T4C8Oall.java:951)
+	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:513)
+	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:227)
+	at oracle.jdbc.driver.T4C8Oall.doOALL(T4C8Oall.java:531)
+	at oracle.jdbc.driver.T4CPreparedStatement.doOall8(T4CPreparedStatement.java:208)
+	at oracle.jdbc.driver.T4CPreparedStatement.executeForDescribe(T4CPreparedStatement.java:886)
+	at oracle.jdbc.driver.OracleStatement.executeMaybeDescribe(OracleStatement.java:1175)
+	at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1296)
+	at oracle.jdbc.driver.OraclePreparedStatement.executeInternal(OraclePreparedStatement.java:3613)
+	at oracle.jdbc.driver.OraclePreparedStatement.executeQuery(OraclePreparedStatement.java:3657)
+	at oracle.jdbc.driver.OraclePreparedStatementWrapper.executeQuery(OraclePreparedStatementWrapper.java:1495)
+	at com.mchange.v2.c3p0.impl.NewProxyPreparedStatement.executeQuery(NewProxyPreparedStatement.java:76)
+	at sun.reflect.GeneratedMethodAccessor46.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.compiere.db.StatementProxy.invoke(StatementProxy.java:100)
+	at com.sun.proxy.$Proxy3.executeQuery(Unknown Source)
+	at org.compiere.util.DB.getSQLValueEx(DB.java:1295)
+	at org.compiere.util.DB.getSQLValue(DB.java:1338)
+	at org.compiere.util.DB.getSQLValue(DB.java:2179)
+
+-----------> AccessSqlParser.getTableInfo: More than one FROM clause - SELECT LA.APPLICATION_NO FROM COL_LOANACCOUNTASSIGNED LA WHERE LA.AD_USER_ID=1000008 AND LA.ISACTIVE='Y' AND LA.PERIOD=(##) UNION SELECT LA.APPLICATION_NO FROM COL_LOANACCOUNTASSIGNED LA WHERE LA.AD_USER_ID IN (##) AND LA.ISACTIVE='Y' AND LA.PERIOD=(##) [143]
+-----------> AccessSqlParser.getTableInfo: More than one FROM clause - SELECT LA.APPLICATION_NO FROM COL_LOANACCOUNTASSIGNED LA WHERE LA.AD_USER_ID=1000008 AND LA.ISACTIVE='Y' AND LA.PERIOD=(##) UNION SELECT LA.APPLICATION_NO FROM COL_LOANACCOUNTASSIGNED LA WHERE LA.AD_USER_ID IN (##) AND LA.ISACTIVE='Y' AND LA.PERIOD=(##) [143]
+===========> GridTable.open: Count SQL=SELECT COUNT(*) FROM VCOL_ACTIVITYFOLLOWUP WHERE (APPLICATION_NO IN (SELECT LA.APPLICATION_NO FROM COL_LOANACCOUNTASSIGNED LA WHERE LA.AD_USER_ID=1000008 AND LA.ISACTIVE='Y' AND LA.PERIOD=(SELECT MAX(PERIOD) FROM COL_LOANACCOUNTASSIGNED) UNION SELECT LA.APPLICATION_NO FROM COL_LOANACCOUNTASSIGNED LA WHERE LA.AD_USER_ID IN (SELECT U.AD_USER_ID FROM AD_USER U WHERE U.SUPERVISOR_ID=1000008) AND LA.ISACTIVE='Y' AND LA.PERIOD=(SELECT MAX(PERIOD) FROM COL_LOANACCOUNTASSIGNED))) AND VCOL_ACTIVITYFOLLOWUP.AD_Client_ID IN(0,1000001) AND VCOL_ACTIVITYFOLLOWUP.AD_Org_ID IN(0,1000004) [143]
+java.sql.SQLSyntaxErrorException: ORA-00942: table or view does not exist
+; State=42000; ErrorCode=942
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:447)
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:396)
+	at oracle.jdbc.driver.T4C8Oall.processError(T4C8Oall.java:951)
+	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:513)
+	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:227)
+	at oracle.jdbc.driver.T4C8Oall.doOALL(T4C8Oall.java:531)
+	at oracle.jdbc.driver.T4CPreparedStatement.doOall8(T4CPreparedStatement.java:208)
+	at oracle.jdbc.driver.T4CPreparedStatement.executeForDescribe(T4CPreparedStatement.java:886)
+	at oracle.jdbc.driver.OracleStatement.executeMaybeDescribe(OracleStatement.java:1175)
+	at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1296)
+	at oracle.jdbc.driver.OraclePreparedStatement.executeInternal(OraclePreparedStatement.java:3613)
+	at oracle.jdbc.driver.OraclePreparedStatement.executeQuery(OraclePreparedStatement.java:3657)
+	at oracle.jdbc.driver.OraclePreparedStatementWrapper.executeQuery(OraclePreparedStatementWrapper.java:1495)
+	at com.mchange.v2.c3p0.impl.NewProxyPreparedStatement.executeQuery(NewProxyPreparedStatement.java:76)
+	at sun.reflect.GeneratedMethodAccessor46.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.compiere.db.StatementProxy.invoke(StatementProxy.java:100)
+	at com.sun.proxy.$Proxy3.executeQuery(Unknown Source)
+	at org.compiere.model.GridTable$Loader.open(GridTable.java:3333)
+	at org.compiere.model.GridTable.open(GridTable.java:605)
+	at org.compiere.model.GridTab.query(GridTab.java:734)
+
+-----------> AbstractADWindowPanel.onNew: Insert Record disabled for Tab [143]
+-----------> AccessSqlParser.getTableInfo: More than one FROM clause - SELECT CODE FROM COL_AGENTGEOMAPPING A WHERE A.AD_USER_ID=1000008 AND A.GEOTYPE='BR' UNION SELECT B.REF_CODE FROM COL_BRANCH B,COL_BR_REGION R WHERE B.COL_BR_REGION_ID=R.COL_BR_REGION_ID AND R.REF_CODE IN (##) UNION SELECT B.REF_CODE FROM COL_BRANCH B,COL_BR_REGION R WHERE B.COL_BR_REGION_ID=R.COL_BR_REGION_ID AND EXISTS (##) [56]
+-----------> AccessSqlParser.getTableInfo: More than one FROM clause - SELECT CODE FROM COL_AGENTGEOMAPPING A WHERE A.AD_USER_ID=1000008 AND A.GEOTYPE='BR' UNION SELECT B.REF_CODE FROM COL_BRANCH B,COL_BR_REGION R WHERE B.COL_BR_REGION_ID=R.COL_BR_REGION_ID AND R.REF_CODE IN (##) UNION SELECT B.REF_CODE FROM COL_BRANCH B,COL_BR_REGION R WHERE B.COL_BR_REGION_ID=R.COL_BR_REGION_ID AND EXISTS (##) [56]
+-----------> AbstractADWindowPanel.onNew: Insert Record disabled for Tab [56]
+-----------> AccessSqlParser.getTableInfo: More than one FROM clause - SELECT LA.APPLICATION_NO FROM COL_LOANACCOUNTASSIGNED LA WHERE LA.AD_USER_ID=1000008 AND LA.ISACTIVE='Y' AND LA.PERIOD=(##) UNION SELECT LA.APPLICATION_NO FROM COL_LOANACCOUNTASSIGNED LA WHERE LA.AD_USER_ID IN (##) AND LA.ISACTIVE='Y' AND LA.PERIOD=(##) [47]
+===========> FindWindow.getNoOfRecords: SELECT COUNT(*) FROM COL_LOANACCOUNT WHERE (APPLICATION_NO IN (SELECT LA.APPLICATION_NO FROM COL_LOANACCOUNTASSIGNED LA WHERE LA.AD_USER_ID=1000008 AND LA.ISACTIVE='Y' AND LA.PERIOD=(SELECT MAX(PERIOD) FROM COL_LOANACCOUNTASSIGNED) UNION SELECT LA.APPLICATION_NO FROM COL_LOANACCOUNTASSIGNED LA WHERE LA.AD_USER_ID IN (SELECT U.AD_USER_ID FROM AD_USER U START WITH U.SUPERVISOR_ID = 1000008 CONNECT BY PRIOR AD_USER_ID = SUPERVISOR_ID) AND LA.ISACTIVE='Y' AND LA.PERIOD=(SELECT MAX(PERIOD) FROM COL_LOANACCOUNTASSIGNED))) AND AD_Client_ID IN(0,1000001) AND AD_Org_ID IN(0,1000004) AND (COL_LOANACCOUNT_ID IS NULL OR COL_LOANACCOUNT_ID NOT IN ( SELECT Record_ID FROM AD_Private_Access WHERE AD_Table_ID = 1000034 AND AD_User_ID <> 1000008 AND IsActive = 'Y' )) [47]
+java.sql.SQLSyntaxErrorException: ORA-00942: table or view does not exist
+; State=42000; ErrorCode=942
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:447)
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:396)
+	at oracle.jdbc.driver.T4C8Oall.processError(T4C8Oall.java:951)
+	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:513)
+	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:227)
+	at oracle.jdbc.driver.T4C8Oall.doOALL(T4C8Oall.java:531)
+	at oracle.jdbc.driver.T4CStatement.doOall8(T4CStatement.java:195)
+	at oracle.jdbc.driver.T4CStatement.executeForDescribe(T4CStatement.java:876)
+	at oracle.jdbc.driver.OracleStatement.executeMaybeDescribe(OracleStatement.java:1175)
+	at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1296)
+	at oracle.jdbc.driver.OracleStatement.executeQuery(OracleStatement.java:1498)
+	at oracle.jdbc.driver.OracleStatementWrapper.executeQuery(OracleStatementWrapper.java:406)
+	at com.mchange.v2.c3p0.impl.NewProxyStatement.executeQuery(NewProxyStatement.java:35)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.compiere.db.StatementProxy.invoke(StatementProxy.java:100)
+	at com.sun.proxy.$Proxy4.executeQuery(Unknown Source)
+	at org.adempiere.webui.window.FindWindow.getNoOfRecords(FindWindow.java:1949)
+	at org.adempiere.webui.window.FindWindow.initFind(FindWindow.java:665)
+
+-----------> AccessSqlParser.getTableInfo: More than one FROM clause - SELECT LA.APPLICATION_NO FROM COL_LOANACCOUNTASSIGNED LA WHERE LA.AD_USER_ID=1000008 AND LA.ISACTIVE='Y' AND LA.PERIOD=(##) UNION SELECT LA.APPLICATION_NO FROM COL_LOANACCOUNTASSIGNED LA WHERE LA.AD_USER_ID IN (##) AND LA.ISACTIVE='Y' AND LA.PERIOD=(##) [56]
+===========> FindWindow.getNoOfRecords: SELECT COUNT(*) FROM COL_LOANACCOUNT WHERE (APPLICATION_NO IN (SELECT LA.APPLICATION_NO FROM COL_LOANACCOUNTASSIGNED LA WHERE LA.AD_USER_ID=1000008 AND LA.ISACTIVE='Y' AND LA.PERIOD=(SELECT MAX(PERIOD) FROM COL_LOANACCOUNTASSIGNED) UNION SELECT LA.APPLICATION_NO FROM COL_LOANACCOUNTASSIGNED LA WHERE LA.AD_USER_ID IN (SELECT U.AD_USER_ID FROM AD_USER U START WITH U.SUPERVISOR_ID = 1000008 CONNECT BY PRIOR AD_USER_ID = SUPERVISOR_ID) AND LA.ISACTIVE='Y' AND LA.PERIOD=(SELECT MAX(PERIOD) FROM COL_LOANACCOUNTASSIGNED))) AND AD_Client_ID IN(0,1000001) AND AD_Org_ID IN(0,1000004) AND (COL_LOANACCOUNT_ID IS NULL OR COL_LOANACCOUNT_ID NOT IN ( SELECT Record_ID FROM AD_Private_Access WHERE AD_Table_ID = 1000034 AND AD_User_ID <> 1000008 AND IsActive = 'Y' )) [56]
+java.sql.SQLSyntaxErrorException: ORA-00942: table or view does not exist
+; State=42000; ErrorCode=942
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:447)
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:396)
+	at oracle.jdbc.driver.T4C8Oall.processError(T4C8Oall.java:951)
+	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:513)
+	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:227)
+	at oracle.jdbc.driver.T4C8Oall.doOALL(T4C8Oall.java:531)
+	at oracle.jdbc.driver.T4CStatement.doOall8(T4CStatement.java:195)
+	at oracle.jdbc.driver.T4CStatement.executeForDescribe(T4CStatement.java:876)
+	at oracle.jdbc.driver.OracleStatement.executeMaybeDescribe(OracleStatement.java:1175)
+	at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1296)
+	at oracle.jdbc.driver.OracleStatement.executeQuery(OracleStatement.java:1498)
+	at oracle.jdbc.driver.OracleStatementWrapper.executeQuery(OracleStatementWrapper.java:406)
+	at com.mchange.v2.c3p0.impl.NewProxyStatement.executeQuery(NewProxyStatement.java:35)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.compiere.db.StatementProxy.invoke(StatementProxy.java:100)
+	at com.sun.proxy.$Proxy4.executeQuery(Unknown Source)
+	at org.adempiere.webui.window.FindWindow.getNoOfRecords(FindWindow.java:1949)
+	at org.adempiere.webui.window.FindWindow.cmd_ok_Simple(FindWindow.java:1873)
+
+-----------> AccessSqlParser.getTableInfo: More than one FROM clause - SELECT LA.APPLICATION_NO FROM COL_LOANACCOUNTASSIGNED LA WHERE LA.AD_USER_ID=1000008 AND LA.ISACTIVE='Y' AND LA.PERIOD=(##) UNION SELECT LA.APPLICATION_NO FROM COL_LOANACCOUNTASSIGNED LA WHERE LA.AD_USER_ID IN (##) AND LA.ISACTIVE='Y' AND LA.PERIOD=(##) [47]
+-----------> AccessSqlParser.getTableInfo: More than one FROM clause - SELECT LA.APPLICATION_NO FROM COL_LOANACCOUNTASSIGNED LA WHERE LA.AD_USER_ID=1000008 AND LA.ISACTIVE='Y' AND LA.PERIOD=(##) UNION SELECT LA.APPLICATION_NO FROM COL_LOANACCOUNTASSIGNED LA WHERE LA.AD_USER_ID IN (##) AND LA.ISACTIVE='Y' AND LA.PERIOD=(##) [47]
+===========> GridTable.open: Count SQL=SELECT COUNT(*) FROM COL_LOANACCOUNT WHERE (APPLICATION_NO IN (SELECT LA.APPLICATION_NO FROM COL_LOANACCOUNTASSIGNED LA WHERE LA.AD_USER_ID=1000008 AND LA.ISACTIVE='Y' AND LA.PERIOD=(SELECT MAX(PERIOD) FROM COL_LOANACCOUNTASSIGNED) UNION SELECT LA.APPLICATION_NO FROM COL_LOANACCOUNTASSIGNED LA WHERE LA.AD_USER_ID IN (SELECT U.AD_USER_ID FROM AD_USER U START WITH U.SUPERVISOR_ID = 1000008 CONNECT BY PRIOR AD_USER_ID = SUPERVISOR_ID) AND LA.ISACTIVE='Y' AND LA.PERIOD=(SELECT MAX(PERIOD) FROM COL_LOANACCOUNTASSIGNED))) AND COL_LOANACCOUNT.AD_Client_ID IN(0,1000001) AND COL_LOANACCOUNT.AD_Org_ID IN(0,1000004) AND (COL_LOANACCOUNT.COL_LOANACCOUNT_ID IS NULL OR COL_LOANACCOUNT.COL_LOANACCOUNT_ID NOT IN ( SELECT Record_ID FROM AD_Private_Access WHERE AD_Table_ID = 1000034 AND AD_User_ID <> 1000008 AND IsActive = 'Y' )) [47]
+java.sql.SQLSyntaxErrorException: ORA-00942: table or view does not exist
+; State=42000; ErrorCode=942
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:447)
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:396)
+	at oracle.jdbc.driver.T4C8Oall.processError(T4C8Oall.java:951)
+	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:513)
+	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:227)
+	at oracle.jdbc.driver.T4C8Oall.doOALL(T4C8Oall.java:531)
+	at oracle.jdbc.driver.T4CPreparedStatement.doOall8(T4CPreparedStatement.java:208)
+	at oracle.jdbc.driver.T4CPreparedStatement.executeForDescribe(T4CPreparedStatement.java:886)
+	at oracle.jdbc.driver.OracleStatement.executeMaybeDescribe(OracleStatement.java:1175)
+	at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1296)
+	at oracle.jdbc.driver.OraclePreparedStatement.executeInternal(OraclePreparedStatement.java:3613)
+	at oracle.jdbc.driver.OraclePreparedStatement.executeQuery(OraclePreparedStatement.java:3657)
+	at oracle.jdbc.driver.OraclePreparedStatementWrapper.executeQuery(OraclePreparedStatementWrapper.java:1495)
+	at com.mchange.v2.c3p0.impl.NewProxyPreparedStatement.executeQuery(NewProxyPreparedStatement.java:76)
+	at sun.reflect.GeneratedMethodAccessor46.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.compiere.db.StatementProxy.invoke(StatementProxy.java:100)
+	at com.sun.proxy.$Proxy3.executeQuery(Unknown Source)
+	at org.compiere.model.GridTable$Loader.open(GridTable.java:3333)
+	at org.compiere.model.GridTable.open(GridTable.java:605)
+	at org.compiere.model.GridTab.query(GridTab.java:734)
+
+-----------> AbstractADWindowPanel.onNew: Insert Record disabled for Tab [56]
+-----------> AbstractADWindowPanel.onNew: Insert Record disabled for Tab [47]
+===========> DB.getSQLValue: SELECT COUNT(*) FROM COL_LOANACCOUNTACTION WHERE (COL_LOANACCOUNT_ID IN (SELECT COL_LOANACCOUNT_ID FROM COL_LOANACCOUNT L WHERE L.APPLICATION_NO IN (SELECT APPLICATION_NO FROM COL_LOANACCOUNTASSIGNED A WHERE A.AD_USER_ID=1000008 AND A.ISACTIVE='Y' AND A.PERIOD=(SELECT MAX(PERIOD) FROM COL_LOANACCOUNTASSIGNED)UNION SELECT A.APPLICATION_NO FROM COL_LOANACCOUNTASSIGNED A WHERE A.AD_USER_ID IN (SELECT U.AD_USER_ID FROM AD_USER U START WITH U.SUPERVISOR_ID =1000008 CONNECT BY PRIOR AD_USER_ID = SUPERVISOR_ID) AND A.ISACTIVE='Y' AND A.PERIOD=(SELECT MAX(PERIOD) FROM COL_LOANACCOUNTASSIGNED))) AND ACTIONMODE='Contact' AND STATUS='Inprogress' AND (TO_CHAR(DUEDATE,'YYYYMMDD') || TO_CHAR(DUETIME,'HHMI'))<=TO_CHAR(SYSDATE,'YYYYMMDDHHMI')) [56]
+java.sql.SQLSyntaxErrorException: ORA-00942: table or view does not exist
+; State=42000; ErrorCode=942
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:447)
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:396)
+	at oracle.jdbc.driver.T4C8Oall.processError(T4C8Oall.java:951)
+	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:513)
+	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:227)
+	at oracle.jdbc.driver.T4C8Oall.doOALL(T4C8Oall.java:531)
+	at oracle.jdbc.driver.T4CPreparedStatement.doOall8(T4CPreparedStatement.java:208)
+	at oracle.jdbc.driver.T4CPreparedStatement.executeForDescribe(T4CPreparedStatement.java:886)
+	at oracle.jdbc.driver.OracleStatement.executeMaybeDescribe(OracleStatement.java:1175)
+	at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1296)
+	at oracle.jdbc.driver.OraclePreparedStatement.executeInternal(OraclePreparedStatement.java:3613)
+	at oracle.jdbc.driver.OraclePreparedStatement.executeQuery(OraclePreparedStatement.java:3657)
+	at oracle.jdbc.driver.OraclePreparedStatementWrapper.executeQuery(OraclePreparedStatementWrapper.java:1495)
+	at com.mchange.v2.c3p0.impl.NewProxyPreparedStatement.executeQuery(NewProxyPreparedStatement.java:76)
+	at sun.reflect.GeneratedMethodAccessor46.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.compiere.db.StatementProxy.invoke(StatementProxy.java:100)
+	at com.sun.proxy.$Proxy3.executeQuery(Unknown Source)
+	at org.compiere.util.DB.getSQLValueEx(DB.java:1295)
+	at org.compiere.util.DB.getSQLValue(DB.java:1338)
+	at org.compiere.util.DB.getSQLValue(DB.java:2179)
+
+-----------> AccessSqlParser.getTableInfo: More than one FROM clause - SELECT APPLICATION_NO FROM COL_LOANACCOUNTASSIGNED A WHERE A.AD_USER_ID=1000008 AND A.ISACTIVE='Y' AND A.PERIOD=(##)UNION SELECT A.APPLICATION_NO FROM COL_LOANACCOUNTASSIGNED A WHERE A.AD_USER_ID IN (##) AND A.ISACTIVE='Y' AND A.PERIOD=(##) [56]
+-----------> AccessSqlParser.getTableInfo: More than one FROM clause - SELECT APPLICATION_NO FROM COL_LOANACCOUNTASSIGNED A WHERE A.AD_USER_ID=1000008 AND A.ISACTIVE='Y' AND A.PERIOD=(##)UNION SELECT A.APPLICATION_NO FROM COL_LOANACCOUNTASSIGNED A WHERE A.AD_USER_ID IN (##) AND A.ISACTIVE='Y' AND A.PERIOD=(##) [56]
+===========> GridTable.open: Count SQL=SELECT COUNT(*) FROM COL_LOANACCOUNTACTION WHERE (COL_LOANACCOUNT_ID IN (SELECT COL_LOANACCOUNT_ID FROM COL_LOANACCOUNT L WHERE L.APPLICATION_NO IN (SELECT APPLICATION_NO FROM COL_LOANACCOUNTASSIGNED A WHERE A.AD_USER_ID=1000008 AND A.ISACTIVE='Y' AND A.PERIOD=(SELECT MAX(PERIOD) FROM COL_LOANACCOUNTASSIGNED)UNION SELECT A.APPLICATION_NO FROM COL_LOANACCOUNTASSIGNED A WHERE A.AD_USER_ID IN (SELECT U.AD_USER_ID FROM AD_USER U START WITH U.SUPERVISOR_ID =1000008 CONNECT BY PRIOR AD_USER_ID = SUPERVISOR_ID) AND A.ISACTIVE='Y' AND A.PERIOD=(SELECT MAX(PERIOD) FROM COL_LOANACCOUNTASSIGNED))) AND ACTIONMODE='Contact' AND STATUS='Inprogress' AND (TO_CHAR(DUEDATE,'YYYYMMDD') || TO_CHAR(DUETIME,'HHMI'))<=TO_CHAR(SYSDATE,'YYYYMMDDHHMI')) AND COL_LOANACCOUNTACTION.AD_Client_ID IN(0,1000001) AND COL_LOANACCOUNTACTION.AD_Org_ID IN(0,1000004) AND (COL_LOANACCOUNTACTION.COL_LOANACCOUNTACTION_ID IS NULL OR COL_LOANACCOUNTACTION.COL_LOANACCOUNTACTION_ID NOT IN ( SELECT Record_ID FROM AD_Private_Access WHERE AD_Table_ID = 1000045 AND AD_User_ID <> 1000008 AND IsActive = 'Y' )) [56]
+java.sql.SQLSyntaxErrorException: ORA-00942: table or view does not exist
+; State=42000; ErrorCode=942
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:447)
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:396)
+	at oracle.jdbc.driver.T4C8Oall.processError(T4C8Oall.java:951)
+	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:513)
+	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:227)
+	at oracle.jdbc.driver.T4C8Oall.doOALL(T4C8Oall.java:531)
+	at oracle.jdbc.driver.T4CPreparedStatement.doOall8(T4CPreparedStatement.java:208)
+	at oracle.jdbc.driver.T4CPreparedStatement.executeForDescribe(T4CPreparedStatement.java:886)
+	at oracle.jdbc.driver.OracleStatement.executeMaybeDescribe(OracleStatement.java:1175)
+	at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1296)
+	at oracle.jdbc.driver.OraclePreparedStatement.executeInternal(OraclePreparedStatement.java:3613)
+	at oracle.jdbc.driver.OraclePreparedStatement.executeQuery(OraclePreparedStatement.java:3657)
+	at oracle.jdbc.driver.OraclePreparedStatementWrapper.executeQuery(OraclePreparedStatementWrapper.java:1495)
+	at com.mchange.v2.c3p0.impl.NewProxyPreparedStatement.executeQuery(NewProxyPreparedStatement.java:76)
+	at sun.reflect.GeneratedMethodAccessor46.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.compiere.db.StatementProxy.invoke(StatementProxy.java:100)
+	at com.sun.proxy.$Proxy3.executeQuery(Unknown Source)
+	at org.compiere.model.GridTable$Loader.open(GridTable.java:3333)
+	at org.compiere.model.GridTable.open(GridTable.java:605)
+	at org.compiere.model.GridTab.query(GridTab.java:734)
+
+-----------> AbstractADWindowPanel.onNew: Insert Record disabled for Tab [56]
+===========> DB.getSQLValue: SELECT COUNT(*) FROM COL_LOANACCOUNTACTION WHERE (COL_LOANACCOUNT_ID IN (SELECT COL_LOANACCOUNT_ID FROM COL_LOANACCOUNT L WHERE L.APPLICATION_NO IN (SELECT APPLICATION_NO FROM COL_LOANACCOUNTASSIGNED A WHERE A.AD_USER_ID=1000008 AND A.ISACTIVE='Y' AND A.PERIOD=(SELECT MAX(PERIOD) FROM COL_LOANACCOUNTASSIGNED)UNION SELECT A.APPLICATION_NO FROM COL_LOANACCOUNTASSIGNED A WHERE A.AD_USER_ID IN (SELECT U.AD_USER_ID FROM AD_USER U START WITH U.SUPERVISOR_ID =1000008 CONNECT BY PRIOR AD_USER_ID = SUPERVISOR_ID) AND A.ISACTIVE='Y' AND A.PERIOD=(SELECT MAX(PERIOD) FROM COL_LOANACCOUNTASSIGNED))) AND ACTIONMODE='Contact' AND STATUS='Inprogress' AND (TO_CHAR(DUEDATE,'YYYYMMDD') || TO_CHAR(DUETIME,'HHMI'))<=TO_CHAR(SYSDATE,'YYYYMMDDHHMI')) [47]
+java.sql.SQLSyntaxErrorException: ORA-00942: table or view does not exist
+; State=42000; ErrorCode=942
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:447)
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:396)
+	at oracle.jdbc.driver.T4C8Oall.processError(T4C8Oall.java:951)
+	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:513)
+	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:227)
+	at oracle.jdbc.driver.T4C8Oall.doOALL(T4C8Oall.java:531)
+	at oracle.jdbc.driver.T4CPreparedStatement.doOall8(T4CPreparedStatement.java:208)
+	at oracle.jdbc.driver.T4CPreparedStatement.executeForDescribe(T4CPreparedStatement.java:886)
+	at oracle.jdbc.driver.OracleStatement.executeMaybeDescribe(OracleStatement.java:1175)
+	at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1296)
+	at oracle.jdbc.driver.OraclePreparedStatement.executeInternal(OraclePreparedStatement.java:3613)
+	at oracle.jdbc.driver.OraclePreparedStatement.executeQuery(OraclePreparedStatement.java:3657)
+	at oracle.jdbc.driver.OraclePreparedStatementWrapper.executeQuery(OraclePreparedStatementWrapper.java:1495)
+	at com.mchange.v2.c3p0.impl.NewProxyPreparedStatement.executeQuery(NewProxyPreparedStatement.java:76)
+	at sun.reflect.GeneratedMethodAccessor46.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.compiere.db.StatementProxy.invoke(StatementProxy.java:100)
+	at com.sun.proxy.$Proxy3.executeQuery(Unknown Source)
+	at org.compiere.util.DB.getSQLValueEx(DB.java:1295)
+	at org.compiere.util.DB.getSQLValue(DB.java:1338)
+	at org.compiere.util.DB.getSQLValue(DB.java:2179)
+
+-----------> AccessSqlParser.getTableInfo: More than one FROM clause - SELECT APPLICATION_NO FROM COL_LOANACCOUNTASSIGNED A WHERE A.AD_USER_ID=1000008 AND A.ISACTIVE='Y' AND A.PERIOD=(##)UNION SELECT A.APPLICATION_NO FROM COL_LOANACCOUNTASSIGNED A WHERE A.AD_USER_ID IN (##) AND A.ISACTIVE='Y' AND A.PERIOD=(##) [47]
+-----------> AccessSqlParser.getTableInfo: More than one FROM clause - SELECT APPLICATION_NO FROM COL_LOANACCOUNTASSIGNED A WHERE A.AD_USER_ID=1000008 AND A.ISACTIVE='Y' AND A.PERIOD=(##)UNION SELECT A.APPLICATION_NO FROM COL_LOANACCOUNTASSIGNED A WHERE A.AD_USER_ID IN (##) AND A.ISACTIVE='Y' AND A.PERIOD=(##) [47]
+===========> GridTable.open: Count SQL=SELECT COUNT(*) FROM COL_LOANACCOUNTACTION WHERE (COL_LOANACCOUNT_ID IN (SELECT COL_LOANACCOUNT_ID FROM COL_LOANACCOUNT L WHERE L.APPLICATION_NO IN (SELECT APPLICATION_NO FROM COL_LOANACCOUNTASSIGNED A WHERE A.AD_USER_ID=1000008 AND A.ISACTIVE='Y' AND A.PERIOD=(SELECT MAX(PERIOD) FROM COL_LOANACCOUNTASSIGNED)UNION SELECT A.APPLICATION_NO FROM COL_LOANACCOUNTASSIGNED A WHERE A.AD_USER_ID IN (SELECT U.AD_USER_ID FROM AD_USER U START WITH U.SUPERVISOR_ID =1000008 CONNECT BY PRIOR AD_USER_ID = SUPERVISOR_ID) AND A.ISACTIVE='Y' AND A.PERIOD=(SELECT MAX(PERIOD) FROM COL_LOANACCOUNTASSIGNED))) AND ACTIONMODE='Contact' AND STATUS='Inprogress' AND (TO_CHAR(DUEDATE,'YYYYMMDD') || TO_CHAR(DUETIME,'HHMI'))<=TO_CHAR(SYSDATE,'YYYYMMDDHHMI')) AND COL_LOANACCOUNTACTION.AD_Client_ID IN(0,1000001) AND COL_LOANACCOUNTACTION.AD_Org_ID IN(0,1000004) AND (COL_LOANACCOUNTACTION.COL_LOANACCOUNTACTION_ID IS NULL OR COL_LOANACCOUNTACTION.COL_LOANACCOUNTACTION_ID NOT IN ( SELECT Record_ID FROM AD_Private_Access WHERE AD_Table_ID = 1000045 AND AD_User_ID <> 1000008 AND IsActive = 'Y' )) [47]
+java.sql.SQLSyntaxErrorException: ORA-00942: table or view does not exist
+; State=42000; ErrorCode=942
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:447)
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:396)
+	at oracle.jdbc.driver.T4C8Oall.processError(T4C8Oall.java:951)
+	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:513)
+	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:227)
+	at oracle.jdbc.driver.T4C8Oall.doOALL(T4C8Oall.java:531)
+	at oracle.jdbc.driver.T4CPreparedStatement.doOall8(T4CPreparedStatement.java:208)
+	at oracle.jdbc.driver.T4CPreparedStatement.executeForDescribe(T4CPreparedStatement.java:886)
+	at oracle.jdbc.driver.OracleStatement.executeMaybeDescribe(OracleStatement.java:1175)
+	at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1296)
+	at oracle.jdbc.driver.OraclePreparedStatement.executeInternal(OraclePreparedStatement.java:3613)
+	at oracle.jdbc.driver.OraclePreparedStatement.executeQuery(OraclePreparedStatement.java:3657)
+	at oracle.jdbc.driver.OraclePreparedStatementWrapper.executeQuery(OraclePreparedStatementWrapper.java:1495)
+	at com.mchange.v2.c3p0.impl.NewProxyPreparedStatement.executeQuery(NewProxyPreparedStatement.java:76)
+	at sun.reflect.GeneratedMethodAccessor46.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.compiere.db.StatementProxy.invoke(StatementProxy.java:100)
+	at com.sun.proxy.$Proxy3.executeQuery(Unknown Source)
+	at org.compiere.model.GridTable$Loader.open(GridTable.java:3333)
+	at org.compiere.model.GridTable.open(GridTable.java:605)
+	at org.compiere.model.GridTab.query(GridTab.java:734)
+
+-----------> AbstractADWindowPanel.onNew: Insert Record disabled for Tab [47]
+-----------> MRecentItem.addWindowChange: null [56]
+-----------> Msg.getMsg: NOT found: Please save changes before closing [56]
+-----------> Msg.getMsg: NOT found: Please save changes before closing [143]
+-----------> Msg.getMsg: NOT found: Please save changes before closing [56]
+===========> MLookupFactory.getLookup_Table: getLookup_Table - AD_Language: ORDER BY must fully qualified: Name [47]
+-----------> Msg.getMsg: NOT found: Please save changes before closing [56]
+-----------> Msg.getMsg: NOT found: Please save changes before closing [56]
+-----------> AccessSqlParser.getTableInfo: More than one FROM clause - SELECT R1.COL_BR_REGION_ID FROM COL_BR_REGION R1 WHERE EXISTS (##) UNION SELECT R2.COL_BR_REGION_ID FROM COL_BR_REGION R2 WHERE R2.REF_CODE IN (##) [47]
+-----------> AccessSqlParser.getTableInfo: More than one FROM clause - SELECT R1.COL_BR_REGION_ID FROM COL_BR_REGION R1 WHERE EXISTS (##) UNION SELECT R2.COL_BR_REGION_ID FROM COL_BR_REGION R2 WHERE R2.REF_CODE IN (##) [47]
+===========> ReportStarter.getRemoteFile: I/O error when trying to download (sub)report from server Connection timed out: connect [47]
+===========> ReportStarter.startProcess: No report file found for given type, falling back to http://10.201.21.78:8080/CustomReports/003_UserLoginLast90Days.jrxml [47]
+===========> ReportStarter.getRemoteFile: I/O error when trying to download (sub)report from server Connection timed out: connect [47]
+===========> ReportStarter.startProcess: Can not find report file at path - http://10.201.21.78:8080/CustomReports/003_UserLoginLast90Days.jrxml [47]
+-----------> GridTable.saveWarning: FillMandatory - Dunning Level
+ [143]
+-----------> GridTable.saveWarning: FillMandatory - Dunning Level
+ [143]

@@ -1,0 +1,480 @@
+*** 2018-07-16 12:49:49.023 Adempiere Log (CLogFile) ***
+12:49:49.023 Adempiere.startup: ADempiere(r) Release 3.9.0_2017-08-01 -Smart Suite ERP,CRM and SCM- (c) 1999-2017 ADempiere(r); Implementation: ADempiere - Supported by ADempiere community [13]
+12:49:49.056 Ini.loadProperties: D:\Ayaz\Ayaz_NBP_PC_Backup\AdempiereTemplate39\Adempiere.properties #37 [13]
+-----------> MIssue.set_Value: SourceClassName - Value too long - truncated to length=60 [47]
+===========> DB.executeUpdate: INSERT INTO AD_Tree_Favorite (AD_Client_ID,AD_Org_ID,AD_Role_ID,AD_Tree_Favorite_ID,Created,CreatedBy,IsActive,Updated,UpdatedBy) VALUES (0,0,0,1000166,TO_DATE('2018-07-16 12:51:56','YYYY-MM-DD HH24:MI:SS'),0,'Y',TO_DATE('2018-07-16 12:51:56','YYYY-MM-DD HH24:MI:SS'),0) [POSave_8d663321-fba7-4247-97f4-b9f5cc6f9f1a] [47]
+java.sql.SQLIntegrityConstraintViolationException: ORA-01400: cannot insert NULL into ("CARSDEV"."AD_TREE_FAVORITE"."AD_USER_ID")
+; State=23000; ErrorCode=1400
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:447)
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:396)
+	at oracle.jdbc.driver.T4C8Oall.processError(T4C8Oall.java:951)
+	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:513)
+	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:227)
+	at oracle.jdbc.driver.T4C8Oall.doOALL(T4C8Oall.java:531)
+	at oracle.jdbc.driver.T4CPreparedStatement.doOall8(T4CPreparedStatement.java:208)
+	at oracle.jdbc.driver.T4CPreparedStatement.executeForRows(T4CPreparedStatement.java:1046)
+	at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1336)
+	at oracle.jdbc.driver.OracleStatement.doScrollExecuteCommon(OracleStatement.java:4709)
+	at oracle.jdbc.driver.OraclePreparedStatement.doScrollPstmtExecuteUpdate(OraclePreparedStatement.java:10613)
+	at oracle.jdbc.driver.OraclePreparedStatement.executeInternal(OraclePreparedStatement.java:3611)
+	at oracle.jdbc.driver.OraclePreparedStatement.executeUpdate(OraclePreparedStatement.java:3694)
+	at oracle.jdbc.driver.OraclePreparedStatementWrapper.executeUpdate(OraclePreparedStatementWrapper.java:1354)
+	at com.mchange.v2.c3p0.impl.NewProxyPreparedStatement.executeUpdate(NewProxyPreparedStatement.java:105)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.compiere.db.StatementProxy.invoke(StatementProxy.java:100)
+	at com.sun.proxy.$Proxy3.executeUpdate(Unknown Source)
+	at org.compiere.util.DB.executeUpdate(DB.java:1046)
+	at org.compiere.util.DB.executeUpdate(DB.java:908)
+	at org.compiere.util.DB.executeUpdate(DB.java:895)
+	at org.compiere.model.PO.saveNew(PO.java:2865)
+	at org.compiere.model.PO.save(PO.java:2195)
+
+===========> DB.saveError: DBExecuteError - ORA-01400: cannot insert NULL into ("CARSDEV"."AD_TREE_FAVORITE"."AD_USER_ID")
+ [47]
+-----------> MTreeFavorite.saveNew: [POSave_8d663321-fba7-4247-97f4-b9f5cc6f9f1a]Not inserted - AD_Tree_Favorite [47]
+-----------> DefaultDesktop.createHomeTab: Failed to create components. zul=/zul/userfavorites.zul [47]
+org.adempiere.exceptions.AdempiereException: Could not create Tree.
+	at org.adempiere.webui.dashboard.DPUserFavorites.createFavouritesPanel(DPUserFavorites.java:119)
+	at org.adempiere.webui.dashboard.DPUserFavorites.<init>(DPUserFavorites.java:63)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at java.lang.Class.newInstance(Unknown Source)
+	at org.zkoss.zk.ui.metainfo.impl.ComponentDefinitionImpl.newInstance(ComponentDefinitionImpl.java:308)
+	at org.zkoss.zk.ui.metainfo.impl.ComponentDefinitionImpl.newInstance(ComponentDefinitionImpl.java:296)
+	at org.zkoss.zk.ui.metainfo.ComponentInfo.newInstance(ComponentInfo.java:664)
+	at org.zkoss.zk.ui.impl.AbstractUiFactory.newComponent(AbstractUiFactory.java:90)
+	at org.zkoss.zk.ui.impl.UiEngineImpl.execCreateChild0(UiEngineImpl.java:616)
+	at org.zkoss.zk.ui.impl.UiEngineImpl.execCreateChild(UiEngineImpl.java:587)
+	at org.zkoss.zk.ui.impl.UiEngineImpl.execCreate0(UiEngineImpl.java:531)
+	at org.zkoss.zk.ui.impl.UiEngineImpl.execCreate(UiEngineImpl.java:498)
+	at org.zkoss.zk.ui.impl.UiEngineImpl.createComponents(UiEngineImpl.java:819)
+	at org.zkoss.zk.ui.impl.AbstractExecution.createComponents(AbstractExecution.java:189)
+	at org.zkoss.zk.ui.Executions.createComponents(Executions.java:177)
+	at org.adempiere.webui.desktop.DefaultDesktop.createHomeTab(DefaultDesktop.java:380)
+	at org.adempiere.webui.desktop.DefaultDesktop.doCreatePart(DefaultDesktop.java:162)
+	at org.adempiere.webui.part.AbstractUIPart.createPart(AbstractUIPart.java:41)
+
+-----------> Msg.getMsg: NOT found: InfoBranch [47]
+===========> zkoss.handleError:1130: >>java.lang.VerifyError: Inconsistent stackmap frames at branch target 380
+>>Exception Details:
+>>  Location:
+>>    org/adempiere/webui/panel/InfoPanel.create(IZLjava/lang/String;Ljava/lang/String;ILjava/lang/String;ZZLjava/lang/String;)Lorg/adempiere/webui/panel/InfoPanel; @380: aload
+>>  Reason:
+>>    Type 'org/adempiere/webui/panel/InfoBPartnerPanel' (current frame, locals[9]) is not assignable to 'org/adempiere/webui/panel/InfoPanel' (stack map, locals[9])
+>>  Current Frame:
+>>... [25]
+-----------> MRecentItem.addMenuOption: AD_User_ID is mandatory. [47]
+-----------> Msg.translate: NOT found: Branch [47]
+-----------> Msg.translate: NOT found: District [47]
+-----------> Msg.translate: NOT found: Tehsil [47]
+-----------> Msg.getMsg: NOT found: InfoBranch [47]
+===========> AccessSqlParser.getTableInfo: Could not remove ON COL_BRANCH b, COL_BR_REGION r ON b.COL_BR_REGION_ID=r.COL_BR_REGION_ID LEFT JOIN COL_DISTRICT d ON b.COL_DISTRICT_ID=d.COL_DISTRICT_ID LEFT JOIN COL_TEHSIL t ON b.COL_TEHSIL_ID=t.COL_TEHSIL_ID [64]
+===========> AccessSqlParser.getTableInfo: Could not remove ON COL_BRANCH b, COL_BR_REGION r ON b.COL_BR_REGION_ID=r.COL_BR_REGION_ID LEFT JOIN COL_DISTRICT d ON b.COL_DISTRICT_ID=d.COL_DISTRICT_ID LEFT JOIN COL_TEHSIL t ON b.COL_TEHSIL_ID=t.COL_TEHSIL_ID [64]
+-----------> MRecentItem.addMenuOption: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [64]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [64]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addMenuOption: AD_User_ID is mandatory. [47]
+-----------> MIssue.set_Value: SourceClassName - Value too long - truncated to length=60 [47]
+===========> DB.executeUpdate: INSERT INTO AD_Tree_Favorite (AD_Client_ID,AD_Org_ID,AD_Role_ID,AD_Tree_Favorite_ID,Created,CreatedBy,IsActive,Updated,UpdatedBy) VALUES (0,0,0,1000167,TO_DATE('2018-07-16 14:25:06','YYYY-MM-DD HH24:MI:SS'),0,'Y',TO_DATE('2018-07-16 14:25:06','YYYY-MM-DD HH24:MI:SS'),0) [POSave_7f679f08-df40-4dab-b3c4-1d02b95aa65c] [47]
+java.sql.SQLIntegrityConstraintViolationException: ORA-01400: cannot insert NULL into ("CARSDEV"."AD_TREE_FAVORITE"."AD_USER_ID")
+; State=23000; ErrorCode=1400
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:447)
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:396)
+	at oracle.jdbc.driver.T4C8Oall.processError(T4C8Oall.java:951)
+	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:513)
+	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:227)
+	at oracle.jdbc.driver.T4C8Oall.doOALL(T4C8Oall.java:531)
+	at oracle.jdbc.driver.T4CPreparedStatement.doOall8(T4CPreparedStatement.java:208)
+	at oracle.jdbc.driver.T4CPreparedStatement.executeForRows(T4CPreparedStatement.java:1046)
+	at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1336)
+	at oracle.jdbc.driver.OracleStatement.doScrollExecuteCommon(OracleStatement.java:4709)
+	at oracle.jdbc.driver.OraclePreparedStatement.doScrollPstmtExecuteUpdate(OraclePreparedStatement.java:10613)
+	at oracle.jdbc.driver.OraclePreparedStatement.executeInternal(OraclePreparedStatement.java:3611)
+	at oracle.jdbc.driver.OraclePreparedStatement.executeUpdate(OraclePreparedStatement.java:3694)
+	at oracle.jdbc.driver.OraclePreparedStatementWrapper.executeUpdate(OraclePreparedStatementWrapper.java:1354)
+	at com.mchange.v2.c3p0.impl.NewProxyPreparedStatement.executeUpdate(NewProxyPreparedStatement.java:105)
+	at sun.reflect.GeneratedMethodAccessor57.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.compiere.db.StatementProxy.invoke(StatementProxy.java:100)
+	at com.sun.proxy.$Proxy3.executeUpdate(Unknown Source)
+	at org.compiere.util.DB.executeUpdate(DB.java:1046)
+	at org.compiere.util.DB.executeUpdate(DB.java:908)
+	at org.compiere.util.DB.executeUpdate(DB.java:895)
+	at org.compiere.model.PO.saveNew(PO.java:2865)
+	at org.compiere.model.PO.save(PO.java:2195)
+
+===========> DB.saveError: DBExecuteError - ORA-01400: cannot insert NULL into ("CARSDEV"."AD_TREE_FAVORITE"."AD_USER_ID")
+ [47]
+-----------> MTreeFavorite.saveNew: [POSave_7f679f08-df40-4dab-b3c4-1d02b95aa65c]Not inserted - AD_Tree_Favorite [47]
+-----------> DefaultDesktop.createHomeTab: Failed to create components. zul=/zul/userfavorites.zul [47]
+org.adempiere.exceptions.AdempiereException: Could not create Tree.
+	at org.adempiere.webui.dashboard.DPUserFavorites.createFavouritesPanel(DPUserFavorites.java:119)
+	at org.adempiere.webui.dashboard.DPUserFavorites.<init>(DPUserFavorites.java:63)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at java.lang.Class.newInstance(Unknown Source)
+	at org.zkoss.zk.ui.metainfo.impl.ComponentDefinitionImpl.newInstance(ComponentDefinitionImpl.java:308)
+	at org.zkoss.zk.ui.metainfo.impl.ComponentDefinitionImpl.newInstance(ComponentDefinitionImpl.java:296)
+	at org.zkoss.zk.ui.metainfo.ComponentInfo.newInstance(ComponentInfo.java:664)
+	at org.zkoss.zk.ui.impl.AbstractUiFactory.newComponent(AbstractUiFactory.java:90)
+	at org.zkoss.zk.ui.impl.UiEngineImpl.execCreateChild0(UiEngineImpl.java:616)
+	at org.zkoss.zk.ui.impl.UiEngineImpl.execCreateChild(UiEngineImpl.java:587)
+	at org.zkoss.zk.ui.impl.UiEngineImpl.execCreate0(UiEngineImpl.java:531)
+	at org.zkoss.zk.ui.impl.UiEngineImpl.execCreate(UiEngineImpl.java:498)
+	at org.zkoss.zk.ui.impl.UiEngineImpl.createComponents(UiEngineImpl.java:819)
+	at org.zkoss.zk.ui.impl.AbstractExecution.createComponents(AbstractExecution.java:189)
+	at org.zkoss.zk.ui.Executions.createComponents(Executions.java:177)
+	at org.adempiere.webui.desktop.DefaultDesktop.createHomeTab(DefaultDesktop.java:380)
+	at org.adempiere.webui.desktop.DefaultDesktop.doCreatePart(DefaultDesktop.java:162)
+	at org.adempiere.webui.part.AbstractUIPart.createPart(AbstractUIPart.java:41)
+
+-----------> Msg.getMsg: NOT found: InfoBranch [47]
+-----------> MRecentItem.addMenuOption: AD_User_ID is mandatory. [64]
+-----------> MRecentItem.addMenuOption: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [64]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [64]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [64]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [64]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addMenuOption: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [64]
+-----------> MRecentItem.addMenuOption: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [64]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [64]
+===========> MSequence.get: More then one sequence for LOS_Leadapplicant [47]
+===========> DB.executeUpdate: UPDATE AD_Sequence SET Description='Table LOS_Leadapplicant', Name='LOS_Leadapplicant',Updated=TO_DATE('2018-07-16 14:45:49','YYYY-MM-DD HH24:MI:SS'),UpdatedBy=0 WHERE AD_Sequence_ID=1000572 [POSave_f22dcd24-eaed-4f14-84bb-f50ca6d9a426] [47]
+java.sql.SQLIntegrityConstraintViolationException: ORA-00001: unique constraint (CARSDEV.AD_SEQUENCE_NAME) violated
+; State=23000; ErrorCode=1
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:447)
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:396)
+	at oracle.jdbc.driver.T4C8Oall.processError(T4C8Oall.java:951)
+	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:513)
+	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:227)
+	at oracle.jdbc.driver.T4C8Oall.doOALL(T4C8Oall.java:531)
+	at oracle.jdbc.driver.T4CPreparedStatement.doOall8(T4CPreparedStatement.java:208)
+	at oracle.jdbc.driver.T4CPreparedStatement.executeForRows(T4CPreparedStatement.java:1046)
+	at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1336)
+	at oracle.jdbc.driver.OracleStatement.doScrollExecuteCommon(OracleStatement.java:4709)
+	at oracle.jdbc.driver.OraclePreparedStatement.doScrollPstmtExecuteUpdate(OraclePreparedStatement.java:10613)
+	at oracle.jdbc.driver.OraclePreparedStatement.executeInternal(OraclePreparedStatement.java:3611)
+	at oracle.jdbc.driver.OraclePreparedStatement.executeUpdate(OraclePreparedStatement.java:3694)
+	at oracle.jdbc.driver.OraclePreparedStatementWrapper.executeUpdate(OraclePreparedStatementWrapper.java:1354)
+	at com.mchange.v2.c3p0.impl.NewProxyPreparedStatement.executeUpdate(NewProxyPreparedStatement.java:105)
+	at sun.reflect.GeneratedMethodAccessor57.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.compiere.db.StatementProxy.invoke(StatementProxy.java:100)
+	at com.sun.proxy.$Proxy3.executeUpdate(Unknown Source)
+	at org.compiere.util.DB.executeUpdate(DB.java:1046)
+	at org.compiere.util.DB.executeUpdate(DB.java:908)
+	at org.compiere.util.DB.executeUpdate(DB.java:895)
+	at org.compiere.model.PO.saveUpdate(PO.java:2642)
+	at org.compiere.model.PO.save(PO.java:2214)
+	at org.compiere.model.PO.saveEx(PO.java:2279)
+	at org.compiere.model.MTable.afterSave(MTable.java:735)
+	at org.compiere.model.PO.saveFinish(PO.java:2311)
+	at org.compiere.model.PO.saveUpdate(PO.java:2655)
+	at org.compiere.model.PO.save(PO.java:2214)
+	at org.compiere.model.GridTable.dataSavePO(GridTable.java:2139)
+	at org.compiere.model.GridTable.dataSave(GridTable.java:1474)
+	at org.compiere.model.GridTab.dataSave(GridTab.java:987)
+
+===========> DB.saveError: DBExecuteError - ORA-00001: unique constraint (CARSDEV.AD_SEQUENCE_NAME) violated
+ [47]
+-----------> MSequence.saveUpdate: #-1 - [POSave_f22dcd24-eaed-4f14-84bb-f50ca6d9a426] - AD_Sequence.AD_Sequence_ID=1000572 [47]
+-----------> MTable.saveFinish: afterSave [47]
+org.adempiere.exceptions.AdempiereException: ORA-00001: unique constraint (CARSDEV.AD_SEQUENCE_NAME) violated
+
+	at org.compiere.model.PO.saveEx(PO.java:2286)
+	at org.compiere.model.MTable.afterSave(MTable.java:735)
+	at org.compiere.model.PO.saveFinish(PO.java:2311)
+	at org.compiere.model.PO.saveUpdate(PO.java:2655)
+	at org.compiere.model.PO.save(PO.java:2214)
+	at org.compiere.model.GridTable.dataSavePO(GridTable.java:2139)
+	at org.compiere.model.GridTable.dataSave(GridTable.java:1474)
+	at org.compiere.model.GridTab.dataSave(GridTab.java:987)
+	at org.adempiere.webui.panel.AbstractADWindowPanel.onSave(AbstractADWindowPanel.java:1645)
+	at org.adempiere.webui.panel.AbstractADWindowPanel.onSave(AbstractADWindowPanel.java:1619)
+	at sun.reflect.GeneratedMethodAccessor62.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.adempiere.webui.component.CWindowToolbar.doOnClick(CWindowToolbar.java:393)
+	at org.adempiere.webui.component.CWindowToolbar.onEvent(CWindowToolbar.java:357)
+	at org.zkoss.zk.ui.impl.EventProcessor.process0(EventProcessor.java:197)
+	at org.zkoss.zk.ui.impl.EventProcessor.process(EventProcessor.java:141)
+	at org.zkoss.zk.ui.impl.EventProcessingThreadImpl.process0(EventProcessingThreadImpl.java:519)
+	at org.zkoss.zk.ui.impl.EventProcessingThreadImpl.run(EventProcessingThreadImpl.java:446)
+
+-----------> GridTable.saveWarning: Error - ORA-00001: unique constraint (CARSDEV.AD_SEQUENCE_NAME) violated
+ [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [64]
+===========> MSequence.get: More then one sequence for LOS_Leadapplicant [64]
+===========> DB.executeUpdate: UPDATE AD_Sequence SET Description='Table LOS_Leadapplicant', Name='LOS_Leadapplicant',Updated=TO_DATE('2018-07-16 14:48:23','YYYY-MM-DD HH24:MI:SS'),UpdatedBy=0 WHERE AD_Sequence_ID=1000572 [POSave_0dff958e-020f-4e13-bb93-ec5a36f4ea51] [64]
+java.sql.SQLIntegrityConstraintViolationException: ORA-00001: unique constraint (CARSDEV.AD_SEQUENCE_NAME) violated
+; State=23000; ErrorCode=1
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:447)
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:396)
+	at oracle.jdbc.driver.T4C8Oall.processError(T4C8Oall.java:951)
+	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:513)
+	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:227)
+	at oracle.jdbc.driver.T4C8Oall.doOALL(T4C8Oall.java:531)
+	at oracle.jdbc.driver.T4CPreparedStatement.doOall8(T4CPreparedStatement.java:208)
+	at oracle.jdbc.driver.T4CPreparedStatement.executeForRows(T4CPreparedStatement.java:1046)
+	at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1336)
+	at oracle.jdbc.driver.OracleStatement.doScrollExecuteCommon(OracleStatement.java:4709)
+	at oracle.jdbc.driver.OraclePreparedStatement.doScrollPstmtExecuteUpdate(OraclePreparedStatement.java:10613)
+	at oracle.jdbc.driver.OraclePreparedStatement.executeInternal(OraclePreparedStatement.java:3611)
+	at oracle.jdbc.driver.OraclePreparedStatement.executeUpdate(OraclePreparedStatement.java:3694)
+	at oracle.jdbc.driver.OraclePreparedStatementWrapper.executeUpdate(OraclePreparedStatementWrapper.java:1354)
+	at com.mchange.v2.c3p0.impl.NewProxyPreparedStatement.executeUpdate(NewProxyPreparedStatement.java:105)
+	at sun.reflect.GeneratedMethodAccessor57.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.compiere.db.StatementProxy.invoke(StatementProxy.java:100)
+	at com.sun.proxy.$Proxy3.executeUpdate(Unknown Source)
+	at org.compiere.util.DB.executeUpdate(DB.java:1046)
+	at org.compiere.util.DB.executeUpdate(DB.java:908)
+	at org.compiere.util.DB.executeUpdate(DB.java:895)
+	at org.compiere.model.PO.saveUpdate(PO.java:2642)
+	at org.compiere.model.PO.save(PO.java:2214)
+	at org.compiere.model.PO.saveEx(PO.java:2279)
+	at org.compiere.model.MTable.afterSave(MTable.java:735)
+	at org.compiere.model.PO.saveFinish(PO.java:2311)
+	at org.compiere.model.PO.saveUpdate(PO.java:2655)
+	at org.compiere.model.PO.save(PO.java:2214)
+	at org.compiere.model.GridTable.dataSavePO(GridTable.java:2139)
+	at org.compiere.model.GridTable.dataSave(GridTable.java:1474)
+	at org.compiere.model.GridTab.dataSave(GridTab.java:987)
+
+===========> DB.saveError: DBExecuteError - ORA-00001: unique constraint (CARSDEV.AD_SEQUENCE_NAME) violated
+ [64]
+-----------> MSequence.saveUpdate: #-1 - [POSave_0dff958e-020f-4e13-bb93-ec5a36f4ea51] - AD_Sequence.AD_Sequence_ID=1000572 [64]
+-----------> MTable.saveFinish: afterSave [64]
+org.adempiere.exceptions.AdempiereException: ORA-00001: unique constraint (CARSDEV.AD_SEQUENCE_NAME) violated
+
+	at org.compiere.model.PO.saveEx(PO.java:2286)
+	at org.compiere.model.MTable.afterSave(MTable.java:735)
+	at org.compiere.model.PO.saveFinish(PO.java:2311)
+	at org.compiere.model.PO.saveUpdate(PO.java:2655)
+	at org.compiere.model.PO.save(PO.java:2214)
+	at org.compiere.model.GridTable.dataSavePO(GridTable.java:2139)
+	at org.compiere.model.GridTable.dataSave(GridTable.java:1474)
+	at org.compiere.model.GridTab.dataSave(GridTab.java:987)
+	at org.adempiere.webui.panel.AbstractADWindowPanel.onSave(AbstractADWindowPanel.java:1645)
+	at org.adempiere.webui.panel.AbstractADWindowPanel.onSave(AbstractADWindowPanel.java:1619)
+	at sun.reflect.GeneratedMethodAccessor62.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.adempiere.webui.component.CWindowToolbar.doOnClick(CWindowToolbar.java:393)
+	at org.adempiere.webui.component.CWindowToolbar.onEvent(CWindowToolbar.java:357)
+	at org.zkoss.zk.ui.impl.EventProcessor.process0(EventProcessor.java:197)
+	at org.zkoss.zk.ui.impl.EventProcessor.process(EventProcessor.java:141)
+	at org.zkoss.zk.ui.impl.EventProcessingThreadImpl.process0(EventProcessingThreadImpl.java:519)
+	at org.zkoss.zk.ui.impl.EventProcessingThreadImpl.run(EventProcessingThreadImpl.java:446)
+
+-----------> GridTable.saveWarning: Error - ORA-00001: unique constraint (CARSDEV.AD_SEQUENCE_NAME) violated
+ [64]
+-----------> MRecentItem.addMenuOption: AD_User_ID is mandatory. [64]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [64]
+===========> MSequence.get: More then one sequence for LOS_Leadapplicant [47]
+===========> DB.executeUpdate: UPDATE AD_Sequence SET Description='Table LOS_Leadapplicant', Name='LOS_Leadapplicant',Updated=TO_DATE('2018-07-16 14:50:38','YYYY-MM-DD HH24:MI:SS'),UpdatedBy=0 WHERE AD_Sequence_ID=1000572 [POSave_76c1454d-565b-4024-a147-f0110026b0f1] [47]
+java.sql.SQLIntegrityConstraintViolationException: ORA-00001: unique constraint (CARSDEV.AD_SEQUENCE_NAME) violated
+; State=23000; ErrorCode=1
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:447)
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:396)
+	at oracle.jdbc.driver.T4C8Oall.processError(T4C8Oall.java:951)
+	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:513)
+	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:227)
+	at oracle.jdbc.driver.T4C8Oall.doOALL(T4C8Oall.java:531)
+	at oracle.jdbc.driver.T4CPreparedStatement.doOall8(T4CPreparedStatement.java:208)
+	at oracle.jdbc.driver.T4CPreparedStatement.executeForRows(T4CPreparedStatement.java:1046)
+	at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1336)
+	at oracle.jdbc.driver.OracleStatement.doScrollExecuteCommon(OracleStatement.java:4709)
+	at oracle.jdbc.driver.OraclePreparedStatement.doScrollPstmtExecuteUpdate(OraclePreparedStatement.java:10613)
+	at oracle.jdbc.driver.OraclePreparedStatement.executeInternal(OraclePreparedStatement.java:3611)
+	at oracle.jdbc.driver.OraclePreparedStatement.executeUpdate(OraclePreparedStatement.java:3694)
+	at oracle.jdbc.driver.OraclePreparedStatementWrapper.executeUpdate(OraclePreparedStatementWrapper.java:1354)
+	at com.mchange.v2.c3p0.impl.NewProxyPreparedStatement.executeUpdate(NewProxyPreparedStatement.java:105)
+	at sun.reflect.GeneratedMethodAccessor57.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.compiere.db.StatementProxy.invoke(StatementProxy.java:100)
+	at com.sun.proxy.$Proxy3.executeUpdate(Unknown Source)
+	at org.compiere.util.DB.executeUpdate(DB.java:1046)
+	at org.compiere.util.DB.executeUpdate(DB.java:908)
+	at org.compiere.util.DB.executeUpdate(DB.java:895)
+	at org.compiere.model.PO.saveUpdate(PO.java:2642)
+	at org.compiere.model.PO.save(PO.java:2214)
+	at org.compiere.model.PO.saveEx(PO.java:2279)
+	at org.compiere.model.MTable.afterSave(MTable.java:735)
+	at org.compiere.model.PO.saveFinish(PO.java:2311)
+	at org.compiere.model.PO.saveUpdate(PO.java:2655)
+	at org.compiere.model.PO.save(PO.java:2214)
+	at org.compiere.model.GridTable.dataSavePO(GridTable.java:2139)
+	at org.compiere.model.GridTable.dataSave(GridTable.java:1474)
+	at org.compiere.model.GridTab.dataSave(GridTab.java:987)
+
+===========> DB.saveError: DBExecuteError - ORA-00001: unique constraint (CARSDEV.AD_SEQUENCE_NAME) violated
+ [47]
+-----------> MSequence.saveUpdate: #-1 - [POSave_76c1454d-565b-4024-a147-f0110026b0f1] - AD_Sequence.AD_Sequence_ID=1000572 [47]
+-----------> MTable.saveFinish: afterSave [47]
+org.adempiere.exceptions.AdempiereException: ORA-00001: unique constraint (CARSDEV.AD_SEQUENCE_NAME) violated
+
+	at org.compiere.model.PO.saveEx(PO.java:2286)
+	at org.compiere.model.MTable.afterSave(MTable.java:735)
+	at org.compiere.model.PO.saveFinish(PO.java:2311)
+	at org.compiere.model.PO.saveUpdate(PO.java:2655)
+	at org.compiere.model.PO.save(PO.java:2214)
+	at org.compiere.model.GridTable.dataSavePO(GridTable.java:2139)
+	at org.compiere.model.GridTable.dataSave(GridTable.java:1474)
+	at org.compiere.model.GridTab.dataSave(GridTab.java:987)
+	at org.adempiere.webui.panel.AbstractADWindowPanel.onSave(AbstractADWindowPanel.java:1645)
+	at org.adempiere.webui.panel.AbstractADWindowPanel.onSave(AbstractADWindowPanel.java:1619)
+	at sun.reflect.GeneratedMethodAccessor62.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.adempiere.webui.component.CWindowToolbar.doOnClick(CWindowToolbar.java:393)
+	at org.adempiere.webui.component.CWindowToolbar.onEvent(CWindowToolbar.java:357)
+	at org.zkoss.zk.ui.impl.EventProcessor.process0(EventProcessor.java:197)
+	at org.zkoss.zk.ui.impl.EventProcessor.process(EventProcessor.java:141)
+	at org.zkoss.zk.ui.impl.EventProcessingThreadImpl.process0(EventProcessingThreadImpl.java:519)
+	at org.zkoss.zk.ui.impl.EventProcessingThreadImpl.run(EventProcessingThreadImpl.java:446)
+
+-----------> GridTable.saveWarning: Error - ORA-00001: unique constraint (CARSDEV.AD_SEQUENCE_NAME) violated
+ [47]
+-----------> MRecentItem.addMenuOption: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addMenuOption: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [64]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [64]
+-----------> Msg.getMsg: NOT found: Table and Column  LOS Lead ID  System (System Administrator) @ System.* [MyAppsServer{localhost-orcl-carsdev}] [47]
+-----------> GridField.getDefault: (SeqNo) - Default SQL variable parse failed: @SQL=SELECT COALESCE(MAX(SeqNo),0)+10 AS DefaultValue FROM AD_Tab WHERE AD_Window_ID=@AD_Window_ID@ [265]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [265]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [64]
+-----------> GridField.getDefault: (SeqNo) - Default SQL variable parse failed: @SQL=SELECT NVL(MAX(SeqNo),0)+10 AS DefaultValue FROM AD_Field WHERE AD_Tab_ID=@AD_Tab_ID@ [265]
+-----------> GridField.getDefault: (SeqNoGrid) - Default SQL variable parse failed: @SQL=SELECT NVL(MAX(SeqNo),0)+10 AS DefaultValue FROM AD_Field WHERE AD_Tab_ID=@AD_Tab_ID@ [265]
+-----------> GridField.getDefault: (SeqNo) - Default SQL variable parse failed: @SQL=SELECT NVL(MAX(SeqNo),0)+10 AS DefaultValue FROM AD_Field WHERE AD_Tab_ID=@AD_Tab_ID@ [265]
+-----------> GridField.getDefault: (SeqNoGrid) - Default SQL variable parse failed: @SQL=SELECT NVL(MAX(SeqNo),0)+10 AS DefaultValue FROM AD_Field WHERE AD_Tab_ID=@AD_Tab_ID@ [265]
+-----------> GridField.getDefault: (SeqNo) - Default SQL variable parse failed: @SQL=SELECT NVL(MAX(SeqNo),0)+10 AS DefaultValue FROM AD_Field WHERE AD_Tab_ID=@AD_Tab_ID@ [265]
+-----------> GridField.getDefault: (SeqNoGrid) - Default SQL variable parse failed: @SQL=SELECT NVL(MAX(SeqNo),0)+10 AS DefaultValue FROM AD_Field WHERE AD_Tab_ID=@AD_Tab_ID@ [265]
+-----------> GridField.getDefault: (SeqNo) - Default SQL variable parse failed: @SQL=SELECT NVL(MAX(SeqNo),0)+10 AS DefaultValue FROM AD_Field WHERE AD_Tab_ID=@AD_Tab_ID@ [265]
+-----------> GridField.getDefault: (SeqNoGrid) - Default SQL variable parse failed: @SQL=SELECT NVL(MAX(SeqNo),0)+10 AS DefaultValue FROM AD_Field WHERE AD_Tab_ID=@AD_Tab_ID@ [265]
+-----------> GridField.getDefault: (SeqNo) - Default SQL variable parse failed: @SQL=SELECT NVL(MAX(SeqNo),0)+10 AS DefaultValue FROM AD_Field WHERE AD_Tab_ID=@AD_Tab_ID@ [265]
+-----------> GridField.getDefault: (SeqNoGrid) - Default SQL variable parse failed: @SQL=SELECT NVL(MAX(SeqNo),0)+10 AS DefaultValue FROM AD_Field WHERE AD_Tab_ID=@AD_Tab_ID@ [265]
+-----------> GridField.getDefault: (SeqNo) - Default SQL variable parse failed: @SQL=SELECT NVL(MAX(SeqNo),0)+10 AS DefaultValue FROM AD_Field WHERE AD_Tab_ID=@AD_Tab_ID@ [265]
+-----------> GridField.getDefault: (SeqNoGrid) - Default SQL variable parse failed: @SQL=SELECT NVL(MAX(SeqNo),0)+10 AS DefaultValue FROM AD_Field WHERE AD_Tab_ID=@AD_Tab_ID@ [265]
+-----------> GridField.getDefault: (SeqNo) - Default SQL variable parse failed: @SQL=SELECT NVL(MAX(SeqNo),0)+10 AS DefaultValue FROM AD_Field WHERE AD_Tab_ID=@AD_Tab_ID@ [265]
+-----------> GridField.getDefault: (SeqNoGrid) - Default SQL variable parse failed: @SQL=SELECT NVL(MAX(SeqNo),0)+10 AS DefaultValue FROM AD_Field WHERE AD_Tab_ID=@AD_Tab_ID@ [265]
+-----------> GridField.getDefault: (SeqNo) - Default SQL variable parse failed: @SQL=SELECT NVL(MAX(SeqNo),0)+10 AS DefaultValue FROM AD_Field WHERE AD_Tab_ID=@AD_Tab_ID@ [265]
+-----------> GridField.getDefault: (SeqNoGrid) - Default SQL variable parse failed: @SQL=SELECT NVL(MAX(SeqNo),0)+10 AS DefaultValue FROM AD_Field WHERE AD_Tab_ID=@AD_Tab_ID@ [265]
+-----------> GridField.getDefault: (SeqNo) - Default SQL variable parse failed: @SQL=SELECT NVL(MAX(SeqNo),0)+10 AS DefaultValue FROM AD_Field WHERE AD_Tab_ID=@AD_Tab_ID@ [265]
+-----------> GridField.getDefault: (SeqNoGrid) - Default SQL variable parse failed: @SQL=SELECT NVL(MAX(SeqNo),0)+10 AS DefaultValue FROM AD_Field WHERE AD_Tab_ID=@AD_Tab_ID@ [265]
+-----------> GridField.getDefault: (SeqNo) - Default SQL variable parse failed: @SQL=SELECT NVL(MAX(SeqNo),0)+10 AS DefaultValue FROM AD_Field WHERE AD_Tab_ID=@AD_Tab_ID@ [265]
+-----------> GridField.getDefault: (SeqNoGrid) - Default SQL variable parse failed: @SQL=SELECT NVL(MAX(SeqNo),0)+10 AS DefaultValue FROM AD_Field WHERE AD_Tab_ID=@AD_Tab_ID@ [265]
+-----------> GridField.getDefault: (SeqNo) - Default SQL variable parse failed: @SQL=SELECT NVL(MAX(SeqNo),0)+10 AS DefaultValue FROM AD_Field WHERE AD_Tab_ID=@AD_Tab_ID@ [265]
+-----------> GridField.getDefault: (SeqNoGrid) - Default SQL variable parse failed: @SQL=SELECT NVL(MAX(SeqNo),0)+10 AS DefaultValue FROM AD_Field WHERE AD_Tab_ID=@AD_Tab_ID@ [265]
+-----------> GridField.getDefault: (SeqNo) - Default SQL variable parse failed: @SQL=SELECT NVL(MAX(SeqNo),0)+10 AS DefaultValue FROM AD_Field WHERE AD_Tab_ID=@AD_Tab_ID@ [265]
+-----------> GridField.getDefault: (SeqNoGrid) - Default SQL variable parse failed: @SQL=SELECT NVL(MAX(SeqNo),0)+10 AS DefaultValue FROM AD_Field WHERE AD_Tab_ID=@AD_Tab_ID@ [265]
+-----------> GridField.getDefault: (SeqNo) - Default SQL variable parse failed: @SQL=SELECT NVL(MAX(SeqNo),0)+10 AS DefaultValue FROM AD_Field WHERE AD_Tab_ID=@AD_Tab_ID@ [265]
+-----------> GridField.getDefault: (SeqNoGrid) - Default SQL variable parse failed: @SQL=SELECT NVL(MAX(SeqNo),0)+10 AS DefaultValue FROM AD_Field WHERE AD_Tab_ID=@AD_Tab_ID@ [265]
+-----------> Msg.getMsg: NOT found: Window, Tab & Field  Applicant  System (System Administrator) @ System.* [MyAppsServer{localhost-orcl-carsdev}] [265]
+===========> MLookupFactory.getLookup_TableDir: No Identifier records found: EW_GREETING_ID [265]
+===========> MLookupFactory.getLookupInfo: No SQL - EW_GREETING_ID [265]
+-----------> MRecentItem.addMenuOption: AD_User_ID is mandatory. [265]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [47]
+===========> MLookupFactory.getLookup_TableDir: No Identifier records found: EW_GREETING_ID [47]
+===========> MLookupFactory.getLookupInfo: No SQL - EW_GREETING_ID [47]
+-----------> MRecentItem.addMenuOption: AD_User_ID is mandatory. [47]
+-----------> Msg.getMsg: NOT found: Please save changes before closing [64]
+===========> MLookupFactory.getLookup_TableDir: No Identifier records found: EW_GREETING_ID [47]
+===========> MLookupFactory.getLookupInfo: No SQL - EW_GREETING_ID [47]
+-----------> MRecentItem.addMenuOption: AD_User_ID is mandatory. [47]
+-----------> Msg.getMsg: NOT found: Please save changes before closing [265]
+-----------> MRecentItem.addMenuOption: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addMenuOption: AD_User_ID is mandatory. [64]
+===========> MLookupFactory.getLookup_TableDir: No Identifier records found: EW_GREETING_ID [64]
+===========> MLookupFactory.getLookupInfo: No SQL - EW_GREETING_ID [64]
+-----------> MRecentItem.addMenuOption: AD_User_ID is mandatory. [64]
+-----------> MIssue.set_Value: SourceClassName - Value too long - truncated to length=60 [265]
+===========> DB.executeUpdate: INSERT INTO AD_Tree_Favorite (AD_Client_ID,AD_Org_ID,AD_Role_ID,AD_Tree_Favorite_ID,Created,CreatedBy,IsActive,Updated,UpdatedBy) VALUES (0,0,0,1000168,TO_DATE('2018-07-16 15:12:22','YYYY-MM-DD HH24:MI:SS'),0,'Y',TO_DATE('2018-07-16 15:12:22','YYYY-MM-DD HH24:MI:SS'),0) [POSave_274abb46-85f2-4c22-9f00-7e3f155ba174] [265]
+java.sql.SQLIntegrityConstraintViolationException: ORA-01400: cannot insert NULL into ("CARSDEV"."AD_TREE_FAVORITE"."AD_USER_ID")
+; State=23000; ErrorCode=1400
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:447)
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:396)
+	at oracle.jdbc.driver.T4C8Oall.processError(T4C8Oall.java:951)
+	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:513)
+	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:227)
+	at oracle.jdbc.driver.T4C8Oall.doOALL(T4C8Oall.java:531)
+	at oracle.jdbc.driver.T4CPreparedStatement.doOall8(T4CPreparedStatement.java:208)
+	at oracle.jdbc.driver.T4CPreparedStatement.executeForRows(T4CPreparedStatement.java:1046)
+	at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1336)
+	at oracle.jdbc.driver.OracleStatement.doScrollExecuteCommon(OracleStatement.java:4709)
+	at oracle.jdbc.driver.OraclePreparedStatement.doScrollPstmtExecuteUpdate(OraclePreparedStatement.java:10613)
+	at oracle.jdbc.driver.OraclePreparedStatement.executeInternal(OraclePreparedStatement.java:3611)
+	at oracle.jdbc.driver.OraclePreparedStatement.executeUpdate(OraclePreparedStatement.java:3694)
+	at oracle.jdbc.driver.OraclePreparedStatementWrapper.executeUpdate(OraclePreparedStatementWrapper.java:1354)
+	at com.mchange.v2.c3p0.impl.NewProxyPreparedStatement.executeUpdate(NewProxyPreparedStatement.java:105)
+	at sun.reflect.GeneratedMethodAccessor75.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.compiere.db.StatementProxy.invoke(StatementProxy.java:100)
+	at com.sun.proxy.$Proxy3.executeUpdate(Unknown Source)
+	at org.compiere.util.DB.executeUpdate(DB.java:1046)
+	at org.compiere.util.DB.executeUpdate(DB.java:908)
+	at org.compiere.util.DB.executeUpdate(DB.java:895)
+	at org.compiere.model.PO.saveNew(PO.java:2865)
+	at org.compiere.model.PO.save(PO.java:2195)
+
+===========> DB.saveError: DBExecuteError - ORA-01400: cannot insert NULL into ("CARSDEV"."AD_TREE_FAVORITE"."AD_USER_ID")
+ [265]
+-----------> MTreeFavorite.saveNew: [POSave_274abb46-85f2-4c22-9f00-7e3f155ba174]Not inserted - AD_Tree_Favorite [265]
+-----------> DefaultDesktop.createHomeTab: Failed to create components. zul=/zul/userfavorites.zul [265]
+org.adempiere.exceptions.AdempiereException: Could not create Tree.
+	at org.adempiere.webui.dashboard.DPUserFavorites.createFavouritesPanel(DPUserFavorites.java:119)
+	at org.adempiere.webui.dashboard.DPUserFavorites.<init>(DPUserFavorites.java:63)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at java.lang.Class.newInstance(Unknown Source)
+	at org.zkoss.zk.ui.metainfo.impl.ComponentDefinitionImpl.newInstance(ComponentDefinitionImpl.java:308)
+	at org.zkoss.zk.ui.metainfo.impl.ComponentDefinitionImpl.newInstance(ComponentDefinitionImpl.java:296)
+	at org.zkoss.zk.ui.metainfo.ComponentInfo.newInstance(ComponentInfo.java:664)
+	at org.zkoss.zk.ui.impl.AbstractUiFactory.newComponent(AbstractUiFactory.java:90)
+	at org.zkoss.zk.ui.impl.UiEngineImpl.execCreateChild0(UiEngineImpl.java:616)
+	at org.zkoss.zk.ui.impl.UiEngineImpl.execCreateChild(UiEngineImpl.java:587)
+	at org.zkoss.zk.ui.impl.UiEngineImpl.execCreate0(UiEngineImpl.java:531)
+	at org.zkoss.zk.ui.impl.UiEngineImpl.execCreate(UiEngineImpl.java:498)
+	at org.zkoss.zk.ui.impl.UiEngineImpl.createComponents(UiEngineImpl.java:819)
+	at org.zkoss.zk.ui.impl.AbstractExecution.createComponents(AbstractExecution.java:189)
+	at org.zkoss.zk.ui.Executions.createComponents(Executions.java:177)
+	at org.adempiere.webui.desktop.DefaultDesktop.createHomeTab(DefaultDesktop.java:380)
+	at org.adempiere.webui.desktop.DefaultDesktop.doCreatePart(DefaultDesktop.java:162)
+	at org.adempiere.webui.part.AbstractUIPart.createPart(AbstractUIPart.java:41)
+
+-----------> Msg.getMsg: NOT found: InfoBranch [265]
+===========> MLookupFactory.getLookup_TableDir: No Identifier records found: EW_GREETING_ID [47]
+===========> MLookupFactory.getLookupInfo: No SQL - EW_GREETING_ID [47]
+-----------> MRecentItem.addMenuOption: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addMenuOption: AD_User_ID is mandatory. [47]

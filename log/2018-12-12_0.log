@@ -1,0 +1,649 @@
+*** 2018-12-12 10:41:49.805 Adempiere Log (CLogFile) ***
+10:41:49.805 Adempiere.startup: ADempiere(r) Release 3.9.0_2017-08-01 -Smart Suite ERP,CRM and SCM- (c) 1999-2017 ADempiere(r); Implementation: ADempiere - Supported by ADempiere community [13]
+10:41:49.851 Ini.loadProperties: D:\Ayaz\Ayaz_NBP_PC_Backup\AdempiereTemplate39\Adempiere.properties #37 [13]
+-----------> MIssue.set_Value: SourceClassName - Value too long - truncated to length=60 [47]
+===========> DB.executeUpdate: INSERT INTO AD_Tree_Favorite (AD_Client_ID,AD_Org_ID,AD_Role_ID,AD_Tree_Favorite_ID,Created,CreatedBy,IsActive,Updated,UpdatedBy) VALUES (0,0,0,1000187,TO_DATE('2018-12-12 10:42:38','YYYY-MM-DD HH24:MI:SS'),0,'Y',TO_DATE('2018-12-12 10:42:38','YYYY-MM-DD HH24:MI:SS'),0) [POSave_7172e09c-bf4f-4708-9581-513b7c511e14] [47]
+java.sql.SQLIntegrityConstraintViolationException: ORA-01400: cannot insert NULL into ("CARSDEV"."AD_TREE_FAVORITE"."AD_USER_ID")
+; State=23000; ErrorCode=1400
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:447)
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:396)
+	at oracle.jdbc.driver.T4C8Oall.processError(T4C8Oall.java:951)
+	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:513)
+	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:227)
+	at oracle.jdbc.driver.T4C8Oall.doOALL(T4C8Oall.java:531)
+	at oracle.jdbc.driver.T4CPreparedStatement.doOall8(T4CPreparedStatement.java:208)
+	at oracle.jdbc.driver.T4CPreparedStatement.executeForRows(T4CPreparedStatement.java:1046)
+	at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1336)
+	at oracle.jdbc.driver.OracleStatement.doScrollExecuteCommon(OracleStatement.java:4709)
+	at oracle.jdbc.driver.OraclePreparedStatement.doScrollPstmtExecuteUpdate(OraclePreparedStatement.java:10613)
+	at oracle.jdbc.driver.OraclePreparedStatement.executeInternal(OraclePreparedStatement.java:3611)
+	at oracle.jdbc.driver.OraclePreparedStatement.executeUpdate(OraclePreparedStatement.java:3694)
+	at oracle.jdbc.driver.OraclePreparedStatementWrapper.executeUpdate(OraclePreparedStatementWrapper.java:1354)
+	at com.mchange.v2.c3p0.impl.NewProxyPreparedStatement.executeUpdate(NewProxyPreparedStatement.java:105)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.compiere.db.StatementProxy.invoke(StatementProxy.java:100)
+	at com.sun.proxy.$Proxy3.executeUpdate(Unknown Source)
+	at org.compiere.util.DB.executeUpdate(DB.java:1046)
+	at org.compiere.util.DB.executeUpdate(DB.java:908)
+	at org.compiere.util.DB.executeUpdate(DB.java:895)
+	at org.compiere.model.PO.saveNew(PO.java:2865)
+	at org.compiere.model.PO.save(PO.java:2195)
+
+===========> DB.saveError: DBExecuteError - ORA-01400: cannot insert NULL into ("CARSDEV"."AD_TREE_FAVORITE"."AD_USER_ID")
+ [47]
+-----------> MTreeFavorite.saveNew: [POSave_7172e09c-bf4f-4708-9581-513b7c511e14]Not inserted - AD_Tree_Favorite [47]
+-----------> DefaultDesktop.createHomeTab: Failed to create components. zul=/zul/userfavorites.zul [47]
+org.adempiere.exceptions.AdempiereException: Could not create Tree.
+	at org.adempiere.webui.dashboard.DPUserFavorites.createFavouritesPanel(DPUserFavorites.java:119)
+	at org.adempiere.webui.dashboard.DPUserFavorites.<init>(DPUserFavorites.java:63)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at java.lang.Class.newInstance(Unknown Source)
+	at org.zkoss.zk.ui.metainfo.impl.ComponentDefinitionImpl.newInstance(ComponentDefinitionImpl.java:308)
+	at org.zkoss.zk.ui.metainfo.impl.ComponentDefinitionImpl.newInstance(ComponentDefinitionImpl.java:296)
+	at org.zkoss.zk.ui.metainfo.ComponentInfo.newInstance(ComponentInfo.java:664)
+	at org.zkoss.zk.ui.impl.AbstractUiFactory.newComponent(AbstractUiFactory.java:90)
+	at org.zkoss.zk.ui.impl.UiEngineImpl.execCreateChild0(UiEngineImpl.java:616)
+	at org.zkoss.zk.ui.impl.UiEngineImpl.execCreateChild(UiEngineImpl.java:587)
+	at org.zkoss.zk.ui.impl.UiEngineImpl.execCreate0(UiEngineImpl.java:531)
+	at org.zkoss.zk.ui.impl.UiEngineImpl.execCreate(UiEngineImpl.java:498)
+	at org.zkoss.zk.ui.impl.UiEngineImpl.createComponents(UiEngineImpl.java:819)
+	at org.zkoss.zk.ui.impl.AbstractExecution.createComponents(AbstractExecution.java:189)
+	at org.zkoss.zk.ui.Executions.createComponents(Executions.java:177)
+	at org.adempiere.webui.desktop.DefaultDesktop.createHomeTab(DefaultDesktop.java:380)
+	at org.adempiere.webui.desktop.DefaultDesktop.doCreatePart(DefaultDesktop.java:162)
+	at org.adempiere.webui.part.AbstractUIPart.createPart(AbstractUIPart.java:41)
+
+-----------> Msg.getMsg: NOT found: InfoBranch [47]
+-----------> MRecentItem.addMenuOption: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [47]
+===========> MLookup.run: AD_Ref_List.Value, 1001006 : Loader - SELECT NULL, AD_Ref_List.Value,AD_Ref_List.Name,AD_Ref_List.IsActive FROM AD_Ref_List WHERE AD_Ref_List.AD_Reference_ID=1000050 AND LOS_LEAD.BUSINESSSIGMENT=10000000 ORDER BY 3 [89]
+java.sql.SQLSyntaxErrorException: ORA-00904: "LOS_LEAD"."BUSINESSSIGMENT": invalid identifier
+; State=42000; ErrorCode=904
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:447)
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:396)
+	at oracle.jdbc.driver.T4C8Oall.processError(T4C8Oall.java:951)
+	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:513)
+	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:227)
+	at oracle.jdbc.driver.T4C8Oall.doOALL(T4C8Oall.java:531)
+	at oracle.jdbc.driver.T4CPreparedStatement.doOall8(T4CPreparedStatement.java:208)
+	at oracle.jdbc.driver.T4CPreparedStatement.executeForDescribe(T4CPreparedStatement.java:886)
+	at oracle.jdbc.driver.OracleStatement.executeMaybeDescribe(OracleStatement.java:1175)
+	at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1296)
+	at oracle.jdbc.driver.OraclePreparedStatement.executeInternal(OraclePreparedStatement.java:3613)
+	at oracle.jdbc.driver.OraclePreparedStatement.executeQuery(OraclePreparedStatement.java:3657)
+	at oracle.jdbc.driver.OraclePreparedStatementWrapper.executeQuery(OraclePreparedStatementWrapper.java:1495)
+	at com.mchange.v2.c3p0.impl.NewProxyPreparedStatement.executeQuery(NewProxyPreparedStatement.java:76)
+	at sun.reflect.GeneratedMethodAccessor21.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.compiere.db.StatementProxy.invoke(StatementProxy.java:100)
+	at com.sun.proxy.$Proxy3.executeQuery(Unknown Source)
+	at org.compiere.model.MLookup$MLoader.run(MLookup.java:747)
+
+-----------> MRecentItem.addMenuOption: AD_User_ID is mandatory. [47]
+===========> MLookup.run: AD_Ref_List.Value, 1001006 : Loader - SELECT NULL, AD_Ref_List.Value,AD_Ref_List.Name,AD_Ref_List.IsActive FROM AD_Ref_List WHERE AD_Ref_List.AD_Reference_ID=1000050 AND LOS_LEAD.BUSINESSSIGMENT=10000000 ORDER BY 3 [90]
+java.sql.SQLSyntaxErrorException: ORA-00904: "LOS_LEAD"."BUSINESSSIGMENT": invalid identifier
+; State=42000; ErrorCode=904
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:447)
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:396)
+	at oracle.jdbc.driver.T4C8Oall.processError(T4C8Oall.java:951)
+	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:513)
+	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:227)
+	at oracle.jdbc.driver.T4C8Oall.doOALL(T4C8Oall.java:531)
+	at oracle.jdbc.driver.T4CPreparedStatement.doOall8(T4CPreparedStatement.java:208)
+	at oracle.jdbc.driver.T4CPreparedStatement.executeForDescribe(T4CPreparedStatement.java:886)
+	at oracle.jdbc.driver.OracleStatement.executeMaybeDescribe(OracleStatement.java:1175)
+	at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1296)
+	at oracle.jdbc.driver.OraclePreparedStatement.executeInternal(OraclePreparedStatement.java:3613)
+	at oracle.jdbc.driver.OraclePreparedStatement.executeQuery(OraclePreparedStatement.java:3657)
+	at oracle.jdbc.driver.OraclePreparedStatementWrapper.executeQuery(OraclePreparedStatementWrapper.java:1495)
+	at com.mchange.v2.c3p0.impl.NewProxyPreparedStatement.executeQuery(NewProxyPreparedStatement.java:76)
+	at sun.reflect.GeneratedMethodAccessor21.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.compiere.db.StatementProxy.invoke(StatementProxy.java:100)
+	at com.sun.proxy.$Proxy3.executeQuery(Unknown Source)
+	at org.compiere.model.MLookup$MLoader.run(MLookup.java:747)
+
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [56]
+===========> MLookup.run: LOS_LOANENTITYTYPE.LOS_LOANENTITYTYPE_ID, 1001006 : Loader - SELECT LOS_LOANENTITYTYPE.LOS_LOANENTITYTYPE_ID,NULL,NVL(LOS_LOANENTITYTYPE.LOS_LOANENTITYTYPE,'-1'),LOS_LOANENTITYTYPE.IsActive FROM LOS_LOANENTITYTYPE WHERE LOS_LOANENTITYTYPE.AD_Client_ID=0 AND LOS_LOANENTITYTYPE.AD_Org_ID=0 AND (LOS_LOANENTITYTYPE.LOS_LOANENTITYTYPE_ID IS NULL OR LOS_LOANENTITYTYPE.LOS_LOANENTITYTYPE_ID NOT IN ( SELECT Record_ID FROM AD_Private_Access WHERE AD_Table_ID = 1000061 AND AD_User_ID <> 0 AND IsActive = 'Y' )) AND LOS_LEAD.BUSINESSSIGMENT=10000000 ORDER BY 3 [100]
+java.sql.SQLSyntaxErrorException: ORA-00904: "LOS_LEAD"."BUSINESSSIGMENT": invalid identifier
+; State=42000; ErrorCode=904
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:447)
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:396)
+	at oracle.jdbc.driver.T4C8Oall.processError(T4C8Oall.java:951)
+	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:513)
+	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:227)
+	at oracle.jdbc.driver.T4C8Oall.doOALL(T4C8Oall.java:531)
+	at oracle.jdbc.driver.T4CPreparedStatement.doOall8(T4CPreparedStatement.java:208)
+	at oracle.jdbc.driver.T4CPreparedStatement.executeForDescribe(T4CPreparedStatement.java:886)
+	at oracle.jdbc.driver.OracleStatement.executeMaybeDescribe(OracleStatement.java:1175)
+	at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1296)
+	at oracle.jdbc.driver.OraclePreparedStatement.executeInternal(OraclePreparedStatement.java:3613)
+	at oracle.jdbc.driver.OraclePreparedStatement.executeQuery(OraclePreparedStatement.java:3657)
+	at oracle.jdbc.driver.OraclePreparedStatementWrapper.executeQuery(OraclePreparedStatementWrapper.java:1495)
+	at com.mchange.v2.c3p0.impl.NewProxyPreparedStatement.executeQuery(NewProxyPreparedStatement.java:76)
+	at sun.reflect.GeneratedMethodAccessor21.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.compiere.db.StatementProxy.invoke(StatementProxy.java:100)
+	at com.sun.proxy.$Proxy3.executeQuery(Unknown Source)
+	at org.compiere.model.MLookup$MLoader.run(MLookup.java:747)
+
+-----------> MRecentItem.addMenuOption: AD_User_ID is mandatory. [47]
+===========> MLookup.run: LOS_LOANENTITYTYPE.LOS_LOANENTITYTYPE_ID, 1001006 : Loader - SELECT LOS_LOANENTITYTYPE.LOS_LOANENTITYTYPE_ID,NULL,NVL(LOS_LOANENTITYTYPE.LOS_LOANENTITYTYPE,'-1'),LOS_LOANENTITYTYPE.IsActive FROM LOS_LOANENTITYTYPE WHERE LOS_LOANENTITYTYPE.AD_Client_ID=0 AND LOS_LOANENTITYTYPE.AD_Org_ID=0 AND (LOS_LOANENTITYTYPE.LOS_LOANENTITYTYPE_ID IS NULL OR LOS_LOANENTITYTYPE.LOS_LOANENTITYTYPE_ID NOT IN ( SELECT Record_ID FROM AD_Private_Access WHERE AD_Table_ID = 1000061 AND AD_User_ID <> 0 AND IsActive = 'Y' )) AND LOS_LEAD.BUSINESSSIGMENT=10000000 ORDER BY 3 [101]
+java.sql.SQLSyntaxErrorException: ORA-00904: "LOS_LEAD"."BUSINESSSIGMENT": invalid identifier
+; State=42000; ErrorCode=904
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:447)
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:396)
+	at oracle.jdbc.driver.T4C8Oall.processError(T4C8Oall.java:951)
+	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:513)
+	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:227)
+	at oracle.jdbc.driver.T4C8Oall.doOALL(T4C8Oall.java:531)
+	at oracle.jdbc.driver.T4CPreparedStatement.doOall8(T4CPreparedStatement.java:208)
+	at oracle.jdbc.driver.T4CPreparedStatement.executeForDescribe(T4CPreparedStatement.java:886)
+	at oracle.jdbc.driver.OracleStatement.executeMaybeDescribe(OracleStatement.java:1175)
+	at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1296)
+	at oracle.jdbc.driver.OraclePreparedStatement.executeInternal(OraclePreparedStatement.java:3613)
+	at oracle.jdbc.driver.OraclePreparedStatement.executeQuery(OraclePreparedStatement.java:3657)
+	at oracle.jdbc.driver.OraclePreparedStatementWrapper.executeQuery(OraclePreparedStatementWrapper.java:1495)
+	at com.mchange.v2.c3p0.impl.NewProxyPreparedStatement.executeQuery(NewProxyPreparedStatement.java:76)
+	at sun.reflect.GeneratedMethodAccessor21.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.compiere.db.StatementProxy.invoke(StatementProxy.java:100)
+	at com.sun.proxy.$Proxy3.executeQuery(Unknown Source)
+	at org.compiere.model.MLookup$MLoader.run(MLookup.java:747)
+
+===========> MLookup.run: LOS_LOANENTITYTYPE.LOS_LOANENTITYTYPE_ID, 1001006 : Loader - SELECT LOS_LOANENTITYTYPE.LOS_LOANENTITYTYPE_ID,NULL,NVL(LOS_LOANENTITYTYPE.LOS_LOANENTITYTYPE,'-1'),LOS_LOANENTITYTYPE.IsActive FROM LOS_LOANENTITYTYPE WHERE LOS_LOANENTITYTYPE.AD_Client_ID=0 AND LOS_LOANENTITYTYPE.AD_Org_ID=0 AND (LOS_LOANENTITYTYPE.LOS_LOANENTITYTYPE_ID IS NULL OR LOS_LOANENTITYTYPE.LOS_LOANENTITYTYPE_ID NOT IN ( SELECT Record_ID FROM AD_Private_Access WHERE AD_Table_ID = 1000061 AND AD_User_ID <> 0 AND IsActive = 'Y' )) AND LOS_LEAD.BUSINESSSIGMENT=10000001 ORDER BY 3 [102]
+java.sql.SQLSyntaxErrorException: ORA-00904: "LOS_LEAD"."BUSINESSSIGMENT": invalid identifier
+; State=42000; ErrorCode=904
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:447)
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:396)
+	at oracle.jdbc.driver.T4C8Oall.processError(T4C8Oall.java:951)
+	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:513)
+	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:227)
+	at oracle.jdbc.driver.T4C8Oall.doOALL(T4C8Oall.java:531)
+	at oracle.jdbc.driver.T4CPreparedStatement.doOall8(T4CPreparedStatement.java:208)
+	at oracle.jdbc.driver.T4CPreparedStatement.executeForDescribe(T4CPreparedStatement.java:886)
+	at oracle.jdbc.driver.OracleStatement.executeMaybeDescribe(OracleStatement.java:1175)
+	at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1296)
+	at oracle.jdbc.driver.OraclePreparedStatement.executeInternal(OraclePreparedStatement.java:3613)
+	at oracle.jdbc.driver.OraclePreparedStatement.executeQuery(OraclePreparedStatement.java:3657)
+	at oracle.jdbc.driver.OraclePreparedStatementWrapper.executeQuery(OraclePreparedStatementWrapper.java:1495)
+	at com.mchange.v2.c3p0.impl.NewProxyPreparedStatement.executeQuery(NewProxyPreparedStatement.java:76)
+	at sun.reflect.GeneratedMethodAccessor21.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.compiere.db.StatementProxy.invoke(StatementProxy.java:100)
+	at com.sun.proxy.$Proxy3.executeQuery(Unknown Source)
+	at org.compiere.model.MLookup$MLoader.run(MLookup.java:747)
+
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [47]
+===========> MLookup.run: LOS_LOANENTITYTYPE.LOS_LOANENTITYTYPE_ID, 1001006 : Loader - SELECT LOS_LOANENTITYTYPE.LOS_LOANENTITYTYPE_ID,NULL,NVL(LOS_LOANENTITYTYPE.LOS_LOANENTITYTYPE,'-1'),LOS_LOANENTITYTYPE.IsActive FROM LOS_LOANENTITYTYPE WHERE LOS_LOANENTITYTYPE.AD_Client_ID=0 AND LOS_LOANENTITYTYPE.AD_Org_ID=0 AND (LOS_LOANENTITYTYPE.LOS_LOANENTITYTYPE_ID IS NULL OR LOS_LOANENTITYTYPE.LOS_LOANENTITYTYPE_ID NOT IN ( SELECT Record_ID FROM AD_Private_Access WHERE AD_Table_ID = 1000061 AND AD_User_ID <> 0 AND IsActive = 'Y' )) AND LOS_LEAD.BUSINESSSIGMENT=10000000 ORDER BY 3 [103]
+java.sql.SQLSyntaxErrorException: ORA-00904: "LOS_LEAD"."BUSINESSSIGMENT": invalid identifier
+; State=42000; ErrorCode=904
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:447)
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:396)
+	at oracle.jdbc.driver.T4C8Oall.processError(T4C8Oall.java:951)
+	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:513)
+	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:227)
+	at oracle.jdbc.driver.T4C8Oall.doOALL(T4C8Oall.java:531)
+	at oracle.jdbc.driver.T4CPreparedStatement.doOall8(T4CPreparedStatement.java:208)
+	at oracle.jdbc.driver.T4CPreparedStatement.executeForDescribe(T4CPreparedStatement.java:886)
+	at oracle.jdbc.driver.OracleStatement.executeMaybeDescribe(OracleStatement.java:1175)
+	at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1296)
+	at oracle.jdbc.driver.OraclePreparedStatement.executeInternal(OraclePreparedStatement.java:3613)
+	at oracle.jdbc.driver.OraclePreparedStatement.executeQuery(OraclePreparedStatement.java:3657)
+	at oracle.jdbc.driver.OraclePreparedStatementWrapper.executeQuery(OraclePreparedStatementWrapper.java:1495)
+	at com.mchange.v2.c3p0.impl.NewProxyPreparedStatement.executeQuery(NewProxyPreparedStatement.java:76)
+	at sun.reflect.GeneratedMethodAccessor21.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.compiere.db.StatementProxy.invoke(StatementProxy.java:100)
+	at com.sun.proxy.$Proxy3.executeQuery(Unknown Source)
+	at org.compiere.model.MLookup$MLoader.run(MLookup.java:747)
+
+===========> MLookup.run: LOS_LOANENTITYTYPE.LOS_LOANENTITYTYPE_ID, 1001006 : Loader - SELECT LOS_LOANENTITYTYPE.LOS_LOANENTITYTYPE_ID,NULL,NVL(LOS_LOANENTITYTYPE.LOS_LOANENTITYTYPE,'-1'),LOS_LOANENTITYTYPE.IsActive FROM LOS_LOANENTITYTYPE WHERE LOS_LOANENTITYTYPE.AD_Client_ID=0 AND LOS_LOANENTITYTYPE.AD_Org_ID=0 AND (LOS_LOANENTITYTYPE.LOS_LOANENTITYTYPE_ID IS NULL OR LOS_LOANENTITYTYPE.LOS_LOANENTITYTYPE_ID NOT IN ( SELECT Record_ID FROM AD_Private_Access WHERE AD_Table_ID = 1000061 AND AD_User_ID <> 0 AND IsActive = 'Y' )) AND LOS_LEAD.BUSINESSSIGMENT=10000002 ORDER BY 3 [104]
+java.sql.SQLSyntaxErrorException: ORA-00904: "LOS_LEAD"."BUSINESSSIGMENT": invalid identifier
+; State=42000; ErrorCode=904
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:447)
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:396)
+	at oracle.jdbc.driver.T4C8Oall.processError(T4C8Oall.java:951)
+	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:513)
+	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:227)
+	at oracle.jdbc.driver.T4C8Oall.doOALL(T4C8Oall.java:531)
+	at oracle.jdbc.driver.T4CPreparedStatement.doOall8(T4CPreparedStatement.java:208)
+	at oracle.jdbc.driver.T4CPreparedStatement.executeForDescribe(T4CPreparedStatement.java:886)
+	at oracle.jdbc.driver.OracleStatement.executeMaybeDescribe(OracleStatement.java:1175)
+	at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1296)
+	at oracle.jdbc.driver.OraclePreparedStatement.executeInternal(OraclePreparedStatement.java:3613)
+	at oracle.jdbc.driver.OraclePreparedStatement.executeQuery(OraclePreparedStatement.java:3657)
+	at oracle.jdbc.driver.OraclePreparedStatementWrapper.executeQuery(OraclePreparedStatementWrapper.java:1495)
+	at com.mchange.v2.c3p0.impl.NewProxyPreparedStatement.executeQuery(NewProxyPreparedStatement.java:76)
+	at sun.reflect.GeneratedMethodAccessor21.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.compiere.db.StatementProxy.invoke(StatementProxy.java:100)
+	at com.sun.proxy.$Proxy3.executeQuery(Unknown Source)
+	at org.compiere.model.MLookup$MLoader.run(MLookup.java:747)
+
+===========> MLookup.run: LOS_LOANENTITYTYPE.LOS_LOANENTITYTYPE_ID, 1001006 : Loader - SELECT LOS_LOANENTITYTYPE.LOS_LOANENTITYTYPE_ID,NULL,NVL(LOS_LOANENTITYTYPE.LOS_LOANENTITYTYPE,'-1'),LOS_LOANENTITYTYPE.IsActive FROM LOS_LOANENTITYTYPE WHERE LOS_LOANENTITYTYPE.AD_Client_ID=0 AND LOS_LOANENTITYTYPE.AD_Org_ID=0 AND (LOS_LOANENTITYTYPE.LOS_LOANENTITYTYPE_ID IS NULL OR LOS_LOANENTITYTYPE.LOS_LOANENTITYTYPE_ID NOT IN ( SELECT Record_ID FROM AD_Private_Access WHERE AD_Table_ID = 1000061 AND AD_User_ID <> 0 AND IsActive = 'Y' )) AND LOS_LEAD.BUSINESSSIGMENT=10000000 ORDER BY 3 [105]
+java.sql.SQLSyntaxErrorException: ORA-00904: "LOS_LEAD"."BUSINESSSIGMENT": invalid identifier
+; State=42000; ErrorCode=904
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:447)
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:396)
+	at oracle.jdbc.driver.T4C8Oall.processError(T4C8Oall.java:951)
+	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:513)
+	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:227)
+	at oracle.jdbc.driver.T4C8Oall.doOALL(T4C8Oall.java:531)
+	at oracle.jdbc.driver.T4CPreparedStatement.doOall8(T4CPreparedStatement.java:208)
+	at oracle.jdbc.driver.T4CPreparedStatement.executeForDescribe(T4CPreparedStatement.java:886)
+	at oracle.jdbc.driver.OracleStatement.executeMaybeDescribe(OracleStatement.java:1175)
+	at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1296)
+	at oracle.jdbc.driver.OraclePreparedStatement.executeInternal(OraclePreparedStatement.java:3613)
+	at oracle.jdbc.driver.OraclePreparedStatement.executeQuery(OraclePreparedStatement.java:3657)
+	at oracle.jdbc.driver.OraclePreparedStatementWrapper.executeQuery(OraclePreparedStatementWrapper.java:1495)
+	at com.mchange.v2.c3p0.impl.NewProxyPreparedStatement.executeQuery(NewProxyPreparedStatement.java:76)
+	at sun.reflect.GeneratedMethodAccessor21.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.compiere.db.StatementProxy.invoke(StatementProxy.java:100)
+	at com.sun.proxy.$Proxy3.executeQuery(Unknown Source)
+	at org.compiere.model.MLookup$MLoader.run(MLookup.java:747)
+
+-----------> MRecentItem.addMenuOption: AD_User_ID is mandatory. [47]
+===========> MLookup.run: LOS_LOANENTITYTYPE.LOS_LOANENTITYTYPE_ID, 1001006 : Loader - SELECT LOS_LOANENTITYTYPE.LOS_LOANENTITYTYPE_ID,NULL,NVL(LOS_LOANENTITYTYPE.LOS_LOANENTITYTYPE,'-1'),LOS_LOANENTITYTYPE.IsActive FROM LOS_LOANENTITYTYPE WHERE LOS_LOANENTITYTYPE.AD_Client_ID=0 AND LOS_LOANENTITYTYPE.AD_Org_ID=0 AND (LOS_LOANENTITYTYPE.LOS_LOANENTITYTYPE_ID IS NULL OR LOS_LOANENTITYTYPE.LOS_LOANENTITYTYPE_ID NOT IN ( SELECT Record_ID FROM AD_Private_Access WHERE AD_Table_ID = 1000061 AND AD_User_ID <> 0 AND IsActive = 'Y' )) AND LOS_LEAD.BUSINESSSIGMENT=10000000 ORDER BY 3 [113]
+java.sql.SQLSyntaxErrorException: ORA-00904: "LOS_LEAD"."BUSINESSSIGMENT": invalid identifier
+; State=42000; ErrorCode=904
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:447)
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:396)
+	at oracle.jdbc.driver.T4C8Oall.processError(T4C8Oall.java:951)
+	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:513)
+	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:227)
+	at oracle.jdbc.driver.T4C8Oall.doOALL(T4C8Oall.java:531)
+	at oracle.jdbc.driver.T4CPreparedStatement.doOall8(T4CPreparedStatement.java:208)
+	at oracle.jdbc.driver.T4CPreparedStatement.executeForDescribe(T4CPreparedStatement.java:886)
+	at oracle.jdbc.driver.OracleStatement.executeMaybeDescribe(OracleStatement.java:1175)
+	at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1296)
+	at oracle.jdbc.driver.OraclePreparedStatement.executeInternal(OraclePreparedStatement.java:3613)
+	at oracle.jdbc.driver.OraclePreparedStatement.executeQuery(OraclePreparedStatement.java:3657)
+	at oracle.jdbc.driver.OraclePreparedStatementWrapper.executeQuery(OraclePreparedStatementWrapper.java:1495)
+	at com.mchange.v2.c3p0.impl.NewProxyPreparedStatement.executeQuery(NewProxyPreparedStatement.java:76)
+	at sun.reflect.GeneratedMethodAccessor34.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.compiere.db.StatementProxy.invoke(StatementProxy.java:100)
+	at com.sun.proxy.$Proxy3.executeQuery(Unknown Source)
+	at org.compiere.model.MLookup$MLoader.run(MLookup.java:747)
+
+-----------> MRecentItem.addMenuOption: AD_User_ID is mandatory. [56]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addMenuOption: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addMenuOption: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addMenuOption: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [56]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [56]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [56]
+-----------> MRecentItem.addMenuOption: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addMenuOption: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [56]
+-----------> MTable.getClass: No class for table with it entity: LOS_Lead [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addMenuOption: AD_User_ID is mandatory. [56]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [56]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addMenuOption: AD_User_ID is mandatory. [56]
+-----------> MRecentItem.addMenuOption: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [56]
+-----------> MRecentItem.addMenuOption: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addMenuOption: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [56]
+-----------> MRecentItem.addMenuOption: AD_User_ID is mandatory. [56]
+-----------> MRecentItem.addMenuOption: AD_User_ID is mandatory. [56]
+-----------> MRecentItem.addMenuOption: AD_User_ID is mandatory. [56]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [56]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addMenuOption: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addMenuOption: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [56]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [56]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [56]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [56]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addMenuOption: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addMenuOption: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [56]
+-----------> MTable.getClass: No class for table with it entity: LOS_LEADAPPLICANT [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [56]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [56]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [56]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [47]
+-----------> MIssue.set_Value: SourceClassName - Value too long - truncated to length=60 [56]
+===========> DB.executeUpdate: INSERT INTO AD_Tree_Favorite (AD_Client_ID,AD_Org_ID,AD_Role_ID,AD_Tree_Favorite_ID,Created,CreatedBy,IsActive,Updated,UpdatedBy) VALUES (0,0,0,1000188,TO_DATE('2018-12-12 12:47:59','YYYY-MM-DD HH24:MI:SS'),0,'Y',TO_DATE('2018-12-12 12:47:59','YYYY-MM-DD HH24:MI:SS'),0) [POSave_5a99dae6-c699-4ad2-b900-e4cb43fb2db2] [56]
+java.sql.SQLIntegrityConstraintViolationException: ORA-01400: cannot insert NULL into ("CARSDEV"."AD_TREE_FAVORITE"."AD_USER_ID")
+; State=23000; ErrorCode=1400
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:447)
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:396)
+	at oracle.jdbc.driver.T4C8Oall.processError(T4C8Oall.java:951)
+	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:513)
+	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:227)
+	at oracle.jdbc.driver.T4C8Oall.doOALL(T4C8Oall.java:531)
+	at oracle.jdbc.driver.T4CPreparedStatement.doOall8(T4CPreparedStatement.java:208)
+	at oracle.jdbc.driver.T4CPreparedStatement.executeForRows(T4CPreparedStatement.java:1046)
+	at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1336)
+	at oracle.jdbc.driver.OracleStatement.doScrollExecuteCommon(OracleStatement.java:4709)
+	at oracle.jdbc.driver.OraclePreparedStatement.doScrollPstmtExecuteUpdate(OraclePreparedStatement.java:10613)
+	at oracle.jdbc.driver.OraclePreparedStatement.executeInternal(OraclePreparedStatement.java:3611)
+	at oracle.jdbc.driver.OraclePreparedStatement.executeUpdate(OraclePreparedStatement.java:3694)
+	at oracle.jdbc.driver.OraclePreparedStatementWrapper.executeUpdate(OraclePreparedStatementWrapper.java:1354)
+	at com.mchange.v2.c3p0.impl.NewProxyPreparedStatement.executeUpdate(NewProxyPreparedStatement.java:105)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.compiere.db.StatementProxy.invoke(StatementProxy.java:100)
+	at com.sun.proxy.$Proxy3.executeUpdate(Unknown Source)
+	at org.compiere.util.DB.executeUpdate(DB.java:1046)
+	at org.compiere.util.DB.executeUpdate(DB.java:908)
+	at org.compiere.util.DB.executeUpdate(DB.java:895)
+	at org.compiere.model.PO.saveNew(PO.java:2865)
+	at org.compiere.model.PO.save(PO.java:2195)
+
+===========> DB.saveError: DBExecuteError - ORA-01400: cannot insert NULL into ("CARSDEV"."AD_TREE_FAVORITE"."AD_USER_ID")
+ [56]
+-----------> MTreeFavorite.saveNew: [POSave_5a99dae6-c699-4ad2-b900-e4cb43fb2db2]Not inserted - AD_Tree_Favorite [56]
+-----------> DefaultDesktop.createHomeTab: Failed to create components. zul=/zul/userfavorites.zul [56]
+org.adempiere.exceptions.AdempiereException: Could not create Tree.
+	at org.adempiere.webui.dashboard.DPUserFavorites.createFavouritesPanel(DPUserFavorites.java:119)
+	at org.adempiere.webui.dashboard.DPUserFavorites.<init>(DPUserFavorites.java:63)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at java.lang.Class.newInstance(Unknown Source)
+	at org.zkoss.zk.ui.metainfo.impl.ComponentDefinitionImpl.newInstance(ComponentDefinitionImpl.java:308)
+	at org.zkoss.zk.ui.metainfo.impl.ComponentDefinitionImpl.newInstance(ComponentDefinitionImpl.java:296)
+	at org.zkoss.zk.ui.metainfo.ComponentInfo.newInstance(ComponentInfo.java:664)
+	at org.zkoss.zk.ui.impl.AbstractUiFactory.newComponent(AbstractUiFactory.java:90)
+	at org.zkoss.zk.ui.impl.UiEngineImpl.execCreateChild0(UiEngineImpl.java:616)
+	at org.zkoss.zk.ui.impl.UiEngineImpl.execCreateChild(UiEngineImpl.java:587)
+	at org.zkoss.zk.ui.impl.UiEngineImpl.execCreate0(UiEngineImpl.java:531)
+	at org.zkoss.zk.ui.impl.UiEngineImpl.execCreate(UiEngineImpl.java:498)
+	at org.zkoss.zk.ui.impl.UiEngineImpl.createComponents(UiEngineImpl.java:819)
+	at org.zkoss.zk.ui.impl.AbstractExecution.createComponents(AbstractExecution.java:189)
+	at org.zkoss.zk.ui.Executions.createComponents(Executions.java:177)
+	at org.adempiere.webui.desktop.DefaultDesktop.createHomeTab(DefaultDesktop.java:380)
+	at org.adempiere.webui.desktop.DefaultDesktop.doCreatePart(DefaultDesktop.java:162)
+	at org.adempiere.webui.part.AbstractUIPart.createPart(AbstractUIPart.java:41)
+
+-----------> Msg.getMsg: NOT found: InfoBranch [56]
+-----------> MRecentItem.addMenuOption: AD_User_ID is mandatory. [56]
+-----------> MIssue.set_Value: SourceClassName - Value too long - truncated to length=60 [47]
+===========> DB.executeUpdate: INSERT INTO AD_Tree_Favorite (AD_Client_ID,AD_Org_ID,AD_Role_ID,AD_Tree_Favorite_ID,Created,CreatedBy,IsActive,Updated,UpdatedBy) VALUES (0,0,0,1000189,TO_DATE('2018-12-12 14:03:53','YYYY-MM-DD HH24:MI:SS'),0,'Y',TO_DATE('2018-12-12 14:03:53','YYYY-MM-DD HH24:MI:SS'),0) [POSave_5119477e-d195-4116-8dfe-08ab35f23565] [47]
+java.sql.SQLIntegrityConstraintViolationException: ORA-01400: cannot insert NULL into ("CARSDEV"."AD_TREE_FAVORITE"."AD_USER_ID")
+; State=23000; ErrorCode=1400
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:447)
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:396)
+	at oracle.jdbc.driver.T4C8Oall.processError(T4C8Oall.java:951)
+	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:513)
+	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:227)
+	at oracle.jdbc.driver.T4C8Oall.doOALL(T4C8Oall.java:531)
+	at oracle.jdbc.driver.T4CPreparedStatement.doOall8(T4CPreparedStatement.java:208)
+	at oracle.jdbc.driver.T4CPreparedStatement.executeForRows(T4CPreparedStatement.java:1046)
+	at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1336)
+	at oracle.jdbc.driver.OracleStatement.doScrollExecuteCommon(OracleStatement.java:4709)
+	at oracle.jdbc.driver.OraclePreparedStatement.doScrollPstmtExecuteUpdate(OraclePreparedStatement.java:10613)
+	at oracle.jdbc.driver.OraclePreparedStatement.executeInternal(OraclePreparedStatement.java:3611)
+	at oracle.jdbc.driver.OraclePreparedStatement.executeUpdate(OraclePreparedStatement.java:3694)
+	at oracle.jdbc.driver.OraclePreparedStatementWrapper.executeUpdate(OraclePreparedStatementWrapper.java:1354)
+	at com.mchange.v2.c3p0.impl.NewProxyPreparedStatement.executeUpdate(NewProxyPreparedStatement.java:105)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.compiere.db.StatementProxy.invoke(StatementProxy.java:100)
+	at com.sun.proxy.$Proxy3.executeUpdate(Unknown Source)
+	at org.compiere.util.DB.executeUpdate(DB.java:1046)
+	at org.compiere.util.DB.executeUpdate(DB.java:908)
+	at org.compiere.util.DB.executeUpdate(DB.java:895)
+	at org.compiere.model.PO.saveNew(PO.java:2865)
+	at org.compiere.model.PO.save(PO.java:2195)
+
+===========> DB.saveError: DBExecuteError - ORA-01400: cannot insert NULL into ("CARSDEV"."AD_TREE_FAVORITE"."AD_USER_ID")
+ [47]
+-----------> MTreeFavorite.saveNew: [POSave_5119477e-d195-4116-8dfe-08ab35f23565]Not inserted - AD_Tree_Favorite [47]
+-----------> DefaultDesktop.createHomeTab: Failed to create components. zul=/zul/userfavorites.zul [47]
+org.adempiere.exceptions.AdempiereException: Could not create Tree.
+	at org.adempiere.webui.dashboard.DPUserFavorites.createFavouritesPanel(DPUserFavorites.java:119)
+	at org.adempiere.webui.dashboard.DPUserFavorites.<init>(DPUserFavorites.java:63)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at java.lang.Class.newInstance(Unknown Source)
+	at org.zkoss.zk.ui.metainfo.impl.ComponentDefinitionImpl.newInstance(ComponentDefinitionImpl.java:308)
+	at org.zkoss.zk.ui.metainfo.impl.ComponentDefinitionImpl.newInstance(ComponentDefinitionImpl.java:296)
+	at org.zkoss.zk.ui.metainfo.ComponentInfo.newInstance(ComponentInfo.java:664)
+	at org.zkoss.zk.ui.impl.AbstractUiFactory.newComponent(AbstractUiFactory.java:90)
+	at org.zkoss.zk.ui.impl.UiEngineImpl.execCreateChild0(UiEngineImpl.java:616)
+	at org.zkoss.zk.ui.impl.UiEngineImpl.execCreateChild(UiEngineImpl.java:587)
+	at org.zkoss.zk.ui.impl.UiEngineImpl.execCreate0(UiEngineImpl.java:531)
+	at org.zkoss.zk.ui.impl.UiEngineImpl.execCreate(UiEngineImpl.java:498)
+	at org.zkoss.zk.ui.impl.UiEngineImpl.createComponents(UiEngineImpl.java:819)
+	at org.zkoss.zk.ui.impl.AbstractExecution.createComponents(AbstractExecution.java:189)
+	at org.zkoss.zk.ui.Executions.createComponents(Executions.java:177)
+	at org.adempiere.webui.desktop.DefaultDesktop.createHomeTab(DefaultDesktop.java:380)
+	at org.adempiere.webui.desktop.DefaultDesktop.doCreatePart(DefaultDesktop.java:162)
+	at org.adempiere.webui.part.AbstractUIPart.createPart(AbstractUIPart.java:41)
+
+-----------> Msg.getMsg: NOT found: InfoBranch [47]
+-----------> MRecentItem.addMenuOption: AD_User_ID is mandatory. [56]
+===========> DB.executeUpdate: INSERT INTO AD_Column (AD_Client_ID,AD_Column_ID,AD_Element_ID,AD_Org_ID,AD_Reference_ID,AD_Table_ID,ColumnName,Created,CreatedBy,EntityType,FieldLength,IsActive,IsAllowCopy,IsAllowLogging,IsAlwaysUpdateable,IsAutocomplete,IsEncrypted,IsIdentifier,IsKey,IsMandatory,IsParent,IsRange,IsSelectionColumn,IsSyncDatabase,IsTranslated,IsUpdateable,Name,Updated,UpdatedBy,Version) VALUES (0,1001018,1000043,0,10,1000053,'FIRST_NM',TO_DATE('2018-12-12 14:39:25','YYYY-MM-DD HH24:MI:SS'),0,'eWizworx LOS',30,'Y','Y','Y','N','N','N','N','N','Y','N','N','N','N','N','Y','First Name',TO_DATE('2018-12-12 14:39:25','YYYY-MM-DD HH24:MI:SS'),0,0) [POSave_25086e1b-1dc0-47fd-8fbf-3f1911c30af3] [56]
+java.sql.SQLIntegrityConstraintViolationException: ORA-00001: unique constraint (CARSDEV.AD_COLUMN_NAME) violated
+; State=23000; ErrorCode=1
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:447)
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:396)
+	at oracle.jdbc.driver.T4C8Oall.processError(T4C8Oall.java:951)
+	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:513)
+	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:227)
+	at oracle.jdbc.driver.T4C8Oall.doOALL(T4C8Oall.java:531)
+	at oracle.jdbc.driver.T4CPreparedStatement.doOall8(T4CPreparedStatement.java:208)
+	at oracle.jdbc.driver.T4CPreparedStatement.executeForRows(T4CPreparedStatement.java:1046)
+	at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1336)
+	at oracle.jdbc.driver.OracleStatement.doScrollExecuteCommon(OracleStatement.java:4709)
+	at oracle.jdbc.driver.OraclePreparedStatement.doScrollPstmtExecuteUpdate(OraclePreparedStatement.java:10613)
+	at oracle.jdbc.driver.OraclePreparedStatement.executeInternal(OraclePreparedStatement.java:3611)
+	at oracle.jdbc.driver.OraclePreparedStatement.executeUpdate(OraclePreparedStatement.java:3694)
+	at oracle.jdbc.driver.OraclePreparedStatementWrapper.executeUpdate(OraclePreparedStatementWrapper.java:1354)
+	at com.mchange.v2.c3p0.impl.NewProxyPreparedStatement.executeUpdate(NewProxyPreparedStatement.java:105)
+	at sun.reflect.GeneratedMethodAccessor71.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.compiere.db.StatementProxy.invoke(StatementProxy.java:100)
+	at com.sun.proxy.$Proxy3.executeUpdate(Unknown Source)
+	at org.compiere.util.DB.executeUpdate(DB.java:1046)
+	at org.compiere.util.DB.executeUpdate(DB.java:908)
+	at org.compiere.util.DB.executeUpdate(DB.java:895)
+	at org.compiere.model.PO.saveNew(PO.java:2865)
+	at org.compiere.model.PO.save(PO.java:2195)
+	at org.compiere.model.GridTable.dataSavePO(GridTable.java:2139)
+	at org.compiere.model.GridTable.dataSave(GridTable.java:1474)
+	at org.compiere.model.GridTab.dataSave(GridTab.java:987)
+
+===========> DB.saveError: DBExecuteError - ORA-00001: unique constraint (CARSDEV.AD_COLUMN_NAME) violated
+ [56]
+-----------> MColumn.saveNew: [POSave_25086e1b-1dc0-47fd-8fbf-3f1911c30af3]Not inserted - AD_Column [56]
+-----------> GridTable.saveWarning: SaveErrorNotUnique - ORA-00001: unique constraint (CARSDEV.AD_COLUMN_NAME) violated
+ [56]
+-----------> MRecentItem.addMenuOption: AD_User_ID is mandatory. [56]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [56]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [56]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [56]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [47]
+===========> ColumnSync.process: java.sql.SQLSyntaxErrorException: ORA-01758: table must be empty to add mandatory (NOT NULL) column
+ [47]
+java.sql.SQLSyntaxErrorException: ORA-01758: table must be empty to add mandatory (NOT NULL) column
+; State=42000; ErrorCode=1758
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:447)
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:396)
+	at oracle.jdbc.driver.T4C8Oall.processError(T4C8Oall.java:951)
+	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:513)
+	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:227)
+	at oracle.jdbc.driver.T4C8Oall.doOALL(T4C8Oall.java:531)
+	at oracle.jdbc.driver.T4CPreparedStatement.doOall8(T4CPreparedStatement.java:208)
+	at oracle.jdbc.driver.T4CPreparedStatement.executeForRows(T4CPreparedStatement.java:1046)
+	at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1336)
+	at oracle.jdbc.driver.OracleStatement.doScrollExecuteCommon(OracleStatement.java:4709)
+	at oracle.jdbc.driver.OraclePreparedStatement.doScrollPstmtExecuteUpdate(OraclePreparedStatement.java:10613)
+	at oracle.jdbc.driver.OraclePreparedStatement.executeInternal(OraclePreparedStatement.java:3611)
+	at oracle.jdbc.driver.OraclePreparedStatement.executeUpdate(OraclePreparedStatement.java:3694)
+	at oracle.jdbc.driver.OraclePreparedStatementWrapper.executeUpdate(OraclePreparedStatementWrapper.java:1354)
+	at com.mchange.v2.c3p0.impl.NewProxyPreparedStatement.executeUpdate(NewProxyPreparedStatement.java:105)
+	at sun.reflect.GeneratedMethodAccessor71.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.compiere.db.StatementProxy.invoke(StatementProxy.java:100)
+	at com.sun.proxy.$Proxy3.executeUpdate(Unknown Source)
+	at org.compiere.util.DB.executeUpdateEx(DB.java:1120)
+	at org.compiere.util.DB.executeUpdateEx(DB.java:1180)
+	at org.compiere.util.DB.executeUpdateEx(DB.java:1171)
+	at org.compiere.model.MColumn.syncDatabase(MColumn.java:783)
+	at org.compiere.process.ColumnSync.doIt(ColumnSync.java:78)
+	at org.compiere.process.SvrProcess.process(SvrProcess.java:171)
+	at org.compiere.process.SvrProcess.startProcess(SvrProcess.java:124)
+
+===========> DB.executeUpdate: DELETE FROM AD_Column WHERE AD_Column_ID=1000989 [POdel_750a3c6c-7116-4a65-80a0-c083d0f4dcad] [56]
+java.sql.SQLIntegrityConstraintViolationException: ORA-02292: integrity constraint (CARSDEV.AD_COLUMN_FIELD) violated - child record found
+; State=23000; ErrorCode=2292
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:447)
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:396)
+	at oracle.jdbc.driver.T4C8Oall.processError(T4C8Oall.java:951)
+	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:513)
+	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:227)
+	at oracle.jdbc.driver.T4C8Oall.doOALL(T4C8Oall.java:531)
+	at oracle.jdbc.driver.T4CPreparedStatement.doOall8(T4CPreparedStatement.java:208)
+	at oracle.jdbc.driver.T4CPreparedStatement.executeForRows(T4CPreparedStatement.java:1046)
+	at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1336)
+	at oracle.jdbc.driver.OracleStatement.doScrollExecuteCommon(OracleStatement.java:4709)
+	at oracle.jdbc.driver.OraclePreparedStatement.doScrollPstmtExecuteUpdate(OraclePreparedStatement.java:10613)
+	at oracle.jdbc.driver.OraclePreparedStatement.executeInternal(OraclePreparedStatement.java:3611)
+	at oracle.jdbc.driver.OraclePreparedStatement.executeUpdate(OraclePreparedStatement.java:3694)
+	at oracle.jdbc.driver.OraclePreparedStatementWrapper.executeUpdate(OraclePreparedStatementWrapper.java:1354)
+	at com.mchange.v2.c3p0.impl.NewProxyPreparedStatement.executeUpdate(NewProxyPreparedStatement.java:105)
+	at sun.reflect.GeneratedMethodAccessor71.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.compiere.db.StatementProxy.invoke(StatementProxy.java:100)
+	at com.sun.proxy.$Proxy3.executeUpdate(Unknown Source)
+	at org.compiere.util.DB.executeUpdate(DB.java:1046)
+	at org.compiere.util.DB.executeUpdate(DB.java:908)
+	at org.compiere.util.DB.executeUpdate(DB.java:895)
+	at org.compiere.model.PO.delete(PO.java:3075)
+	at org.compiere.model.GridTable.dataDelete(GridTable.java:2602)
+	at org.compiere.model.GridTab.dataDelete(GridTab.java:1178)
+
+===========> DB.saveError: DBExecuteError - ORA-02292: integrity constraint (CARSDEV.AD_COLUMN_FIELD) violated - child record found
+ [56]
+-----------> MColumn.delete: Not deleted [56]
+-----------> GridTable.saveWarning: DBExecuteError - ORA-02292: integrity constraint (CARSDEV.AD_COLUMN_FIELD) violated - child record found
+ [56]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [56]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [56]
+-----------> Msg.getMsg: NOT found: Table and Column  Complete Name  System (System Administrator) @ System.* [MyAppsServer{localhost-orcl-carsdev}] [47]
+-----------> GridField.getDefault: (SeqNo) - Default SQL variable parse failed: @SQL=SELECT NVL(MAX(SeqNo),0)+10 AS DefaultValue FROM AD_Field WHERE AD_Tab_ID=@AD_Tab_ID@ [449]
+-----------> GridField.getDefault: (SeqNoGrid) - Default SQL variable parse failed: @SQL=SELECT NVL(MAX(SeqNo),0)+10 AS DefaultValue FROM AD_Field WHERE AD_Tab_ID=@AD_Tab_ID@ [449]
+-----------> Msg.getMsg: NOT found: Window, Tab & Field  Applicant  System (System Administrator) @ System.* [MyAppsServer{localhost-orcl-carsdev}] [449]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [56]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [449]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [56]
+-----------> MRecentItem.addMenuOption: AD_User_ID is mandatory. [56]
+-----------> MRecentItem.addMenuOption: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [56]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [56]
+-----------> MRecentItem.addMenuOption: AD_User_ID is mandatory. [56]
+-----------> MRecentItem.addMenuOption: AD_User_ID is mandatory. [56]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [449]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [449]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [56]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [449]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [449]
+===========> DB.executeUpdate: UPDATE AD_Ref_List SET Value='Guarantor',Updated=TO_DATE('2018-12-12 15:55:11','YYYY-MM-DD HH24:MI:SS'),UpdatedBy=0 WHERE AD_Ref_List_ID=1000042 [POSave_231d8f12-41f3-49c7-845e-8da760a88063] [47]
+java.sql.SQLIntegrityConstraintViolationException: ORA-00001: unique constraint (CARSDEV.AD_REF_LIST_VALUE) violated
+; State=23000; ErrorCode=1
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:447)
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:396)
+	at oracle.jdbc.driver.T4C8Oall.processError(T4C8Oall.java:951)
+	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:513)
+	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:227)
+	at oracle.jdbc.driver.T4C8Oall.doOALL(T4C8Oall.java:531)
+	at oracle.jdbc.driver.T4CPreparedStatement.doOall8(T4CPreparedStatement.java:208)
+	at oracle.jdbc.driver.T4CPreparedStatement.executeForRows(T4CPreparedStatement.java:1046)
+	at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1336)
+	at oracle.jdbc.driver.OracleStatement.doScrollExecuteCommon(OracleStatement.java:4709)
+	at oracle.jdbc.driver.OraclePreparedStatement.doScrollPstmtExecuteUpdate(OraclePreparedStatement.java:10613)
+	at oracle.jdbc.driver.OraclePreparedStatement.executeInternal(OraclePreparedStatement.java:3611)
+	at oracle.jdbc.driver.OraclePreparedStatement.executeUpdate(OraclePreparedStatement.java:3694)
+	at oracle.jdbc.driver.OraclePreparedStatementWrapper.executeUpdate(OraclePreparedStatementWrapper.java:1354)
+	at com.mchange.v2.c3p0.impl.NewProxyPreparedStatement.executeUpdate(NewProxyPreparedStatement.java:105)
+	at sun.reflect.GeneratedMethodAccessor71.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.compiere.db.StatementProxy.invoke(StatementProxy.java:100)
+	at com.sun.proxy.$Proxy3.executeUpdate(Unknown Source)
+	at org.compiere.util.DB.executeUpdate(DB.java:1046)
+	at org.compiere.util.DB.executeUpdate(DB.java:908)
+	at org.compiere.util.DB.executeUpdate(DB.java:895)
+	at org.compiere.model.PO.saveUpdate(PO.java:2642)
+	at org.compiere.model.PO.save(PO.java:2214)
+	at org.compiere.model.GridTable.dataSavePO(GridTable.java:2139)
+	at org.compiere.model.GridTable.dataSave(GridTable.java:1474)
+	at org.compiere.model.GridTab.dataSave(GridTab.java:987)
+
+===========> DB.saveError: DBExecuteError - ORA-00001: unique constraint (CARSDEV.AD_REF_LIST_VALUE) violated
+ [47]
+-----------> MRefList.saveUpdate: #-1 - [POSave_231d8f12-41f3-49c7-845e-8da760a88063] - AD_Ref_List.AD_Ref_List_ID=1000042 [47]
+-----------> GridTable.saveWarning: SaveErrorNotUnique - ORA-00001: unique constraint (CARSDEV.AD_REF_LIST_VALUE) violated
+ [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [56]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [56]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [449]
+-----------> Msg.getMsg: NOT found: Table and Column  Applicant Type  System (System Administrator) @ System.* [MyAppsServer{localhost-orcl-carsdev}] [47]
+-----------> GridField.getDefault: (SeqNo) - Default SQL variable parse failed: @SQL=SELECT NVL(MAX(SeqNo),0)+10 AS DefaultValue FROM AD_Field WHERE AD_Tab_ID=@AD_Tab_ID@ [47]
+-----------> GridField.getDefault: (SeqNoGrid) - Default SQL variable parse failed: @SQL=SELECT NVL(MAX(SeqNo),0)+10 AS DefaultValue FROM AD_Field WHERE AD_Tab_ID=@AD_Tab_ID@ [47]
+-----------> Msg.getMsg: NOT found: Window, Tab & Field  Applicant  System (System Administrator) @ System.* [MyAppsServer{localhost-orcl-carsdev}] [47]
+-----------> MRecentItem.addMenuOption: AD_User_ID is mandatory. [449]
+-----------> MRecentItem.addMenuOption: AD_User_ID is mandatory. [56]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [56]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [56]
+-----------> MRecentItem.addMenuOption: AD_User_ID is mandatory. [56]
+-----------> MRecentItem.addMenuOption: AD_User_ID is mandatory. [47]

@@ -1,0 +1,35 @@
+*** 2018-08-06 14:23:42.458 Adempiere Log (CLogFile) ***
+14:23:42.457 Adempiere.startup: ADempiere(r) Release 3.9.0_2017-08-01 -Smart Suite ERP,CRM and SCM- (c) 1999-2017 ADempiere(r); Implementation: ADempiere - Supported by ADempiere community [13]
+14:23:42.458 Ini.loadProperties: D:\Ayaz\Ayaz_NBP_PC_Backup\AdempiereTemplate39\Adempiere.properties #37 [13]
+-----------> Msg.getMsg: NOT found: InfoBranch [47]
+===========> DB.getSQLValueBD: SELECT COALESCE(SUM(currencyBase(invoiceOpen(C_Invoice_ID, C_InvoicePaySchedule_ID),C_Currency_ID, DateAcct, AD_Client_ID, AD_Org_ID)),0)
+FROM C_Invoice_v C_Invoice WHERE IsSOTrx='Y' AND Processed='Y' AND C_Invoice.AD_Client_ID IN(0,11) AND C_Invoice.AD_Org_ID IN(0,11,12,50000,50002,50001,50004,50006,50005,50007) [47]
+java.sql.SQLException: ORA-29516: Aurora assertion failure: Assertion failure at eox.c:359
+Uncaught exception System error:   java/lang/UnsupportedClassVersionError
+; State=99999; ErrorCode=29516
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:447)
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:396)
+	at oracle.jdbc.driver.T4C8Oall.processError(T4C8Oall.java:951)
+	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:513)
+	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:227)
+	at oracle.jdbc.driver.T4C8Oall.doOALL(T4C8Oall.java:531)
+	at oracle.jdbc.driver.T4CPreparedStatement.doOall8(T4CPreparedStatement.java:208)
+	at oracle.jdbc.driver.T4CPreparedStatement.executeForDescribe(T4CPreparedStatement.java:886)
+	at oracle.jdbc.driver.OracleStatement.executeMaybeDescribe(OracleStatement.java:1175)
+	at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1296)
+	at oracle.jdbc.driver.OraclePreparedStatement.executeInternal(OraclePreparedStatement.java:3613)
+	at oracle.jdbc.driver.OraclePreparedStatement.executeQuery(OraclePreparedStatement.java:3657)
+	at oracle.jdbc.driver.OraclePreparedStatementWrapper.executeQuery(OraclePreparedStatementWrapper.java:1495)
+	at com.mchange.v2.c3p0.impl.NewProxyPreparedStatement.executeQuery(NewProxyPreparedStatement.java:76)
+	at sun.reflect.GeneratedMethodAccessor21.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.compiere.db.StatementProxy.invoke(StatementProxy.java:100)
+	at com.sun.proxy.$Proxy3.executeQuery(Unknown Source)
+	at org.compiere.util.DB.getSQLValueBDEx(DB.java:1457)
+	at org.compiere.util.DB.getSQLValueBD(DB.java:1501)
+	at org.compiere.model.MMeasure.updateCalculatedGoals(MMeasure.java:473)
+	at org.compiere.model.MMeasure.updateGoals(MMeasure.java:360)
+	at org.compiere.model.MGoal.updateGoal(MGoal.java:379)
+	at org.compiere.model.MGoal.getUserGoals(MGoal.java:84)
+

@@ -1,0 +1,684 @@
+*** 2017-10-05 10:27:57.071 Adempiere Log (CLogFile) ***
+10:27:57.071 Adempiere.startup: ADempiere(r) Release 3.9.0_2017-08-01 -Smart Suite ERP,CRM and SCM- (c) 1999-2017 ADempiere(r); Implementation: ADempiere - Supported by ADempiere community [13]
+10:27:57.072 Ini.loadProperties: C:\Users\AYAZ\Adempiere.properties #37 [13]
+-----------> MIssue.set_Value: SourceClassName - Value too long - truncated to length=60 [47]
+===========> DB.executeUpdate: INSERT INTO AD_Tree_Favorite (AD_Client_ID,AD_Org_ID,AD_Role_ID,AD_Tree_Favorite_ID,Created,CreatedBy,IsActive,Updated,UpdatedBy) VALUES (0,0,0,1000030,TO_DATE('2017-10-05 10:47:39','YYYY-MM-DD HH24:MI:SS'),0,'Y',TO_DATE('2017-10-05 10:47:39','YYYY-MM-DD HH24:MI:SS'),0) [POSave_8be9f6a1-70d0-4c67-9e6a-a0ec34cbb5ca] [47]
+java.sql.SQLIntegrityConstraintViolationException: ORA-01400: cannot insert NULL into ("CARSDEV"."AD_TREE_FAVORITE"."AD_USER_ID")
+; State=23000; ErrorCode=1400
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:447)
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:396)
+	at oracle.jdbc.driver.T4C8Oall.processError(T4C8Oall.java:951)
+	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:513)
+	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:227)
+	at oracle.jdbc.driver.T4C8Oall.doOALL(T4C8Oall.java:531)
+	at oracle.jdbc.driver.T4CPreparedStatement.doOall8(T4CPreparedStatement.java:208)
+	at oracle.jdbc.driver.T4CPreparedStatement.executeForRows(T4CPreparedStatement.java:1046)
+	at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1336)
+	at oracle.jdbc.driver.OracleStatement.doScrollExecuteCommon(OracleStatement.java:4709)
+	at oracle.jdbc.driver.OraclePreparedStatement.doScrollPstmtExecuteUpdate(OraclePreparedStatement.java:10613)
+	at oracle.jdbc.driver.OraclePreparedStatement.executeInternal(OraclePreparedStatement.java:3611)
+	at oracle.jdbc.driver.OraclePreparedStatement.executeUpdate(OraclePreparedStatement.java:3694)
+	at oracle.jdbc.driver.OraclePreparedStatementWrapper.executeUpdate(OraclePreparedStatementWrapper.java:1354)
+	at com.mchange.v2.c3p0.impl.NewProxyPreparedStatement.executeUpdate(NewProxyPreparedStatement.java:105)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.compiere.db.StatementProxy.invoke(StatementProxy.java:100)
+	at com.sun.proxy.$Proxy3.executeUpdate(Unknown Source)
+	at org.compiere.util.DB.executeUpdate(DB.java:1046)
+	at org.compiere.util.DB.executeUpdate(DB.java:908)
+	at org.compiere.util.DB.executeUpdate(DB.java:895)
+	at org.compiere.model.PO.saveNew(PO.java:2865)
+	at org.compiere.model.PO.save(PO.java:2195)
+
+===========> DB.saveError: DBExecuteError - ORA-01400: cannot insert NULL into ("CARSDEV"."AD_TREE_FAVORITE"."AD_USER_ID")
+ [47]
+-----------> MTreeFavorite.saveNew: [POSave_8be9f6a1-70d0-4c67-9e6a-a0ec34cbb5ca]Not inserted - AD_Tree_Favorite [47]
+-----------> DefaultDesktop.createHomeTab: Failed to create components. zul=/zul/userfavorites.zul [47]
+org.adempiere.exceptions.AdempiereException: Could not create Tree.
+	at org.adempiere.webui.dashboard.DPUserFavorites.createFavouritesPanel(DPUserFavorites.java:119)
+	at org.adempiere.webui.dashboard.DPUserFavorites.<init>(DPUserFavorites.java:63)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at java.lang.Class.newInstance(Unknown Source)
+	at org.zkoss.zk.ui.metainfo.impl.ComponentDefinitionImpl.newInstance(ComponentDefinitionImpl.java:308)
+	at org.zkoss.zk.ui.metainfo.impl.ComponentDefinitionImpl.newInstance(ComponentDefinitionImpl.java:296)
+	at org.zkoss.zk.ui.metainfo.ComponentInfo.newInstance(ComponentInfo.java:664)
+	at org.zkoss.zk.ui.impl.AbstractUiFactory.newComponent(AbstractUiFactory.java:90)
+	at org.zkoss.zk.ui.impl.UiEngineImpl.execCreateChild0(UiEngineImpl.java:616)
+	at org.zkoss.zk.ui.impl.UiEngineImpl.execCreateChild(UiEngineImpl.java:587)
+	at org.zkoss.zk.ui.impl.UiEngineImpl.execCreate0(UiEngineImpl.java:531)
+	at org.zkoss.zk.ui.impl.UiEngineImpl.execCreate(UiEngineImpl.java:498)
+	at org.zkoss.zk.ui.impl.UiEngineImpl.createComponents(UiEngineImpl.java:819)
+	at org.zkoss.zk.ui.impl.AbstractExecution.createComponents(AbstractExecution.java:189)
+	at org.zkoss.zk.ui.Executions.createComponents(Executions.java:177)
+	at org.adempiere.webui.desktop.DefaultDesktop.createHomeTab(DefaultDesktop.java:380)
+	at org.adempiere.webui.desktop.DefaultDesktop.doCreatePart(DefaultDesktop.java:162)
+	at org.adempiere.webui.part.AbstractUIPart.createPart(AbstractUIPart.java:41)
+
+-----------> MRecentItem.addMenuOption: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addMenuOption: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addMenuOption: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addMenuOption: AD_User_ID is mandatory. [47]
+-----------> Msg.getMsg: NOT found: View  Person View  Person View  System (System Administrator) @ System.* [AYAZ-PC{AYAZ-PC-orcl-carsdev}] [111]
+-----------> MRecentItem.addMenuOption: AD_User_ID is mandatory. [47]
+-----------> MIssue.set_Value: SourceClassName - Value too long - truncated to length=60 [112]
+===========> DB.executeUpdate: INSERT INTO AD_Tree_Favorite (AD_Client_ID,AD_Org_ID,AD_Role_ID,AD_Tree_Favorite_ID,Created,CreatedBy,IsActive,Updated,UpdatedBy) VALUES (0,0,0,1000031,TO_DATE('2017-10-05 12:09:29','YYYY-MM-DD HH24:MI:SS'),0,'Y',TO_DATE('2017-10-05 12:09:29','YYYY-MM-DD HH24:MI:SS'),0) [POSave_4630e80d-679f-40b5-8e50-3dbe55f9ac9a] [112]
+java.sql.SQLIntegrityConstraintViolationException: ORA-01400: cannot insert NULL into ("CARSDEV"."AD_TREE_FAVORITE"."AD_USER_ID")
+; State=23000; ErrorCode=1400
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:447)
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:396)
+	at oracle.jdbc.driver.T4C8Oall.processError(T4C8Oall.java:951)
+	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:513)
+	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:227)
+	at oracle.jdbc.driver.T4C8Oall.doOALL(T4C8Oall.java:531)
+	at oracle.jdbc.driver.T4CPreparedStatement.doOall8(T4CPreparedStatement.java:208)
+	at oracle.jdbc.driver.T4CPreparedStatement.executeForRows(T4CPreparedStatement.java:1046)
+	at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1336)
+	at oracle.jdbc.driver.OracleStatement.doScrollExecuteCommon(OracleStatement.java:4709)
+	at oracle.jdbc.driver.OraclePreparedStatement.doScrollPstmtExecuteUpdate(OraclePreparedStatement.java:10613)
+	at oracle.jdbc.driver.OraclePreparedStatement.executeInternal(OraclePreparedStatement.java:3611)
+	at oracle.jdbc.driver.OraclePreparedStatement.executeUpdate(OraclePreparedStatement.java:3694)
+	at oracle.jdbc.driver.OraclePreparedStatementWrapper.executeUpdate(OraclePreparedStatementWrapper.java:1354)
+	at com.mchange.v2.c3p0.impl.NewProxyPreparedStatement.executeUpdate(NewProxyPreparedStatement.java:105)
+	at sun.reflect.GeneratedMethodAccessor43.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.compiere.db.StatementProxy.invoke(StatementProxy.java:100)
+	at com.sun.proxy.$Proxy3.executeUpdate(Unknown Source)
+	at org.compiere.util.DB.executeUpdate(DB.java:1046)
+	at org.compiere.util.DB.executeUpdate(DB.java:908)
+	at org.compiere.util.DB.executeUpdate(DB.java:895)
+	at org.compiere.model.PO.saveNew(PO.java:2865)
+	at org.compiere.model.PO.save(PO.java:2195)
+
+===========> DB.saveError: DBExecuteError - ORA-01400: cannot insert NULL into ("CARSDEV"."AD_TREE_FAVORITE"."AD_USER_ID")
+ [112]
+-----------> MTreeFavorite.saveNew: [POSave_4630e80d-679f-40b5-8e50-3dbe55f9ac9a]Not inserted - AD_Tree_Favorite [112]
+-----------> DefaultDesktop.createHomeTab: Failed to create components. zul=/zul/userfavorites.zul [112]
+org.adempiere.exceptions.AdempiereException: Could not create Tree.
+	at org.adempiere.webui.dashboard.DPUserFavorites.createFavouritesPanel(DPUserFavorites.java:119)
+	at org.adempiere.webui.dashboard.DPUserFavorites.<init>(DPUserFavorites.java:63)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at java.lang.Class.newInstance(Unknown Source)
+	at org.zkoss.zk.ui.metainfo.impl.ComponentDefinitionImpl.newInstance(ComponentDefinitionImpl.java:308)
+	at org.zkoss.zk.ui.metainfo.impl.ComponentDefinitionImpl.newInstance(ComponentDefinitionImpl.java:296)
+	at org.zkoss.zk.ui.metainfo.ComponentInfo.newInstance(ComponentInfo.java:664)
+	at org.zkoss.zk.ui.impl.AbstractUiFactory.newComponent(AbstractUiFactory.java:90)
+	at org.zkoss.zk.ui.impl.UiEngineImpl.execCreateChild0(UiEngineImpl.java:616)
+	at org.zkoss.zk.ui.impl.UiEngineImpl.execCreateChild(UiEngineImpl.java:587)
+	at org.zkoss.zk.ui.impl.UiEngineImpl.execCreate0(UiEngineImpl.java:531)
+	at org.zkoss.zk.ui.impl.UiEngineImpl.execCreate(UiEngineImpl.java:498)
+	at org.zkoss.zk.ui.impl.UiEngineImpl.createComponents(UiEngineImpl.java:819)
+	at org.zkoss.zk.ui.impl.AbstractExecution.createComponents(AbstractExecution.java:189)
+	at org.zkoss.zk.ui.Executions.createComponents(Executions.java:177)
+	at org.adempiere.webui.desktop.DefaultDesktop.createHomeTab(DefaultDesktop.java:380)
+	at org.adempiere.webui.desktop.DefaultDesktop.doCreatePart(DefaultDesktop.java:162)
+	at org.adempiere.webui.part.AbstractUIPart.createPart(AbstractUIPart.java:41)
+
+-----------> MRecentItem.addMenuOption: AD_User_ID is mandatory. [47]
+===========> zkoss.handleError:1130: >>java.lang.NoClassDefFoundError: org/apache/poi/ss/usermodel/Workbook
+>>java.lang.ClassNotFoundException: org.apache.poi.ss.usermodel.Workbook
+>>	at java.net.URLClassLoader.findClass(Unknown Source)
+>>	at java.lang.ClassLoader.loadClass(Unknown Source)
+>>	at sun.misc.Launcher$AppClassLoader.loadClass(Unknown Source)
+>>	at java.lang.ClassLoader.loadClass(Unknown Source)
+>>	at org.eevolution.grid.Browser.exportXLS(Browser.java:1489)
+>>	at org.eevolution.form.WBrowser.cmd_Export(WBrowser.java:731)
+>>	at org.eevolution.form.WBrowser.access$3(WBrowser.java:727)
+>>	at org.eevolution.form.WBrowser$4.onEvent(WBrowser.java:472)
+>>	at org.zkoss.zk.ui.impl.EventProcessor.process0(EventProcessor.java:197)
+>>	at org.zkoss.zk.ui.impl.EventProcessor.process(EventProcessor.java:141)
+>>... [22]
+-----------> MRecentItem.addMenuOption: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [111]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [111]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [112]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [111]
+-----------> MRecentItem.addMenuOption: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [111]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addMenuOption: AD_User_ID is mandatory. [47]
+===========> MLookupFactory.getLookup_TableDir: No Identifier records found: EW_PERSON_ID [112]
+===========> MLookupFactory.getLookupInfo: No SQL - EW_PERSON_ID [112]
+===========> MLookupFactory.getLookup_TableDir: No Identifier records found: EW_PERSON_ID [112]
+===========> MLookupFactory.getLookupInfo: No SQL - EW_PERSON_ID [112]
+===========> MLookupFactory.getLookup_TableDir: No Identifier records found: EW_PERSON_ID [112]
+===========> MLookupFactory.getLookupInfo: No SQL - EW_PERSON_ID [112]
+===========> MLookupFactory.getLookup_TableDir: No Identifier records found: EW_PERSON_ID [112]
+===========> MLookupFactory.getLookupInfo: No SQL - EW_PERSON_ID [112]
+===========> MLookupFactory.getLookup_TableDir: No Identifier records found: EW_PERSON_ID [112]
+===========> MLookupFactory.getLookupInfo: No SQL - EW_PERSON_ID [112]
+===========> MLookupFactory.getLookup_TableDir: No Identifier records found: EW_PERSON_ID [112]
+===========> MLookupFactory.getLookupInfo: No SQL - EW_PERSON_ID [112]
+===========> MLookupFactory.getLookup_TableDir: No Identifier records found: EW_PERSON_ID [112]
+===========> MLookupFactory.getLookupInfo: No SQL - EW_PERSON_ID [112]
+===========> MLookupFactory.getLookup_TableDir: No Identifier records found: EW_PERSON_ID [112]
+===========> MLookupFactory.getLookupInfo: No SQL - EW_PERSON_ID [112]
+===========> MLookupFactory.getLookup_TableDir: No Identifier records found: EW_PERSON_ID [112]
+===========> MLookupFactory.getLookupInfo: No SQL - EW_PERSON_ID [112]
+===========> MLookupFactory.getLookup_TableDir: No Identifier records found: EW_PERSON_ID [112]
+===========> MLookupFactory.getLookupInfo: No SQL - EW_PERSON_ID [112]
+===========> MLookupFactory.getLookup_TableDir: No Identifier records found: EW_PERSON_ID [112]
+===========> MLookupFactory.getLookupInfo: No SQL - EW_PERSON_ID [112]
+===========> MLookupFactory.getLookup_TableDir: No Identifier records found: EW_PERSON_ID [112]
+===========> MLookupFactory.getLookupInfo: No SQL - EW_PERSON_ID [112]
+===========> MLookupFactory.getLookup_TableDir: No Identifier records found: EW_PERSON_ID [112]
+===========> MLookupFactory.getLookupInfo: No SQL - EW_PERSON_ID [112]
+===========> MLookupFactory.getLookup_TableDir: No Identifier records found: EW_PERSON_ID [112]
+===========> MLookupFactory.getLookupInfo: No SQL - EW_PERSON_ID [112]
+===========> MLookupFactory.getLookup_TableDir: No Identifier records found: EW_PERSON_ID [112]
+===========> MLookupFactory.getLookupInfo: No SQL - EW_PERSON_ID [112]
+===========> MLookupFactory.getLookup_TableDir: No Identifier records found: EW_PERSON_ID [112]
+===========> MLookupFactory.getLookupInfo: No SQL - EW_PERSON_ID [112]
+-----------> MRecentItem.addMenuOption: AD_User_ID is mandatory. [111]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [112]
+-----------> MRecentItem.addMenuOption: AD_User_ID is mandatory. [47]
+===========> MLookupFactory.getLookup_TableDir: No Identifier records found: EW_PERSON_ID [112]
+===========> MLookupFactory.getLookupInfo: No SQL - EW_PERSON_ID [112]
+===========> MLookupFactory.getLookup_TableDir: No Identifier records found: EW_PERSON_ID [112]
+===========> MLookupFactory.getLookupInfo: No SQL - EW_PERSON_ID [112]
+===========> MLookupFactory.getLookup_TableDir: No Identifier records found: EW_PERSON_ID [112]
+===========> MLookupFactory.getLookupInfo: No SQL - EW_PERSON_ID [112]
+===========> MLookupFactory.getLookup_TableDir: No Identifier records found: EW_PERSON_ID [112]
+===========> MLookupFactory.getLookupInfo: No SQL - EW_PERSON_ID [112]
+===========> MLookupFactory.getLookup_TableDir: No Identifier records found: EW_PERSON_ID [112]
+===========> MLookupFactory.getLookupInfo: No SQL - EW_PERSON_ID [112]
+===========> MLookupFactory.getLookup_TableDir: No Identifier records found: EW_PERSON_ID [112]
+===========> MLookupFactory.getLookupInfo: No SQL - EW_PERSON_ID [112]
+===========> MLookupFactory.getLookup_TableDir: No Identifier records found: EW_PERSON_ID [112]
+===========> MLookupFactory.getLookupInfo: No SQL - EW_PERSON_ID [112]
+===========> MLookupFactory.getLookup_TableDir: No Identifier records found: EW_PERSON_ID [112]
+===========> MLookupFactory.getLookupInfo: No SQL - EW_PERSON_ID [112]
+===========> MLookupFactory.getLookup_TableDir: No Identifier records found: EW_PERSON_ID [112]
+===========> MLookupFactory.getLookupInfo: No SQL - EW_PERSON_ID [112]
+===========> MLookupFactory.getLookup_TableDir: No Identifier records found: EW_PERSON_ID [112]
+===========> MLookupFactory.getLookupInfo: No SQL - EW_PERSON_ID [112]
+===========> MLookupFactory.getLookup_TableDir: No Identifier records found: EW_PERSON_ID [112]
+===========> MLookupFactory.getLookupInfo: No SQL - EW_PERSON_ID [112]
+===========> MLookupFactory.getLookup_TableDir: No Identifier records found: EW_PERSON_ID [112]
+===========> MLookupFactory.getLookupInfo: No SQL - EW_PERSON_ID [112]
+===========> MLookupFactory.getLookup_TableDir: No Identifier records found: EW_PERSON_ID [112]
+===========> MLookupFactory.getLookupInfo: No SQL - EW_PERSON_ID [112]
+===========> MLookupFactory.getLookup_TableDir: No Identifier records found: EW_PERSON_ID [112]
+===========> MLookupFactory.getLookupInfo: No SQL - EW_PERSON_ID [112]
+===========> MLookupFactory.getLookup_TableDir: No Identifier records found: EW_PERSON_ID [112]
+===========> MLookupFactory.getLookupInfo: No SQL - EW_PERSON_ID [112]
+===========> MLookupFactory.getLookup_TableDir: No Identifier records found: EW_PERSON_ID [112]
+===========> MLookupFactory.getLookupInfo: No SQL - EW_PERSON_ID [112]
+-----------> MIssue.set_Value: SourceClassName - Value too long - truncated to length=60 [111]
+===========> DB.executeUpdate: INSERT INTO AD_Tree_Favorite (AD_Client_ID,AD_Org_ID,AD_Role_ID,AD_Tree_Favorite_ID,Created,CreatedBy,IsActive,Updated,UpdatedBy) VALUES (0,0,0,1000032,TO_DATE('2017-10-05 12:38:54','YYYY-MM-DD HH24:MI:SS'),0,'Y',TO_DATE('2017-10-05 12:38:54','YYYY-MM-DD HH24:MI:SS'),0) [POSave_4c100a22-07b2-4d36-8e0d-0dd605a37048] [111]
+java.sql.SQLIntegrityConstraintViolationException: ORA-01400: cannot insert NULL into ("CARSDEV"."AD_TREE_FAVORITE"."AD_USER_ID")
+; State=23000; ErrorCode=1400
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:447)
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:396)
+	at oracle.jdbc.driver.T4C8Oall.processError(T4C8Oall.java:951)
+	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:513)
+	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:227)
+	at oracle.jdbc.driver.T4C8Oall.doOALL(T4C8Oall.java:531)
+	at oracle.jdbc.driver.T4CPreparedStatement.doOall8(T4CPreparedStatement.java:208)
+	at oracle.jdbc.driver.T4CPreparedStatement.executeForRows(T4CPreparedStatement.java:1046)
+	at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1336)
+	at oracle.jdbc.driver.OracleStatement.doScrollExecuteCommon(OracleStatement.java:4709)
+	at oracle.jdbc.driver.OraclePreparedStatement.doScrollPstmtExecuteUpdate(OraclePreparedStatement.java:10613)
+	at oracle.jdbc.driver.OraclePreparedStatement.executeInternal(OraclePreparedStatement.java:3611)
+	at oracle.jdbc.driver.OraclePreparedStatement.executeUpdate(OraclePreparedStatement.java:3694)
+	at oracle.jdbc.driver.OraclePreparedStatementWrapper.executeUpdate(OraclePreparedStatementWrapper.java:1354)
+	at com.mchange.v2.c3p0.impl.NewProxyPreparedStatement.executeUpdate(NewProxyPreparedStatement.java:105)
+	at sun.reflect.GeneratedMethodAccessor58.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.compiere.db.StatementProxy.invoke(StatementProxy.java:100)
+	at com.sun.proxy.$Proxy3.executeUpdate(Unknown Source)
+	at org.compiere.util.DB.executeUpdate(DB.java:1046)
+	at org.compiere.util.DB.executeUpdate(DB.java:908)
+	at org.compiere.util.DB.executeUpdate(DB.java:895)
+	at org.compiere.model.PO.saveNew(PO.java:2865)
+	at org.compiere.model.PO.save(PO.java:2195)
+
+===========> DB.saveError: DBExecuteError - ORA-01400: cannot insert NULL into ("CARSDEV"."AD_TREE_FAVORITE"."AD_USER_ID")
+ [111]
+-----------> MTreeFavorite.saveNew: [POSave_4c100a22-07b2-4d36-8e0d-0dd605a37048]Not inserted - AD_Tree_Favorite [111]
+-----------> DefaultDesktop.createHomeTab: Failed to create components. zul=/zul/userfavorites.zul [111]
+org.adempiere.exceptions.AdempiereException: Could not create Tree.
+	at org.adempiere.webui.dashboard.DPUserFavorites.createFavouritesPanel(DPUserFavorites.java:119)
+	at org.adempiere.webui.dashboard.DPUserFavorites.<init>(DPUserFavorites.java:63)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at java.lang.Class.newInstance(Unknown Source)
+	at org.zkoss.zk.ui.metainfo.impl.ComponentDefinitionImpl.newInstance(ComponentDefinitionImpl.java:308)
+	at org.zkoss.zk.ui.metainfo.impl.ComponentDefinitionImpl.newInstance(ComponentDefinitionImpl.java:296)
+	at org.zkoss.zk.ui.metainfo.ComponentInfo.newInstance(ComponentInfo.java:664)
+	at org.zkoss.zk.ui.impl.AbstractUiFactory.newComponent(AbstractUiFactory.java:90)
+	at org.zkoss.zk.ui.impl.UiEngineImpl.execCreateChild0(UiEngineImpl.java:616)
+	at org.zkoss.zk.ui.impl.UiEngineImpl.execCreateChild(UiEngineImpl.java:587)
+	at org.zkoss.zk.ui.impl.UiEngineImpl.execCreate0(UiEngineImpl.java:531)
+	at org.zkoss.zk.ui.impl.UiEngineImpl.execCreate(UiEngineImpl.java:498)
+	at org.zkoss.zk.ui.impl.UiEngineImpl.createComponents(UiEngineImpl.java:819)
+	at org.zkoss.zk.ui.impl.AbstractExecution.createComponents(AbstractExecution.java:189)
+	at org.zkoss.zk.ui.Executions.createComponents(Executions.java:177)
+	at org.adempiere.webui.desktop.DefaultDesktop.createHomeTab(DefaultDesktop.java:380)
+	at org.adempiere.webui.desktop.DefaultDesktop.doCreatePart(DefaultDesktop.java:162)
+	at org.adempiere.webui.part.AbstractUIPart.createPart(AbstractUIPart.java:41)
+
+-----------> MRecentItem.addMenuOption: AD_User_ID is mandatory. [111]
+===========> MLookupFactory.getLookup_TableDir: No Identifier records found: EW_PERSON_ID [47]
+===========> MLookupFactory.getLookupInfo: No SQL - EW_PERSON_ID [47]
+===========> MLookupFactory.getLookup_TableDir: No Identifier records found: EW_PERSON_ID [47]
+===========> MLookupFactory.getLookupInfo: No SQL - EW_PERSON_ID [47]
+===========> MLookupFactory.getLookup_TableDir: No Identifier records found: EW_PERSON_ID [47]
+===========> MLookupFactory.getLookupInfo: No SQL - EW_PERSON_ID [47]
+===========> MLookupFactory.getLookup_TableDir: No Identifier records found: EW_PERSON_ID [47]
+===========> MLookupFactory.getLookupInfo: No SQL - EW_PERSON_ID [47]
+===========> MLookupFactory.getLookup_TableDir: No Identifier records found: EW_PERSON_ID [47]
+===========> MLookupFactory.getLookupInfo: No SQL - EW_PERSON_ID [47]
+===========> MLookupFactory.getLookup_TableDir: No Identifier records found: EW_PERSON_ID [47]
+===========> MLookupFactory.getLookupInfo: No SQL - EW_PERSON_ID [47]
+===========> MLookupFactory.getLookup_TableDir: No Identifier records found: EW_PERSON_ID [47]
+===========> MLookupFactory.getLookupInfo: No SQL - EW_PERSON_ID [47]
+===========> MLookupFactory.getLookup_TableDir: No Identifier records found: EW_PERSON_ID [47]
+===========> MLookupFactory.getLookupInfo: No SQL - EW_PERSON_ID [47]
+===========> MLookupFactory.getLookup_TableDir: No Identifier records found: EW_PERSON_ID [47]
+===========> MLookupFactory.getLookupInfo: No SQL - EW_PERSON_ID [47]
+===========> MLookupFactory.getLookup_TableDir: No Identifier records found: EW_PERSON_ID [47]
+===========> MLookupFactory.getLookupInfo: No SQL - EW_PERSON_ID [47]
+===========> MLookupFactory.getLookup_TableDir: No Identifier records found: EW_PERSON_ID [47]
+===========> MLookupFactory.getLookupInfo: No SQL - EW_PERSON_ID [47]
+===========> MLookupFactory.getLookup_TableDir: No Identifier records found: EW_PERSON_ID [47]
+===========> MLookupFactory.getLookupInfo: No SQL - EW_PERSON_ID [47]
+===========> MLookupFactory.getLookup_TableDir: No Identifier records found: EW_PERSON_ID [47]
+===========> MLookupFactory.getLookupInfo: No SQL - EW_PERSON_ID [47]
+===========> MLookupFactory.getLookup_TableDir: No Identifier records found: EW_PERSON_ID [47]
+===========> MLookupFactory.getLookupInfo: No SQL - EW_PERSON_ID [47]
+===========> MLookupFactory.getLookup_TableDir: No Identifier records found: EW_PERSON_ID [47]
+===========> MLookupFactory.getLookupInfo: No SQL - EW_PERSON_ID [47]
+===========> MLookupFactory.getLookup_TableDir: No Identifier records found: EW_PERSON_ID [47]
+===========> MLookupFactory.getLookupInfo: No SQL - EW_PERSON_ID [47]
+-----------> MRecentItem.addMenuOption: AD_User_ID is mandatory. [112]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [112]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [111]
+-----------> MRecentItem.addMenuOption: AD_User_ID is mandatory. [112]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [112]
+-----------> MRecentItem.addMenuOption: AD_User_ID is mandatory. [112]
+-----------> MRecentItem.addMenuOption: AD_User_ID is mandatory. [111]
+-----------> MIssue.set_Value: SourceClassName - Value too long - truncated to length=60 [112]
+===========> DB.executeUpdate: INSERT INTO AD_Tree_Favorite (AD_Client_ID,AD_Org_ID,AD_Role_ID,AD_Tree_Favorite_ID,Created,CreatedBy,IsActive,Updated,UpdatedBy) VALUES (0,0,0,1000033,TO_DATE('2017-10-05 13:48:37','YYYY-MM-DD HH24:MI:SS'),0,'Y',TO_DATE('2017-10-05 13:48:37','YYYY-MM-DD HH24:MI:SS'),0) [POSave_53acabf9-a1d3-4aae-8b8d-65fa79fbf36b] [112]
+java.sql.SQLIntegrityConstraintViolationException: ORA-01400: cannot insert NULL into ("CARSDEV"."AD_TREE_FAVORITE"."AD_USER_ID")
+; State=23000; ErrorCode=1400
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:447)
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:396)
+	at oracle.jdbc.driver.T4C8Oall.processError(T4C8Oall.java:951)
+	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:513)
+	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:227)
+	at oracle.jdbc.driver.T4C8Oall.doOALL(T4C8Oall.java:531)
+	at oracle.jdbc.driver.T4CPreparedStatement.doOall8(T4CPreparedStatement.java:208)
+	at oracle.jdbc.driver.T4CPreparedStatement.executeForRows(T4CPreparedStatement.java:1046)
+	at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1336)
+	at oracle.jdbc.driver.OracleStatement.doScrollExecuteCommon(OracleStatement.java:4709)
+	at oracle.jdbc.driver.OraclePreparedStatement.doScrollPstmtExecuteUpdate(OraclePreparedStatement.java:10613)
+	at oracle.jdbc.driver.OraclePreparedStatement.executeInternal(OraclePreparedStatement.java:3611)
+	at oracle.jdbc.driver.OraclePreparedStatement.executeUpdate(OraclePreparedStatement.java:3694)
+	at oracle.jdbc.driver.OraclePreparedStatementWrapper.executeUpdate(OraclePreparedStatementWrapper.java:1354)
+	at com.mchange.v2.c3p0.impl.NewProxyPreparedStatement.executeUpdate(NewProxyPreparedStatement.java:105)
+	at sun.reflect.GeneratedMethodAccessor58.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.compiere.db.StatementProxy.invoke(StatementProxy.java:100)
+	at com.sun.proxy.$Proxy3.executeUpdate(Unknown Source)
+	at org.compiere.util.DB.executeUpdate(DB.java:1046)
+	at org.compiere.util.DB.executeUpdate(DB.java:908)
+	at org.compiere.util.DB.executeUpdate(DB.java:895)
+	at org.compiere.model.PO.saveNew(PO.java:2865)
+	at org.compiere.model.PO.save(PO.java:2195)
+
+===========> DB.saveError: DBExecuteError - ORA-01400: cannot insert NULL into ("CARSDEV"."AD_TREE_FAVORITE"."AD_USER_ID")
+ [112]
+-----------> MTreeFavorite.saveNew: [POSave_53acabf9-a1d3-4aae-8b8d-65fa79fbf36b]Not inserted - AD_Tree_Favorite [112]
+-----------> DefaultDesktop.createHomeTab: Failed to create components. zul=/zul/userfavorites.zul [112]
+org.adempiere.exceptions.AdempiereException: Could not create Tree.
+	at org.adempiere.webui.dashboard.DPUserFavorites.createFavouritesPanel(DPUserFavorites.java:119)
+	at org.adempiere.webui.dashboard.DPUserFavorites.<init>(DPUserFavorites.java:63)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at java.lang.Class.newInstance(Unknown Source)
+	at org.zkoss.zk.ui.metainfo.impl.ComponentDefinitionImpl.newInstance(ComponentDefinitionImpl.java:308)
+	at org.zkoss.zk.ui.metainfo.impl.ComponentDefinitionImpl.newInstance(ComponentDefinitionImpl.java:296)
+	at org.zkoss.zk.ui.metainfo.ComponentInfo.newInstance(ComponentInfo.java:664)
+	at org.zkoss.zk.ui.impl.AbstractUiFactory.newComponent(AbstractUiFactory.java:90)
+	at org.zkoss.zk.ui.impl.UiEngineImpl.execCreateChild0(UiEngineImpl.java:616)
+	at org.zkoss.zk.ui.impl.UiEngineImpl.execCreateChild(UiEngineImpl.java:587)
+	at org.zkoss.zk.ui.impl.UiEngineImpl.execCreate0(UiEngineImpl.java:531)
+	at org.zkoss.zk.ui.impl.UiEngineImpl.execCreate(UiEngineImpl.java:498)
+	at org.zkoss.zk.ui.impl.UiEngineImpl.createComponents(UiEngineImpl.java:819)
+	at org.zkoss.zk.ui.impl.AbstractExecution.createComponents(AbstractExecution.java:189)
+	at org.zkoss.zk.ui.Executions.createComponents(Executions.java:177)
+	at org.adempiere.webui.desktop.DefaultDesktop.createHomeTab(DefaultDesktop.java:380)
+	at org.adempiere.webui.desktop.DefaultDesktop.doCreatePart(DefaultDesktop.java:162)
+	at org.adempiere.webui.part.AbstractUIPart.createPart(AbstractUIPart.java:41)
+
+-----------> MRecentItem.addMenuOption: AD_User_ID is mandatory. [47]
+===========> MLookupFactory.getLookup_TableDir: No Identifier records found: EW_PERSON_ID [112]
+===========> MLookupFactory.getLookupInfo: No SQL - EW_PERSON_ID [112]
+===========> MLookupFactory.getLookup_TableDir: No Identifier records found: EW_PERSON_ID [112]
+===========> MLookupFactory.getLookupInfo: No SQL - EW_PERSON_ID [112]
+===========> MLookupFactory.getLookup_TableDir: No Identifier records found: EW_PERSON_ID [112]
+===========> MLookupFactory.getLookupInfo: No SQL - EW_PERSON_ID [112]
+===========> MLookupFactory.getLookup_TableDir: No Identifier records found: EW_PERSON_ID [112]
+===========> MLookupFactory.getLookupInfo: No SQL - EW_PERSON_ID [112]
+===========> MLookupFactory.getLookup_TableDir: No Identifier records found: EW_PERSON_ID [112]
+===========> MLookupFactory.getLookupInfo: No SQL - EW_PERSON_ID [112]
+===========> MLookupFactory.getLookup_TableDir: No Identifier records found: EW_PERSON_ID [112]
+===========> MLookupFactory.getLookupInfo: No SQL - EW_PERSON_ID [112]
+===========> MLookupFactory.getLookup_TableDir: No Identifier records found: EW_PERSON_ID [112]
+===========> MLookupFactory.getLookupInfo: No SQL - EW_PERSON_ID [112]
+===========> MLookupFactory.getLookup_TableDir: No Identifier records found: EW_PERSON_ID [112]
+===========> MLookupFactory.getLookupInfo: No SQL - EW_PERSON_ID [112]
+===========> zkoss.handleError:1130: >>java.lang.NoClassDefFoundError: org/apache/poi/ss/usermodel/Workbook
+>>java.lang.ClassNotFoundException: org.apache.poi.ss.usermodel.Workbook
+>>	at java.net.URLClassLoader.findClass(Unknown Source)
+>>	at java.lang.ClassLoader.loadClass(Unknown Source)
+>>	at sun.misc.Launcher$AppClassLoader.loadClass(Unknown Source)
+>>	at java.lang.ClassLoader.loadClass(Unknown Source)
+>>	at org.eevolution.grid.Browser.exportXLS(Browser.java:1489)
+>>	at org.eevolution.form.WBrowser.cmd_Export(WBrowser.java:731)
+>>	at org.eevolution.form.WBrowser.access$3(WBrowser.java:727)
+>>	at org.eevolution.form.WBrowser$4.onEvent(WBrowser.java:472)
+>>	at org.zkoss.zk.ui.impl.EventProcessor.process0(EventProcessor.java:197)
+>>	at org.zkoss.zk.ui.impl.EventProcessor.process(EventProcessor.java:141)
+>>... [20]
+-----------> MRecentItem.addMenuOption: AD_User_ID is mandatory. [112]
+-----------> MIssue.set_Value: SourceClassName - Value too long - truncated to length=60 [47]
+===========> DB.executeUpdate: INSERT INTO AD_Tree_Favorite (AD_Client_ID,AD_Org_ID,AD_Role_ID,AD_Tree_Favorite_ID,Created,CreatedBy,IsActive,Updated,UpdatedBy) VALUES (0,0,0,1000034,TO_DATE('2017-10-05 14:27:07','YYYY-MM-DD HH24:MI:SS'),0,'Y',TO_DATE('2017-10-05 14:27:07','YYYY-MM-DD HH24:MI:SS'),0) [POSave_b3a60988-8373-4cc2-a5cb-48ba9c3c8d89] [47]
+java.sql.SQLIntegrityConstraintViolationException: ORA-01400: cannot insert NULL into ("CARSDEV"."AD_TREE_FAVORITE"."AD_USER_ID")
+; State=23000; ErrorCode=1400
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:447)
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:396)
+	at oracle.jdbc.driver.T4C8Oall.processError(T4C8Oall.java:951)
+	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:513)
+	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:227)
+	at oracle.jdbc.driver.T4C8Oall.doOALL(T4C8Oall.java:531)
+	at oracle.jdbc.driver.T4CPreparedStatement.doOall8(T4CPreparedStatement.java:208)
+	at oracle.jdbc.driver.T4CPreparedStatement.executeForRows(T4CPreparedStatement.java:1046)
+	at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1336)
+	at oracle.jdbc.driver.OracleStatement.doScrollExecuteCommon(OracleStatement.java:4709)
+	at oracle.jdbc.driver.OraclePreparedStatement.doScrollPstmtExecuteUpdate(OraclePreparedStatement.java:10613)
+	at oracle.jdbc.driver.OraclePreparedStatement.executeInternal(OraclePreparedStatement.java:3611)
+	at oracle.jdbc.driver.OraclePreparedStatement.executeUpdate(OraclePreparedStatement.java:3694)
+	at oracle.jdbc.driver.OraclePreparedStatementWrapper.executeUpdate(OraclePreparedStatementWrapper.java:1354)
+	at com.mchange.v2.c3p0.impl.NewProxyPreparedStatement.executeUpdate(NewProxyPreparedStatement.java:105)
+	at sun.reflect.GeneratedMethodAccessor58.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.compiere.db.StatementProxy.invoke(StatementProxy.java:100)
+	at com.sun.proxy.$Proxy3.executeUpdate(Unknown Source)
+	at org.compiere.util.DB.executeUpdate(DB.java:1046)
+	at org.compiere.util.DB.executeUpdate(DB.java:908)
+	at org.compiere.util.DB.executeUpdate(DB.java:895)
+	at org.compiere.model.PO.saveNew(PO.java:2865)
+	at org.compiere.model.PO.save(PO.java:2195)
+
+===========> DB.saveError: DBExecuteError - ORA-01400: cannot insert NULL into ("CARSDEV"."AD_TREE_FAVORITE"."AD_USER_ID")
+ [47]
+-----------> MTreeFavorite.saveNew: [POSave_b3a60988-8373-4cc2-a5cb-48ba9c3c8d89]Not inserted - AD_Tree_Favorite [47]
+-----------> DefaultDesktop.createHomeTab: Failed to create components. zul=/zul/userfavorites.zul [47]
+org.adempiere.exceptions.AdempiereException: Could not create Tree.
+	at org.adempiere.webui.dashboard.DPUserFavorites.createFavouritesPanel(DPUserFavorites.java:119)
+	at org.adempiere.webui.dashboard.DPUserFavorites.<init>(DPUserFavorites.java:63)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at java.lang.Class.newInstance(Unknown Source)
+	at org.zkoss.zk.ui.metainfo.impl.ComponentDefinitionImpl.newInstance(ComponentDefinitionImpl.java:308)
+	at org.zkoss.zk.ui.metainfo.impl.ComponentDefinitionImpl.newInstance(ComponentDefinitionImpl.java:296)
+	at org.zkoss.zk.ui.metainfo.ComponentInfo.newInstance(ComponentInfo.java:664)
+	at org.zkoss.zk.ui.impl.AbstractUiFactory.newComponent(AbstractUiFactory.java:90)
+	at org.zkoss.zk.ui.impl.UiEngineImpl.execCreateChild0(UiEngineImpl.java:616)
+	at org.zkoss.zk.ui.impl.UiEngineImpl.execCreateChild(UiEngineImpl.java:587)
+	at org.zkoss.zk.ui.impl.UiEngineImpl.execCreate0(UiEngineImpl.java:531)
+	at org.zkoss.zk.ui.impl.UiEngineImpl.execCreate(UiEngineImpl.java:498)
+	at org.zkoss.zk.ui.impl.UiEngineImpl.createComponents(UiEngineImpl.java:819)
+	at org.zkoss.zk.ui.impl.AbstractExecution.createComponents(AbstractExecution.java:189)
+	at org.zkoss.zk.ui.Executions.createComponents(Executions.java:177)
+	at org.adempiere.webui.desktop.DefaultDesktop.createHomeTab(DefaultDesktop.java:380)
+	at org.adempiere.webui.desktop.DefaultDesktop.doCreatePart(DefaultDesktop.java:162)
+	at org.adempiere.webui.part.AbstractUIPart.createPart(AbstractUIPart.java:41)
+
+-----------> MRecentItem.addMenuOption: AD_User_ID is mandatory. [111]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [111]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [112]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [111]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [112]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [111]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [112]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [111]
+-----------> MRecentItem.addMenuOption: AD_User_ID is mandatory. [111]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [111]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [112]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [111]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [111]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [112]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [112]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [47]
+-----------> MIssue.set_Value: SourceClassName - Value too long - truncated to length=60 [47]
+===========> DB.executeUpdate: INSERT INTO AD_Tree_Favorite (AD_Client_ID,AD_Org_ID,AD_Role_ID,AD_Tree_Favorite_ID,Created,CreatedBy,IsActive,Updated,UpdatedBy) VALUES (0,0,0,1000035,TO_DATE('2017-10-05 14:32:16','YYYY-MM-DD HH24:MI:SS'),0,'Y',TO_DATE('2017-10-05 14:32:16','YYYY-MM-DD HH24:MI:SS'),0) [POSave_53765383-f4c1-4751-b1ee-fcd972603d16] [47]
+java.sql.SQLIntegrityConstraintViolationException: ORA-01400: cannot insert NULL into ("CARSDEV"."AD_TREE_FAVORITE"."AD_USER_ID")
+; State=23000; ErrorCode=1400
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:447)
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:396)
+	at oracle.jdbc.driver.T4C8Oall.processError(T4C8Oall.java:951)
+	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:513)
+	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:227)
+	at oracle.jdbc.driver.T4C8Oall.doOALL(T4C8Oall.java:531)
+	at oracle.jdbc.driver.T4CPreparedStatement.doOall8(T4CPreparedStatement.java:208)
+	at oracle.jdbc.driver.T4CPreparedStatement.executeForRows(T4CPreparedStatement.java:1046)
+	at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1336)
+	at oracle.jdbc.driver.OracleStatement.doScrollExecuteCommon(OracleStatement.java:4709)
+	at oracle.jdbc.driver.OraclePreparedStatement.doScrollPstmtExecuteUpdate(OraclePreparedStatement.java:10613)
+	at oracle.jdbc.driver.OraclePreparedStatement.executeInternal(OraclePreparedStatement.java:3611)
+	at oracle.jdbc.driver.OraclePreparedStatement.executeUpdate(OraclePreparedStatement.java:3694)
+	at oracle.jdbc.driver.OraclePreparedStatementWrapper.executeUpdate(OraclePreparedStatementWrapper.java:1354)
+	at com.mchange.v2.c3p0.impl.NewProxyPreparedStatement.executeUpdate(NewProxyPreparedStatement.java:105)
+	at sun.reflect.GeneratedMethodAccessor58.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.compiere.db.StatementProxy.invoke(StatementProxy.java:100)
+	at com.sun.proxy.$Proxy3.executeUpdate(Unknown Source)
+	at org.compiere.util.DB.executeUpdate(DB.java:1046)
+	at org.compiere.util.DB.executeUpdate(DB.java:908)
+	at org.compiere.util.DB.executeUpdate(DB.java:895)
+	at org.compiere.model.PO.saveNew(PO.java:2865)
+	at org.compiere.model.PO.save(PO.java:2195)
+
+===========> DB.saveError: DBExecuteError - ORA-01400: cannot insert NULL into ("CARSDEV"."AD_TREE_FAVORITE"."AD_USER_ID")
+ [47]
+-----------> MTreeFavorite.saveNew: [POSave_53765383-f4c1-4751-b1ee-fcd972603d16]Not inserted - AD_Tree_Favorite [47]
+-----------> DefaultDesktop.createHomeTab: Failed to create components. zul=/zul/userfavorites.zul [47]
+org.adempiere.exceptions.AdempiereException: Could not create Tree.
+	at org.adempiere.webui.dashboard.DPUserFavorites.createFavouritesPanel(DPUserFavorites.java:119)
+	at org.adempiere.webui.dashboard.DPUserFavorites.<init>(DPUserFavorites.java:63)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at java.lang.Class.newInstance(Unknown Source)
+	at org.zkoss.zk.ui.metainfo.impl.ComponentDefinitionImpl.newInstance(ComponentDefinitionImpl.java:308)
+	at org.zkoss.zk.ui.metainfo.impl.ComponentDefinitionImpl.newInstance(ComponentDefinitionImpl.java:296)
+	at org.zkoss.zk.ui.metainfo.ComponentInfo.newInstance(ComponentInfo.java:664)
+	at org.zkoss.zk.ui.impl.AbstractUiFactory.newComponent(AbstractUiFactory.java:90)
+	at org.zkoss.zk.ui.impl.UiEngineImpl.execCreateChild0(UiEngineImpl.java:616)
+	at org.zkoss.zk.ui.impl.UiEngineImpl.execCreateChild(UiEngineImpl.java:587)
+	at org.zkoss.zk.ui.impl.UiEngineImpl.execCreate0(UiEngineImpl.java:531)
+	at org.zkoss.zk.ui.impl.UiEngineImpl.execCreate(UiEngineImpl.java:498)
+	at org.zkoss.zk.ui.impl.UiEngineImpl.createComponents(UiEngineImpl.java:819)
+	at org.zkoss.zk.ui.impl.AbstractExecution.createComponents(AbstractExecution.java:189)
+	at org.zkoss.zk.ui.Executions.createComponents(Executions.java:177)
+	at org.adempiere.webui.desktop.DefaultDesktop.createHomeTab(DefaultDesktop.java:380)
+	at org.adempiere.webui.desktop.DefaultDesktop.doCreatePart(DefaultDesktop.java:162)
+	at org.adempiere.webui.part.AbstractUIPart.createPart(AbstractUIPart.java:41)
+
+-----------> MRecentItem.addMenuOption: AD_User_ID is mandatory. [47]
+===========> DB.getSQLValue: SELECT COUNT(*) FROM VCOL_ACTIVITYFOLLOWUP WHERE (APPLICATION_NO IN (SELECT LA.APPLICATION_NO FROM COL_LOANACCOUNTASSIGNED LA WHERE LA.AD_USER_ID=0 AND LA.ISACTIVE='Y' AND LA.PERIOD=(SELECT MAX(PERIOD) FROM COL_LOANACCOUNTASSIGNED) UNION SELECT LA.APPLICATION_NO FROM COL_LOANACCOUNTASSIGNED LA WHERE LA.AD_USER_ID IN (SELECT U.AD_USER_ID FROM AD_USER U WHERE U.SUPERVISOR_ID=0) AND LA.ISACTIVE='Y' AND LA.PERIOD=(SELECT MAX(PERIOD) FROM COL_LOANACCOUNTASSIGNED))) [47]
+java.sql.SQLSyntaxErrorException: ORA-00942: table or view does not exist
+; State=42000; ErrorCode=942
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:447)
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:396)
+	at oracle.jdbc.driver.T4C8Oall.processError(T4C8Oall.java:951)
+	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:513)
+	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:227)
+	at oracle.jdbc.driver.T4C8Oall.doOALL(T4C8Oall.java:531)
+	at oracle.jdbc.driver.T4CPreparedStatement.doOall8(T4CPreparedStatement.java:208)
+	at oracle.jdbc.driver.T4CPreparedStatement.executeForDescribe(T4CPreparedStatement.java:886)
+	at oracle.jdbc.driver.OracleStatement.executeMaybeDescribe(OracleStatement.java:1175)
+	at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1296)
+	at oracle.jdbc.driver.OraclePreparedStatement.executeInternal(OraclePreparedStatement.java:3613)
+	at oracle.jdbc.driver.OraclePreparedStatement.executeQuery(OraclePreparedStatement.java:3657)
+	at oracle.jdbc.driver.OraclePreparedStatementWrapper.executeQuery(OraclePreparedStatementWrapper.java:1495)
+	at com.mchange.v2.c3p0.impl.NewProxyPreparedStatement.executeQuery(NewProxyPreparedStatement.java:76)
+	at sun.reflect.GeneratedMethodAccessor53.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.compiere.db.StatementProxy.invoke(StatementProxy.java:100)
+	at com.sun.proxy.$Proxy3.executeQuery(Unknown Source)
+	at org.compiere.util.DB.getSQLValueEx(DB.java:1295)
+	at org.compiere.util.DB.getSQLValue(DB.java:1338)
+	at org.compiere.util.DB.getSQLValue(DB.java:2179)
+
+-----------> AccessSqlParser.getTableInfo: More than one FROM clause - SELECT LA.APPLICATION_NO FROM COL_LOANACCOUNTASSIGNED LA WHERE LA.AD_USER_ID=0 AND LA.ISACTIVE='Y' AND LA.PERIOD=(##) UNION SELECT LA.APPLICATION_NO FROM COL_LOANACCOUNTASSIGNED LA WHERE LA.AD_USER_ID IN (##) AND LA.ISACTIVE='Y' AND LA.PERIOD=(##) [47]
+-----------> AccessSqlParser.getTableInfo: More than one FROM clause - SELECT LA.APPLICATION_NO FROM COL_LOANACCOUNTASSIGNED LA WHERE LA.AD_USER_ID=0 AND LA.ISACTIVE='Y' AND LA.PERIOD=(##) UNION SELECT LA.APPLICATION_NO FROM COL_LOANACCOUNTASSIGNED LA WHERE LA.AD_USER_ID IN (##) AND LA.ISACTIVE='Y' AND LA.PERIOD=(##) [47]
+===========> GridTable.open: Count SQL=SELECT COUNT(*) FROM VCOL_ACTIVITYFOLLOWUP WHERE (APPLICATION_NO IN (SELECT LA.APPLICATION_NO FROM COL_LOANACCOUNTASSIGNED LA WHERE LA.AD_USER_ID=0 AND LA.ISACTIVE='Y' AND LA.PERIOD=(SELECT MAX(PERIOD) FROM COL_LOANACCOUNTASSIGNED) UNION SELECT LA.APPLICATION_NO FROM COL_LOANACCOUNTASSIGNED LA WHERE LA.AD_USER_ID IN (SELECT U.AD_USER_ID FROM AD_USER U WHERE U.SUPERVISOR_ID=0) AND LA.ISACTIVE='Y' AND LA.PERIOD=(SELECT MAX(PERIOD) FROM COL_LOANACCOUNTASSIGNED))) AND VCOL_ACTIVITYFOLLOWUP.AD_Client_ID=0 AND VCOL_ACTIVITYFOLLOWUP.AD_Org_ID=0 [47]
+java.sql.SQLSyntaxErrorException: ORA-00942: table or view does not exist
+; State=42000; ErrorCode=942
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:447)
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:396)
+	at oracle.jdbc.driver.T4C8Oall.processError(T4C8Oall.java:951)
+	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:513)
+	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:227)
+	at oracle.jdbc.driver.T4C8Oall.doOALL(T4C8Oall.java:531)
+	at oracle.jdbc.driver.T4CPreparedStatement.doOall8(T4CPreparedStatement.java:208)
+	at oracle.jdbc.driver.T4CPreparedStatement.executeForDescribe(T4CPreparedStatement.java:886)
+	at oracle.jdbc.driver.OracleStatement.executeMaybeDescribe(OracleStatement.java:1175)
+	at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1296)
+	at oracle.jdbc.driver.OraclePreparedStatement.executeInternal(OraclePreparedStatement.java:3613)
+	at oracle.jdbc.driver.OraclePreparedStatement.executeQuery(OraclePreparedStatement.java:3657)
+	at oracle.jdbc.driver.OraclePreparedStatementWrapper.executeQuery(OraclePreparedStatementWrapper.java:1495)
+	at com.mchange.v2.c3p0.impl.NewProxyPreparedStatement.executeQuery(NewProxyPreparedStatement.java:76)
+	at sun.reflect.GeneratedMethodAccessor53.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.compiere.db.StatementProxy.invoke(StatementProxy.java:100)
+	at com.sun.proxy.$Proxy3.executeQuery(Unknown Source)
+	at org.compiere.model.GridTable$Loader.open(GridTable.java:3333)
+	at org.compiere.model.GridTable.open(GridTable.java:605)
+	at org.compiere.model.GridTab.query(GridTab.java:734)
+
+-----------> MRecentItem.addMenuOption: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addMenuOption: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [112]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [111]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [112]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [111]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [112]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [111]
+-----------> MRecentItem.addMenuOption: AD_User_ID is mandatory. [112]
+-----------> MRecentItem.addMenuOption: AD_User_ID is mandatory. [111]
+-----------> MRecentItem.addMenuOption: AD_User_ID is mandatory. [112]
+-----------> MRecentItem.addMenuOption: AD_User_ID is mandatory. [47]
+-----------> AccessSqlParser.getTableInfo: More than one FROM clause - SELECT CODE FROM COL_AGENTGEOMAPPING A WHERE A.AD_USER_ID=0 AND A.GEOTYPE='BR' UNION SELECT B.REF_CODE FROM COL_BRANCH B,COL_BR_REGION R WHERE B.COL_BR_REGION_ID=R.COL_BR_REGION_ID AND R.REF_CODE IN (##) UNION SELECT B.REF_CODE FROM COL_BRANCH B,COL_BR_REGION R WHERE B.COL_BR_REGION_ID=R.COL_BR_REGION_ID AND EXISTS (##) [111]
+-----------> AccessSqlParser.getTableInfo: More than one FROM clause - SELECT CODE FROM COL_AGENTGEOMAPPING A WHERE A.AD_USER_ID=0 AND A.GEOTYPE='BR' UNION SELECT B.REF_CODE FROM COL_BRANCH B,COL_BR_REGION R WHERE B.COL_BR_REGION_ID=R.COL_BR_REGION_ID AND R.REF_CODE IN (##) UNION SELECT B.REF_CODE FROM COL_BRANCH B,COL_BR_REGION R WHERE B.COL_BR_REGION_ID=R.COL_BR_REGION_ID AND EXISTS (##) [111]
+-----------> MRecentItem.addMenuOption: AD_User_ID is mandatory. [111]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [112]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [111]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [112]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [111]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [112]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [111]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [111]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [111]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [112]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [111]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [111]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [112]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [111]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [112]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [111]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [112]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [112]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [111]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [112]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [111]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [112]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [111]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [112]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [111]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [112]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [111]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [112]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [112]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [111]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [111]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [112]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [111]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [112]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [112]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [111]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [112]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [111]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [112]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [111]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [112]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [112]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [111]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [112]
+-----------> MRecentItem.addWindowChange: AD_User_ID is mandatory. [111]
+-----------> MRecentItem.addMenuOption: AD_User_ID is mandatory. [111]
+-----------> MRecentItem.addMenuOption: AD_User_ID is mandatory. [47]
+-----------> MRecentItem.addMenuOption: AD_User_ID is mandatory. [112]
+-----------> MRecentItem.addMenuOption: AD_User_ID is mandatory. [111]

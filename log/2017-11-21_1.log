@@ -1,0 +1,60 @@
+*** 2017-11-21 12:06:55.451 Adempiere Log (CLogFile) ***
+12:06:55.451 Adempiere.startup: ADempiere(r) Release 3.9.0_2017-08-01 -Smart Suite ERP,CRM and SCM- (c) 1999-2017 ADempiere(r); Implementation: ADempiere - Supported by ADempiere community [13]
+12:06:55.451 Ini.loadProperties: C:\Users\AYAZ\Adempiere.properties #37 [13]
+===========> DB.getSQLValueBD: SELECT COALESCE(SUM(currencyBase(invoiceOpen(C_Invoice_ID, C_InvoicePaySchedule_ID),C_Currency_ID, DateAcct, AD_Client_ID, AD_Org_ID)),0)
+FROM C_Invoice_v C_Invoice WHERE IsSOTrx='Y' AND Processed='Y' AND C_Invoice.AD_Client_ID IN(0,11) AND C_Invoice.AD_Org_ID IN(0,11,12,50000,50002,50001,50004,50006,50005,50007) [47]
+java.sql.SQLException: ORA-04063: view "CARSDEV.C_INVOICE_V" has errors
+; State=72000; ErrorCode=4063
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:447)
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:396)
+	at oracle.jdbc.driver.T4C8Oall.processError(T4C8Oall.java:951)
+	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:513)
+	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:227)
+	at oracle.jdbc.driver.T4C8Oall.doOALL(T4C8Oall.java:531)
+	at oracle.jdbc.driver.T4CPreparedStatement.doOall8(T4CPreparedStatement.java:208)
+	at oracle.jdbc.driver.T4CPreparedStatement.executeForDescribe(T4CPreparedStatement.java:886)
+	at oracle.jdbc.driver.OracleStatement.executeMaybeDescribe(OracleStatement.java:1175)
+	at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1296)
+	at oracle.jdbc.driver.OraclePreparedStatement.executeInternal(OraclePreparedStatement.java:3613)
+	at oracle.jdbc.driver.OraclePreparedStatement.executeQuery(OraclePreparedStatement.java:3657)
+	at oracle.jdbc.driver.OraclePreparedStatementWrapper.executeQuery(OraclePreparedStatementWrapper.java:1495)
+	at com.mchange.v2.c3p0.impl.NewProxyPreparedStatement.executeQuery(NewProxyPreparedStatement.java:76)
+	at sun.reflect.GeneratedMethodAccessor21.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.compiere.db.StatementProxy.invoke(StatementProxy.java:100)
+	at com.sun.proxy.$Proxy3.executeQuery(Unknown Source)
+	at org.compiere.util.DB.getSQLValueBDEx(DB.java:1457)
+	at org.compiere.util.DB.getSQLValueBD(DB.java:1501)
+	at org.compiere.model.MMeasure.updateCalculatedGoals(MMeasure.java:473)
+	at org.compiere.model.MMeasure.updateGoals(MMeasure.java:360)
+	at org.compiere.model.MGoal.updateGoal(MGoal.java:379)
+	at org.compiere.model.MGoal.getUserGoals(MGoal.java:84)
+
+===========> ADForm.openForm: Class=org.adempiere.webui.apps.form.WSampleWebUIWindow, AD_Form_ID=1000001 [47]
+org.zkoss.zk.ui.UiException: Unsupported child for tabbox: <Panel null>
+	at org.zkoss.zul.Tabbox.beforeChildAdded(Tabbox.java:374)
+	at org.zkoss.zk.ui.AbstractComponent.insertBefore(AbstractComponent.java:967)
+	at org.zkoss.zul.Tabbox.insertBefore(Tabbox.java:407)
+	at org.zkoss.zk.ui.AbstractComponent.appendChild(AbstractComponent.java:1043)
+	at org.adempiere.webui.apps.form.WSampleWebUIWindow.zkInit(WSampleWebUIWindow.java:78)
+	at org.adempiere.webui.apps.form.WSampleWebUIWindow.initForm(WSampleWebUIWindow.java:62)
+	at org.adempiere.webui.panel.ADForm.init(ADForm.java:115)
+	at org.adempiere.webui.panel.ADForm.openForm(ADForm.java:343)
+	at org.adempiere.webui.desktop.TabbedDesktop.openForm(TabbedDesktop.java:84)
+	at org.adempiere.webui.desktop.AbstractDesktop.onMenuSelected(AbstractDesktop.java:75)
+	at org.adempiere.webui.panel.MenuPanel.fireMenuSelectedEvent(MenuPanel.java:231)
+	at org.adempiere.webui.panel.MenuPanel.onEvent(MenuPanel.java:203)
+	at org.zkoss.zk.ui.impl.EventProcessor.process0(EventProcessor.java:197)
+	at org.zkoss.zk.ui.impl.EventProcessor.process(EventProcessor.java:141)
+	at org.zkoss.zk.ui.impl.EventProcessingThreadImpl.process0(EventProcessingThreadImpl.java:519)
+	at org.zkoss.zk.ui.impl.EventProcessingThreadImpl.run(EventProcessingThreadImpl.java:446)
+
+===========> zkoss.handleError:1130: >>org.adempiere.webui.exception.ApplicationException: The web user interface custom form 'org.adempiere.webui.apps.form.WSampleWebUIWindow' failed to initialise:org.zkoss.zk.ui.UiException: Unsupported child for tabbox: <Panel null>
+>>org.adempiere.webui.exception.ApplicationException: The web user interface custom form 'org.adempiere.webui.apps.form.WSampleWebUIWindow' failed to initialise:org.zkoss.zk.ui.UiException: Unsupported child for tabbox: <Panel null>
+>>	at org.adempiere.webui.panel.ADForm.openForm(ADForm.java:372)
+>>	at org.adempiere.webui.desktop.TabbedDesktop.openForm(TabbedDesktop.java:84)
+>>	at org.adempiere.webui.desktop.AbstractDesktop.onMenuSelected(AbstractDesktop.java:75)
+>>	at org.adempiere.webui.panel.MenuPanel.fireMenuSelectedEvent(MenuPanel.java:231)
+>>	at org.adempiere.webui.panel.MenuPanel.onEvent(MenuPanel.java:203)
+>>... [29]

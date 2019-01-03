@@ -1,0 +1,47 @@
+*** 2017-09-25 13:22:35.534 Adempiere Log (CLogFile) ***
+13:22:35.534 Adempiere.startup: ADempiere(r) Release 3.9.0_2017-08-01 -Smart Suite ERP,CRM and SCM- (c) 1999-2017 ADempiere(r); Implementation: ADempiere - Supported by ADempiere community [1]
+13:22:35.553 Ini.loadProperties: C:\Users\AYAZ\Adempiere.properties #37 [1]
+===========> CoyoteAdapter.service: PWC3989: An exception or error occurred in the container during the request processing [19]
+java.lang.ClassCastException: java.lang.String cannot be cast to org.apache.catalina.Host
+	at org.apache.coyote.tomcat5.CoyoteRequest.getHost(CoyoteRequest.java:708)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:128)
+	at org.apache.catalina.core.StandardPipeline.doInvoke(StandardPipeline.java:632)
+	at org.apache.catalina.core.StandardPipeline.doInvoke(StandardPipeline.java:577)
+	at org.apache.catalina.core.StandardPipeline.invoke(StandardPipeline.java:571)
+	at org.apache.catalina.core.ContainerBase.invoke(ContainerBase.java:1080)
+	at org.apache.coyote.tomcat5.CoyoteAdapter.service(CoyoteAdapter.java:272)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:719)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.processConnection(Http11Protocol.java:684)
+	at org.apache.tomcat.util.net.TcpWorkerThread.runIt(PoolTcpEndpoint.java:561)
+	at org.apache.tomcat.util.threads.ThreadPool$ControlRunnable.run(ThreadPool.java:666)
+	at java.lang.Thread.run(Unknown Source)
+
+===========> Registry.registerComponent: Null component Catalina:type=protocolHandler,className=org.apache.jk.server.JkCoyoteHandler [1]
+===========> Catalina.start: Catalina.start:  [1]
+LifecycleException:  PWC3987: Protocol handler start failed: java.lang.NullPointerException
+	at org.apache.coyote.tomcat5.CoyoteConnector.start(CoyoteConnector.java:1683)
+	at org.apache.catalina.core.StandardService.start(StandardService.java:524)
+	at org.apache.catalina.core.StandardServer.start(StandardServer.java:2317)
+	at org.apache.catalina.startup.Catalina.start(Catalina.java:575)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:351)
+	at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:485)
+
+===========> CoyoteAdapter.service: PWC3989: An exception or error occurred in the container during the request processing [18]
+java.lang.ClassCastException: java.lang.String cannot be cast to org.apache.catalina.Host
+	at org.apache.coyote.tomcat5.CoyoteRequest.getHost(CoyoteRequest.java:708)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:128)
+	at org.apache.catalina.core.StandardPipeline.doInvoke(StandardPipeline.java:632)
+	at org.apache.catalina.core.StandardPipeline.doInvoke(StandardPipeline.java:577)
+	at org.apache.catalina.core.StandardPipeline.invoke(StandardPipeline.java:571)
+	at org.apache.catalina.core.ContainerBase.invoke(ContainerBase.java:1080)
+	at org.apache.coyote.tomcat5.CoyoteAdapter.service(CoyoteAdapter.java:272)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:719)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.processConnection(Http11Protocol.java:684)
+	at org.apache.tomcat.util.net.TcpWorkerThread.runIt(PoolTcpEndpoint.java:561)
+	at org.apache.tomcat.util.threads.ThreadPool$ControlRunnable.run(ThreadPool.java:666)
+	at java.lang.Thread.run(Unknown Source)
+

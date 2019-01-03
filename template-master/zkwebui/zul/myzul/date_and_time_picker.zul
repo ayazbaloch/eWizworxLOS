@@ -1,0 +1,51 @@
+<window title="" border="normal">
+	
+	<tabbox>
+		<tabs>
+			<tab label="Ayaz tab" />
+			<tab label="Ejaz Tab" />
+		</tabs>
+		<tabpanels>
+			<tabpanel>
+				<panel>
+					<panelchildren>
+					
+						<grid>
+							<columns>
+								<column label="Header1" width="50%"/>
+								<column label="Header2" width="50%"/>
+							</columns>
+							
+							<rows>
+								<row>
+									<hbox>
+										CNIC#: <intbox /> 
+										Name: <textbox />
+									</hbox>
+								</row>
+								
+								<row>
+									Address: <textbox rows="2" width="250 px" />					
+								</row>
+								
+								<row>
+									<label value="You are using ZK version: ${desktop.webApp.version}"/>
+								</row>
+								
+							</rows>
+						</grid>
+						
+					</panelchildren>
+				</panel>
+			
+			</tabpanel>
+			
+			
+			
+			
+			
+			<tabpanel></tabpanel>
+		</tabpanels>
+	</tabbox>
+
+</window>
