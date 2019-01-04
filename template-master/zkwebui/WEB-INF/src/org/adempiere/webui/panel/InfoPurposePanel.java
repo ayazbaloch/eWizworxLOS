@@ -30,11 +30,12 @@ import org.compiere.util.KeyNamePair;
 import org.compiere.util.Msg;
 import org.compiere.util.ValueNamePair;
 import org.ewizworx.model.I_COL_BRANCH;
+import org.ewizworx.model.I_LOS_PURPOSECATEGORY;
 //import org.jfree.text.TextBox;
 import org.zkoss.zk.ui.event.EventListener;
 import org.zkoss.zk.ui.event.Events;
 
-public class InfoLoanPurposePanel extends InfoPanel implements ValueChangeListener, EventListener {
+public class InfoPurposePanel extends InfoPanel implements ValueChangeListener, EventListener {
 
 	/**
 	 * 
@@ -52,7 +53,7 @@ public class InfoLoanPurposePanel extends InfoPanel implements ValueChangeListen
 	 * @param multiSelection 	multiple selections
 	 * @param whereClause 		where clause
 	 */
-	public InfoLoanPurposePanel(	int WindowNo, int record_id, String value,
+	public InfoPurposePanel(	int WindowNo, int record_id, String value,
 							boolean multiSelection, String whereClause)
 	{
 		this(WindowNo, true, record_id, value, multiSelection, false, whereClause);
@@ -69,7 +70,7 @@ public class InfoLoanPurposePanel extends InfoPanel implements ValueChangeListen
 	 * @param modal True if window is opened in modal mode.
 	 */
 	
-	public InfoLoanPurposePanel(	int WindowNo, boolean modal, int record_id, String value,
+	public InfoPurposePanel(	int WindowNo, boolean modal, int record_id, String value,
 			boolean multiSelection, boolean saveResults, String whereClause)
 	{
 		super (WindowNo, modal, "p", "LOS_PURPOSE_ID", multiSelection, saveResults, whereClause);
@@ -88,6 +89,7 @@ public class InfoLoanPurposePanel extends InfoPanel implements ValueChangeListen
 		setOrderClause("p.PURPOSE");
 		//
 		statInit();
+		
 		initInfo(record_id, value, whereClause);
 		
 		//  Auto query
@@ -141,7 +143,7 @@ public class InfoLoanPurposePanel extends InfoPanel implements ValueChangeListen
 		fieldPurpose.setWidth("100%");
 		
 		
-		labelSubCategory.setValue(Msg.getMsg(Env.getCtx(), "Tehsil"));
+		labelSubCategory.setValue(Msg.getMsg(Env.getCtx(), "Sub-Category"));
 		
 		
 		
@@ -155,15 +157,18 @@ public class InfoLoanPurposePanel extends InfoPanel implements ValueChangeListen
 		// From COL_BRANCH.
 		
 		/* this line review after model file generation
-		fLOSCtegory = new WTableDirEditor(I_COL_BRANCH.COLUMNNAME_LOS_PURPOSECATEGORY_ID, false, false, true,
+		fCOLRegion_ID = new WTableDirEditor(I_COL_BRANCH.COLUMNNAME_COL_BR_REGION_ID, false, false, true,
 				MLookupFactory.get (Env.getCtx(), p_WindowNo, 0, 
-						MColumn.getColumn_ID(I_COL_BRANCH.Table_Name,I_COL_BRANCH.COLUMNNAME_LOS_PURPOSECATEGORY_ID ), 
+						MColumn.getColumn_ID(I_COL_BRANCH.Table_Name,I_COL_BRANCH.COLUMNNAME_COL_BR_REGION_ID ), 
 						DisplayType.Table));
 		*/
-		fLOSCtegory = new WTableDirEditor("LOS_PURPOSECATEGORY_ID", false, false, true,
+		
+		fLOSCtegory = new WTableDirEditor(I_LOS_PURPOSECATEGORY.COLUMNNAME_LOS_PURPOSECATEGORY_ID, false, false, true,
 				MLookupFactory.get (Env.getCtx(), p_WindowNo, 0, 
-						MColumn.getColumn_ID("LOS_PURPOSECATEGORY","LOS_PURPOSECATEGORY_ID" ), 
+						MColumn.getColumn_ID(I_LOS_PURPOSECATEGORY.Table_Name,I_LOS_PURPOSECATEGORY.COLUMNNAME_LOS_PURPOSECATEGORY_ID), 
 						DisplayType.Table));
+		
+		org.adempiere.webui.window.FDialog.ask(1,null,"Are you sure to save these data ?");
 		
 		fLOSCtegory.addValueChangeListener(this);
 		fLOSCtegory.getComponent().setAttribute("zk_component_ID", "Lookup_Criteria_fLOSCtegory");
@@ -370,16 +375,16 @@ public class InfoLoanPurposePanel extends InfoPanel implements ValueChangeListen
 	 *  @param COL_District_ID District
 	 */
 	
-	protected void initTehsil (int COL_District_ID)
+	protected void initTehsil (int LOS_PURPOSESUBCATEGORY_ID)
 	{
-		log.config("COL_District_ID=" + COL_District_ID);
+		log.config("LOS_PURPOSESUBCATEGORY_ID=" + LOS_PURPOSESUBCATEGORY_ID);
 		KeyNamePair pp = new KeyNamePair(0,"");
 		//  load PO Orders - Closed, Completed
 		fLOSSubCategory.removeActionListener(this);
 		fLOSSubCategory.removeAllItems();
 		fLOSSubCategory.addItem(pp);
 		
-		ArrayList<KeyNamePair> list = loadTehsilData(COL_District_ID);
+		ArrayList<KeyNamePair> list = loadTehsilData(LOS_PURPOSESUBCATEGORY_ID);
 		for(KeyNamePair knp : list)
 			fLOSSubCategory.addItem(knp);
 		
@@ -399,12 +404,12 @@ public class InfoLoanPurposePanel extends InfoPanel implements ValueChangeListen
 		ArrayList<KeyNamePair> list = new ArrayList<KeyNamePair>();
 
 		//	Display
-		StringBuffer display = new StringBuffer("t.TEHSIL_NM");
+		StringBuffer display = new StringBuffer("s.LOS_PURPOSESUBCATEGORY");
 		//	.append(DB.TO_CHAR("s.MovementDate", DisplayType.Date, Env.getAD_Language(Env.getCtx())));
 		//
-		StringBuffer sql = new StringBuffer("SELECT t.LOS_PURPOSESUBCATEGORY_ID,").append(display)
-			.append(" FROM COL_TEHSIL t "
-			+ "WHERE t.COL_DISTRICT_ID=? AND t.ISACTIVE='Y'");
+		StringBuffer sql = new StringBuffer("SELECT s.LOS_PURPOSESUBCATEGORY_ID,").append(display)
+			.append(" FROM LOS_PURPOSESUBCATEGORY s "
+			+ "WHERE s.LOS_PURPOSECATEGORY_ID=? AND s.ISACTIVE='Y'");
 		try
 		{
 			PreparedStatement pstmt = DB.prepareStatement(sql.toString(), null);
@@ -451,7 +456,7 @@ public class InfoLoanPurposePanel extends InfoPanel implements ValueChangeListen
 	 */
 	public static void showBranch (int WindowNo,String value)
 	{
-		InfoLoanPurposePanel info = new InfoLoanPurposePanel (WindowNo, false, 0, "", 
+		InfoPurposePanel info = new InfoPurposePanel (WindowNo, false, 0, "", 
 			true, false,   "");
 		//(	int WindowNo, boolean modal, int record_id, String value,
 		//boolean multiSelection, boolean saveResults, String whereClause)

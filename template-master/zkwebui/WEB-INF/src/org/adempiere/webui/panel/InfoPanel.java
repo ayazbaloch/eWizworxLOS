@@ -152,6 +152,9 @@ public abstract class InfoPanel extends Window implements EventListener, WTableM
             else if (tableName.equals("COL_BRANCH"))
             	info = new InfoBranchPanel (WindowNo, modal, record_id, value,
                        multiSelection, saveResult, whereClause);
+            else if (tableName.equals("LOS_PURPOSE"))
+            	info = new InfoPurposePanel (WindowNo, modal, record_id, value,
+                       multiSelection, saveResult, whereClause);
             
             else
                 info = new InfoGeneralPanel (WindowNo, modal, record_id, value,  
