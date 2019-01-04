@@ -1,9 +1,0 @@
-*** 2017-09-29 11:55:15.121 Adempiere Log (CLogFile) ***
-11:55:15.121 Adempiere.startup: ADempiere(r) Release 3.9.0_2017-08-01 -Smart Suite ERP,CRM and SCM- (c) 1999-2017 ADempiere(r); Implementation: ADempiere - Supported by ADempiere community [13]
-11:55:15.153 Ini.loadProperties: C:\Users\AYAZ\Adempiere.properties #37 [13]
-===========> Login.validateLogin: Refused: nulljava.lang.ClassNotFoundException: compiere.model.MyValidator on client GardenWorld
- [47]
-===========> Login.validateLogin: Refused: nulljava.lang.ClassNotFoundException: compiere.model.MyValidator on client GardenWorld
- [47]
-===========> Login.validateLogin: Refused: nulljava.lang.ClassNotFoundException: compiere.model.MyValidator on client GardenWorld
- [47]

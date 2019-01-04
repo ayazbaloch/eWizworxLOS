@@ -1,4 +1,0 @@
-*** 2018-03-29 15:42:57.073 Adempiere Log (CLogFile) ***
-15:42:57.073 Adempiere.startup: ADempiere(r) Release 3.9.0_2017-08-01 -Smart Suite ERP,CRM and SCM- (c) 1999-2017 ADempiere(r); Implementation: ADempiere - Supported by ADempiere community [13]
-15:42:57.074 Ini.loadProperties: C:\Users\AYAZ\Adempiere.properties #37 [13]
------------> Msg.translate: NOT found: Assignment [47]

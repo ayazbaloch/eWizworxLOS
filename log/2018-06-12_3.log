@@ -1,8 +1,0 @@
-*** 2018-06-12 15:26:15.813 Adempiere Log (CLogFile) ***
-15:26:15.813 Adempiere.startup: ADempiere(r) Release 3.9.0_2017-08-01 -Smart Suite ERP,CRM and SCM- (c) 1999-2017 ADempiere(r); Implementation: ADempiere - Supported by ADempiere community [16]
-15:26:15.813 Ini.loadProperties: D:\Ayaz\Ayaz_NBP_PC_Backup\AdempiereTemplate39\Adempiere.properties #37 [16]
-===========> MLookupFactory.getLookup_TableDir: No Identifier records found: COL_BRANCH_ID [50]
-===========> MLookupFactory.getLookupInfo: No SQL - COL_BRANCH_ID [50]
------------> GridTable.open: Count - ORA-00904: "PROCESSED": invalid identifier
-
-SQL=SELECT COUNT(*) FROM LOS_Lead WHERE (Processed='N' OR Updated>SysDate-1) AND LOS_Lead.AD_Client_ID IN(0,11) AND LOS_Lead.AD_Org_ID IN(0,11,12,50000,50002,50001,50004,50006,50005,50007) AND (LOS_Lead.LOS_Lead_ID IS NULL OR LOS_Lead.LOS_Lead_ID NOT IN ( SELECT Record_ID FROM AD_Private_Access WHERE AD_Table_ID = 1000052 AND AD_User_ID <> 101 AND IsActive = 'Y' )) [50]
