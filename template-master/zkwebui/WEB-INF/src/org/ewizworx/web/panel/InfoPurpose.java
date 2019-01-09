@@ -21,10 +21,10 @@ public class InfoPurpose implements InfoPanelFactory {
 	}
 	
 	
-	InfoPurpose(){
+	static void display() 
+    {
 		org.adempiere.webui.window.FDialog.ask(1,null,"Are you sure to save these data ?");
-		
-	}
+    }
 	
 
 }

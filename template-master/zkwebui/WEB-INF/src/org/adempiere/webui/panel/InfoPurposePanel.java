@@ -30,6 +30,7 @@ import org.compiere.util.KeyNamePair;
 import org.compiere.util.Msg;
 import org.compiere.util.ValueNamePair;
 import org.ewizworx.model.I_COL_BRANCH;
+import org.ewizworx.model.I_LOS_PURPOSE;
 import org.ewizworx.model.I_LOS_PURPOSECATEGORY;
 //import org.jfree.text.TextBox;
 import org.zkoss.zk.ui.event.EventListener;
@@ -77,7 +78,7 @@ public class InfoPurposePanel extends InfoPanel implements ValueChangeListener, 
 		
 		
 		log.info(value + ", ID=" + record_id + ", WHERE=" + whereClause);
-		setTitle(Msg.getMsg(Env.getCtx(), "InfoLoanPurpose"));
+		setTitle(Msg.getMsg(Env.getCtx(), "InfoPurpose"));
 		//
 		StringBuffer where = new StringBuffer();
 		where.append("p.IsActive='Y'");
@@ -112,7 +113,7 @@ public class InfoPurposePanel extends InfoPanel implements ValueChangeListener, 
 		new ColumnInfo(" ", "p.LOS_PURPOSE_ID", IDColumn.class),
 		new ColumnInfo(Msg.translate(Env.getCtx(), "Purpose Category"), "c.LOS_PURPOSECATEGORY", String.class),
 		new ColumnInfo(Msg.translate(Env.getCtx(), "Purpose Sub-Category"), "s.LOS_PURPOSESUBCATEGORY", String.class),
-		new ColumnInfo(Msg.translate(Env.getCtx(), "Purpose"), "p.PURPOSE", String.class)
+		new ColumnInfo(Msg.translate(Env.getCtx(), "Purpose"), "p.Purpose", String.class)
 	};
 	
 	
@@ -122,9 +123,6 @@ public class InfoPurposePanel extends InfoPanel implements ValueChangeListener, 
 	private Textbox fieldPurpose = new Textbox();
 	
 	
-	
-	
-	//private Listbox fLOSSubCategory = ListboxFactory.newDropdownListbox();
 	private Listbox fLOSSubCategory ;
 
 	
@@ -140,10 +138,10 @@ public class InfoPurposePanel extends InfoPanel implements ValueChangeListener, 
 	
 	private void statInit()
 	{
-		fieldPurpose.setWidth("100%");
+		fieldPurpose.setWidth("80%");
 		
 		
-		labelSubCategory.setValue(Msg.getMsg(Env.getCtx(), "Sub-Category"));
+		labelSubCategory.setValue(Msg.getMsg(Env.getCtx(), "Purpose Sub-Category"));
 		
 		
 		
@@ -151,49 +149,44 @@ public class InfoPurposePanel extends InfoPanel implements ValueChangeListener, 
 		fieldPurpose.addEventListener(Events.ON_CANCEL, this);
 		fieldPurpose.setAttribute("zk_component_ID", "Lookup_Criteria_fieldPurpose");
 		
-		//fieldRefCode.addEventListener(Events.ON_CANCEL, this);
-		//fieldRefCode.setAttribute("zk_component_ID", "Lookup_Criteria_fieldRefCode");
+		//Note WTableDirEditor is depend on detail table not Master
 		
-		// From COL_BRANCH.
-		
-		/* this line review after model file generation
-		fCOLRegion_ID = new WTableDirEditor(I_COL_BRANCH.COLUMNNAME_COL_BR_REGION_ID, false, false, true,
+		fLOSCtegory = new WTableDirEditor(I_LOS_PURPOSE.COLUMNNAME_LOS_PURPOSECATEGORY_ID, false, false, true,
 				MLookupFactory.get (Env.getCtx(), p_WindowNo, 0, 
-						MColumn.getColumn_ID(I_COL_BRANCH.Table_Name,I_COL_BRANCH.COLUMNNAME_COL_BR_REGION_ID ), 
-						DisplayType.Table));
-		*/
-		
-		fLOSCtegory = new WTableDirEditor(I_LOS_PURPOSECATEGORY.COLUMNNAME_LOS_PURPOSECATEGORY_ID, false, false, true,
-				MLookupFactory.get (Env.getCtx(), p_WindowNo, 0, 
-						MColumn.getColumn_ID(I_LOS_PURPOSECATEGORY.Table_Name,I_LOS_PURPOSECATEGORY.COLUMNNAME_LOS_PURPOSECATEGORY_ID), 
+						MColumn.getColumn_ID(I_LOS_PURPOSE.Table_Name,I_LOS_PURPOSE.COLUMNNAME_LOS_PURPOSECATEGORY_ID), 
 						DisplayType.Table));
 		
-		org.adempiere.webui.window.FDialog.ask(1,null,"Are you sure to save these data ?");
+		//org.adempiere.webui.window.FDialog.ask(1,null,"Are you sure to save these data ?");
 		
 		fLOSCtegory.addValueChangeListener(this);
 		fLOSCtegory.getComponent().setAttribute("zk_component_ID", "Lookup_Criteria_fLOSCtegory");
-		fLOSCtegory.setLabel("Region");
-		
+		fLOSCtegory.setLabel("Purpose Category");
 		
 		
 		fLOSSubCategory = ListboxFactory.newDropdownListbox();
-		fLOSSubCategory.setAttribute("zk_component_ID", "Lookup_Criteria_fCOLTehsil_ID");
-		fLOSSubCategory.setWidth("100%");
+		fLOSSubCategory.setAttribute("zk_component_ID", "Lookup_Criteria_fLOSSubCategory_ID");
+		fLOSSubCategory.setWidth("36%");
 		
 		
 		Rows rows = new Rows();
 		
 		Row row = new Row();
 		rows.appendChild(row);
-		//row.appendChild(labelRegion);
+		
 		row.appendChild(fLOSCtegory.getLabel().rightAlign());
 		row.appendChild(fLOSCtegory.getComponent());
 		
+		row = new Row();
+		rows.appendChild(row);
+		row.appendChild(labelSubCategory.rightAlign());
+		row.appendChild(fLOSSubCategory);
+		
+		row = new Row();
+		rows.appendChild(row);
 		row.appendChild(labelPurpose.rightAlign());
 		row.appendChild(fieldPurpose);
 		
-		row.appendChild(labelSubCategory.rightAlign());
-		row.appendChild(fLOSSubCategory);
+		
 		
 		p_criteriaGrid.appendChild(rows);
 		super.setSizes();
@@ -229,13 +222,13 @@ public class InfoPurposePanel extends InfoPanel implements ValueChangeListener, 
 			else
 			{
 				//  Try to find the context - LOS_PURPOSE_ID
-	        	String aid = Env.getContext(Env.getCtx(), p_WindowNo, "LOS_PURPOSE_ID");
+	        	String aid = Env.getContext(Env.getCtx(), p_WindowNo, I_LOS_PURPOSE.COLUMNNAME_LOS_PURPOSE_ID);
 				if (aid != null && aid.length() != 0)
 				{
 					fieldID = new Integer(aid).intValue();
 				}
 				//  LOS_PURPOSECATEGORY_ID
-				String rg = Env.getContext(Env.getCtx(), p_WindowNo, "LOS_PURPOSECATEGORY_ID");
+				String rg = Env.getContext(Env.getCtx(), p_WindowNo,I_LOS_PURPOSE.COLUMNNAME_LOS_PURPOSECATEGORY_ID);
 				if (rg != null && rg.length() != 0)
 				{
 					fLOSCtegory.setValue(new Integer(rg).intValue());
@@ -243,7 +236,7 @@ public class InfoPurposePanel extends InfoPanel implements ValueChangeListener, 
 				
 				
 				//  LOS_PURPOSESUBCATEGORY_ID
-				String sid = Env.getContext(Env.getCtx(), p_WindowNo, "LOS_PURPOSESUBCATEGORY_ID");
+				String sid = Env.getContext(Env.getCtx(), p_WindowNo,I_LOS_PURPOSE.COLUMNNAME_LOS_PURPOSESUBCATEGORY_ID);
 				if (sid != null && sid.length() != 0)
 				{
 					fLOSSubCategory.setValue(new Integer(sid).intValue());
@@ -336,7 +329,7 @@ public class InfoPurposePanel extends InfoPanel implements ValueChangeListener, 
 		//  publish for Callout to read
 		
 		Integer ID = getSelectedRowKey();
-		Env.setContext(Env.getCtx(), p_WindowNo, Env.TAB_INFO, "LOS_PURPOSE_ID", ID == null ? "0" : ID.toString());
+		Env.setContext(Env.getCtx(), p_WindowNo, Env.TAB_INFO,I_LOS_PURPOSE.COLUMNNAME_LOS_PURPOSE_ID, ID == null ? "0" : ID.toString());
 	} // saveSelectionDetail
 
 
@@ -345,7 +338,7 @@ public class InfoPurposePanel extends InfoPanel implements ValueChangeListener, 
 	 */
 	public void zoom(int record_id)
 	{
-		log.info( "InfoLoanPurpose.zoom");
+		log.info( "InfoPurpose.zoom");
 		Integer A_Asset_ID = record_id;
 		
 		if (A_Asset_ID == null)
@@ -371,20 +364,20 @@ public class InfoPurposePanel extends InfoPanel implements ValueChangeListener, 
 	} // hasZoom
 	
 	/**
-	 *  Load PBartner dependent Order/Invoice/Shipment Field.
-	 *  @param COL_District_ID District
+	 *  Load Loan Purpose Sub-Category dependent Category Field.
+	 *  @param LOS_PURPOSESUBCATEGORY_ID Category
 	 */
 	
-	protected void initTehsil (int LOS_PURPOSESUBCATEGORY_ID)
+	protected void initSubCategory (int LOS_PURPOSESUBCATEGORY_ID)
 	{
-		log.config("LOS_PURPOSESUBCATEGORY_ID=" + LOS_PURPOSESUBCATEGORY_ID);
+		log.config("LOS_PURPOSESUBCATEGORY_ID=" + I_LOS_PURPOSE.COLUMNNAME_LOS_PURPOSESUBCATEGORY_ID);
 		KeyNamePair pp = new KeyNamePair(0,"");
 		//  load PO Orders - Closed, Completed
 		fLOSSubCategory.removeActionListener(this);
 		fLOSSubCategory.removeAllItems();
 		fLOSSubCategory.addItem(pp);
 		
-		ArrayList<KeyNamePair> list = loadTehsilData(LOS_PURPOSESUBCATEGORY_ID);
+		ArrayList<KeyNamePair> list = loadSubCategoryData(LOS_PURPOSESUBCATEGORY_ID);
 		for(KeyNamePair knp : list)
 			fLOSSubCategory.addItem(knp);
 		
@@ -392,14 +385,14 @@ public class InfoPurposePanel extends InfoPanel implements ValueChangeListener, 
 		fLOSSubCategory.addActionListener(this);
 
 		//initBPDetails(COL_District_ID);
-	}   //  initBPartnerOIS
+	}   //  initSubCategory
 
 	
 	/**
-	 * Load Tehsil dependent Distric Field.
+	 * Load Sub-Category dependent Category Field.
 	 * @param LOS_PURPOSESUBCATEGORY_ID
 	 */
-	protected ArrayList<KeyNamePair> loadTehsilData (int LOS_PURPOSESUBCATEGORY_ID)
+	protected ArrayList<KeyNamePair> loadSubCategoryData (int LOS_PURPOSESUBCATEGORY_ID)
 	{
 		ArrayList<KeyNamePair> list = new ArrayList<KeyNamePair>();
 
@@ -442,10 +435,10 @@ public class InfoPurposePanel extends InfoPanel implements ValueChangeListener, 
 		log.config(e.getPropertyName() + "=" + e.getNewValue());
 
 		//  BPartner - load Order/Invoice/Shipment
-		if (e.getPropertyName().equals("COL_DISTRICT_ID"))
+		if (e.getPropertyName().equals(I_LOS_PURPOSE.COLUMNNAME_LOS_PURPOSECATEGORY_ID))
 		{
-			int COL_DISTRICT_ID = ((Integer)e.getNewValue()).intValue();
-			initTehsil (COL_DISTRICT_ID);
+			int LOS_PURPOSECATEGORY_ID = ((Integer)e.getNewValue()).intValue();
+			initSubCategory (LOS_PURPOSECATEGORY_ID);
 		}
 		//v_CreateFromPanel.tableChanged(null);
 	}   //  vetoableChange
@@ -454,7 +447,7 @@ public class InfoPurposePanel extends InfoPanel implements ValueChangeListener, 
 	 * Show BPartner Info (non modal)
 	 * @param WindowNo window no
 	 */
-	public static void showBranch (int WindowNo,String value)
+	public static void showPurpose (int WindowNo,String value)
 	{
 		InfoPurposePanel info = new InfoPurposePanel (WindowNo, false, 0, "", 
 			true, false,   "");
