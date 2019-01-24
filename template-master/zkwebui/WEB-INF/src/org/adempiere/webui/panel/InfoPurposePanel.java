@@ -37,7 +37,6 @@ import org.zkoss.zk.ui.event.EventListener;
 import org.zkoss.zk.ui.event.Events;
 
 public class InfoPurposePanel extends InfoPanel implements ValueChangeListener, EventListener {
-
 	/**
 	 * 
 	 */

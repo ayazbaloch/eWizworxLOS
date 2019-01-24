@@ -3,6 +3,8 @@ package org.ewizworx.model;
 import java.sql.ResultSet;
 import java.util.Properties;
 
+import org.compiere.util.Msg;
+
 
 public class MEWGENDER extends X_EW_GENDER {
 
@@ -27,6 +29,7 @@ public class MEWGENDER extends X_EW_GENDER {
 		//log.fine("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
 		//log.info("xxxxxxxxxxxxxxxxxxxxxxxxxx");
 		log.severe("ddddddddddddddddddddddddd");
+		log.saveError("Error", Msg.getMsg(getCtx(), "CannotDelete"));
 		
 		//mTab.fireDataStatusEEvent ("NoQtyAvailable", "0", true); 
 		return false;

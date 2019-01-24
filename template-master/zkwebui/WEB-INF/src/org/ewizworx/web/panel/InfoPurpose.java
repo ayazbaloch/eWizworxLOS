@@ -20,11 +20,4 @@ public class InfoPurpose implements InfoPanelFactory {
 		 return info;
 	}
 	
-	
-	static void display() 
-    {
-		org.adempiere.webui.window.FDialog.ask(1,null,"Are you sure to save these data ?");
-    }
-	
-
 }
