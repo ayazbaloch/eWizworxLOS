@@ -14,9 +14,10 @@ public class WDateTime extends ADForm {
 	@Override
 	protected void initForm() {
 		// TODO Auto-generated method stub
-		//Executions.sendRedirect("/zul/date_and_time_picker.zul");
+		//Executions.sendRedirect("/zul/test_1.jsp");
 		
 		String zulfile = "/zul/myzul/date_and_time_picker.zul"; // Relative to the root
+		//String zulfile = "/zul/test_1.jsp"; // Relative to the root
 		PageDefinition pageDefintion = Executions.getCurrent().getPageDefinition(zulfile);
 		Executions.createComponents(pageDefintion, this, null);
 		

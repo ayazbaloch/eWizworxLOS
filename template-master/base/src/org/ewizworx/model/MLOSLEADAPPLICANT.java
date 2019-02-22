@@ -3,7 +3,9 @@ package org.ewizworx.model;
 import java.sql.ResultSet;
 import java.util.Properties;
 
+import org.adempiere.exceptions.AdempiereException;
 import org.compiere.model.MInvoice;
+import org.compiere.model.MProduct;
 import org.compiere.model.POResultSet;
 import org.compiere.model.Query;
 import org.compiere.util.DB;
@@ -44,23 +46,55 @@ public class MLOSLEADAPPLICANT extends X_LOS_LEADAPPLICANT {
 	}	//	getParent
 	
 	protected boolean beforeSave (boolean newRecord){
-		//1000001--> Individual
 		
-		//log.severe(lead.getBUSINESSSIGMENT());
-		//log.severe(X_LOS_Lead.BUSINESSSIGMENT_Consumer);
-		//log.severe(String.valueOf(lead.getLOS_LOANENTITYTYPE_ID()));
-		//if (newRecord){
+		String key;
+		key=getParent().getBUSINESSSIGMENT()+ "_" + getParent().getLOS_LOANENTITYTYPE_ID()+ "_" + getSTAKEHOLDERTYPE();
 		
-			if (hasConsumerBorrower(newRecord)){
-				log.saveError("Error", "Not allowed more than 1 applicant for Individual type.");
-				return false;
-			}
-		//}
 		
+		MLOSProductStakeHolderRule rule=MLOSProductStakeHolderRule.get(getCtx(), key);
+		if (rule==null){
+			log.saveError("Error", "No Rule define for " + getParent().getBUSINESSSIGMENT());
+			return false;
+		}
+		
+		int cnt;
+		//if (newRecord)
+		//	cnt=getStakeholderCount()+1;
+		//else
+			cnt=getStakeholderCount();
+		
+		if (cnt >= rule.getMaxValue()){
+			log.saveError("Error", "Not allowed more than " + String.valueOf(cnt) + " " + getSTAKEHOLDERTYPE());
+			//throw new AdempiereException("Not allowed more than " + String.valueOf(cnt) + " " + getSTAKEHOLDERTYPE());
+			return false;
+		}
+		
+		
+		
+		
+		
+		
+		return true;//isValidApplicantRange(key);
+		
+	}
+	
+	public boolean isValidApplicantRange(String key){
+		int cnt;
+		MLOSProductStakeHolderRule rule=MLOSProductStakeHolderRule.get(getCtx(), key);
+		if (rule==null){
+			log.saveError("Error", "No Rule define for " + getParent().getBUSINESSSIGMENT());
+			return false;
+		}
+		
+		cnt=getStakeholderCount();
+		
+		if (cnt >= rule.getMaxValue()){
+			log.saveError("Error", "Not allowed more than " + String.valueOf(cnt) + " " + getSTAKEHOLDERTYPE());
+			return false;
+		}
 		
 		
 		return true;
-		
 	}
 	
 	private boolean hasConsumerBorrower(boolean newRecord){
@@ -99,6 +133,9 @@ public class MLOSLEADAPPLICANT extends X_LOS_LEADAPPLICANT {
 		int count = DB.getSQLValue(get_TrxName(), sql, getLOS_Lead_ID(),getSTAKEHOLDERTYPE());
 		return count;
 	}
+	
+	
+	
 	
 
 }

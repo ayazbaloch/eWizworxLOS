@@ -74,8 +74,7 @@ public class InfoPurposePanel extends InfoPanel implements ValueChangeListener, 
 			boolean multiSelection, boolean saveResults, String whereClause)
 	{
 		super (WindowNo, modal, "p", "LOS_PURPOSE_ID", multiSelection, saveResults, whereClause);
-		
-		
+				
 		log.info(value + ", ID=" + record_id + ", WHERE=" + whereClause);
 		setTitle(Msg.getMsg(Env.getCtx(), "InfoPurpose"));
 		//
@@ -279,10 +278,7 @@ public class InfoPurposePanel extends InfoPanel implements ValueChangeListener, 
 			if (LOS_PURPOSESUBCATEGORY_ID != null)
 				sql.append (" AND s.LOS_PURPOSESUBCATEGORY_ID=").append(LOS_PURPOSESUBCATEGORY_ID);
 		}
-		
-			//
-		
-		
+				
 		return sql.toString();
 	} //getSQLWhere
 

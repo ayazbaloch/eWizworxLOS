@@ -75,7 +75,7 @@ public class MLOSProductStakeHolderRule extends X_LOS_ProductStakeHolderRule {
 	 * 	Get StakeholderRule from (cached) using key (BusinessSigment+LoanEntityType+StakeholderType
 	 * 	@param ctx context
 	 *	@param C_Country_ID ID
-	 *	@return Country
+	 *	@return ProductStakeHolderRule
 	 */
 	public static MLOSProductStakeHolderRule get (Properties ctx, String key)
 	{
@@ -83,19 +83,21 @@ public class MLOSProductStakeHolderRule extends X_LOS_ProductStakeHolderRule {
 		
 		if (s_cache == null || s_cache.size() == 0)
 			loadAllStakeholderRule(ctx);
-		//String key = String.valueOf(C_Country_ID);
 		MLOSProductStakeHolderRule r = (MLOSProductStakeHolderRule)s_cache.get(key);
 		if (r != null)
 			return r;
 		
 		LOS_ProductStakeHolderRule_ID=getIDByKey(ctx,key);
-		
+				
 		r = new MLOSProductStakeHolderRule (ctx, LOS_ProductStakeHolderRule_ID, null);
+		
 		if (r.getLOS_ProductStakeHolderRule_ID()== LOS_ProductStakeHolderRule_ID)
 		{
 			s_cache.put(key, r);
+			s_log.log(Level.SEVERE, "New Rule key is added  into cache [" + key + "]");
 			return r;
 		}
+		
 		return null;
 	}	//	get
 	
@@ -130,7 +132,7 @@ public class MLOSProductStakeHolderRule extends X_LOS_ProductStakeHolderRule {
 		
 		if (retValue!=null)
 			return retValue.getLOS_ProductStakeHolderRule_ID();
-		return 0;
+		return -1;
 	}
 	
 
